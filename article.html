@@ -153,7 +153,7 @@
         </div>
 
         <!-- 関連記事セクション -->
-        <section class="mt-12">
+        <section id="related-section" class="mt-12">
             <h2 class="text-base sm:text-xl font-black text-choco-950 mb-4 flex items-center gap-2">
                 <i data-lucide="book-open" class="w-5 h-5 text-emerald-700"></i>
                 <span>あわせて読みたい関連記事</span>
@@ -166,7 +166,7 @@
     <section id="access" class="py-10 sm:py-12 bg-white border-t border-b border-amber-100">
         <div class="max-w-5xl mx-auto px-4">
             <div class="text-center mb-6">
-                <span class="bg-blue-100 text-blue-900 text-xs font-bold px-3 py-1 rounded-full">Google Maps & Access</span>
+                <span class="bg-blue-100 text-blue-900 text-xs font-bold px-3 py-1 rounded-full">Google Maps &amp; Access</span>
                 <h2 class="text-lg sm:text-2xl font-black text-amber-950 mt-2">店舗情報・アクセス（堺市・高石市・和泉市エリア）</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -230,10 +230,22 @@
     </div>
 
     <script>
+        /**
+         * microCMS 公開用（GET専用）設定
+         * ※フロントエンドから直接呼び出すため、microCMS管理画面では必ず
+         *   「GET（コンテンツ取得）のみ許可」に設定したAPIキーを使用してください。
+         */
         const MICROCMS_CONFIG = {
             serviceDomain: 'chocomoka',
             apiKey: 'EDk7M5qdFvl2Dnj642LZD27KjDX9W6zZvoy5',
             endpoint: 'blogs'
+        };
+
+        const CATEGORY_ID_MAP = {
+            'ubpr_oz3cdi9': 'ペットホテル',
+            'sj3ldra6h': '社会化教室・しつけ教室',
+            '6ak8glw67': 'ペットシッター',
+            '2dpm681flrfc': 'ケア・その他'
         };
 
         const LOCAL_FALLBACK_ARTICLES = [
@@ -290,20 +302,48 @@
             }
         ];
 
+        // プレーンテキスト用HTMLエスケープ（XSS防止）
+        function escapeHTML(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // リッチエディタHTML用サニタイズ（危険なタグ・属性を除去）
+        function sanitizeHTML(dirtyHtml) {
+            if (!dirtyHtml) return '';
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(dirtyHtml, 'text/html');
+
+            const forbiddenTags = ['script', 'style', 'iframe', 'object', 'embed', 'form', 'input', 'button', 'meta', 'link'];
+            forbiddenTags.forEach(tag => {
+                doc.querySelectorAll(tag).forEach(el => el.remove());
+            });
+
+            doc.body.querySelectorAll('*').forEach(el => {
+                Array.from(el.attributes).forEach(attr => {
+                    const name = attr.name.toLowerCase();
+                    const value = attr.value.trim().toLowerCase();
+                    if (name.startsWith('on') || value.startsWith('javascript:') || value.startsWith('data:text/html')) {
+                        el.removeAttribute(attr.name);
+                    }
+                });
+            });
+
+            return doc.body.innerHTML;
+        }
+
         function normalizeCategory(rawCat) {
             if (typeof rawCat === 'object' && rawCat !== null) {
-                if (rawCat.id === 'ubpr_oz3cdi9') return 'ペットホテル';
-                if (rawCat.id === 'sj3ldra6h') return '社会化教室・しつけ教室';
-                if (rawCat.id === '6ak8glw67') return 'ペットシッター';
-                if (rawCat.id === '2dpm681flrfc') return 'ケア・その他';
+                if (rawCat.id && CATEGORY_ID_MAP[rawCat.id]) return CATEGORY_ID_MAP[rawCat.id];
                 return rawCat.name || rawCat.title || 'ケア・その他';
             }
             if (typeof rawCat === 'string' && rawCat) {
-                if (rawCat === 'ubpr_oz3cdi9') return 'ペットホテル';
-                if (rawCat === 'sj3ldra6h') return '社会化教室・しつけ教室';
-                if (rawCat === '6ak8glw67') return 'ペットシッター';
-                if (rawCat === '2dpm681flrfc') return 'ケア・その他';
-                return rawCat;
+                return CATEGORY_ID_MAP[rawCat] || rawCat;
             }
             return 'ケア・その他';
         }
@@ -312,7 +352,15 @@
             if (!isoStr) return "";
             const d = new Date(isoStr);
             if (isNaN(d.getTime())) return "";
-            return `${d.getFullYear()}.${String(d.getMonth()+1).padStart(2,'0')}.${String(d.getDate()).padStart(2,'0')}`;
+            return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')}`;
+        }
+
+        function getCategoryBadgeColor(category) {
+            if (category.includes("社会化") || category.includes("しつけ")) return "bg-emerald-600";
+            if (category.includes("シッター")) return "bg-blue-600";
+            if (category.includes("ホテル")) return "bg-amber-700";
+            if (category.includes("ケア") || category.includes("その他")) return "bg-indigo-600";
+            return "bg-gray-600";
         }
 
         function updateSEOMetadata(article, articleUrl) {
@@ -328,7 +376,10 @@
                 document.getElementById('og-image').setAttribute('content', article.img);
             }
 
-            // 構造化データ（BlogPosting + BreadcrumbList）を更新
+            const categoryUrl = (article.category.includes("社会化") || article.category.includes("しつけ"))
+                ? "https://chocomoka.com/school.html"
+                : (article.category.includes("シッター") ? "https://chocomoka.com/sitter.html" : "https://chocomoka.com/");
+
             const jsonLdData = {
                 "@context": "https://schema.org",
                 "@graph": [
@@ -370,7 +421,7 @@
                                 "@type": "ListItem",
                                 "position": 2,
                                 "name": article.category,
-                                "item": article.category.includes("社会化") ? "https://chocomoka.com/school.html" : (article.category.includes("ケア") ? "https://chocomoka.com/sitter.html" : "https://chocomoka.com/")
+                                "item": categoryUrl
                             },
                             {
                                 "@type": "ListItem",
@@ -416,46 +467,69 @@
             const container = document.getElementById('article-container');
             document.getElementById('breadcrumb-title').textContent = article.title;
 
-            let badgeColor = "bg-gray-600";
-            if (article.category.includes("社会化") || article.category.includes("しつけ")) badgeColor = "bg-emerald-600";
-            else if (article.category.includes("シッター")) badgeColor = "bg-blue-600";
-            else if (article.category.includes("ホテル")) badgeColor = "bg-amber-700";
-            else if (article.category.includes("ケア") || article.category.includes("その他")) badgeColor = "bg-indigo-600";
-
-            const fallback = article.fallbackImg || '12.jpg';
+            const badgeColor = getCategoryBadgeColor(article.category);
+            const fallback = escapeHTML(article.fallbackImg || '12.jpg');
+            const safeTitle = escapeHTML(article.title);
+            const safeCategory = escapeHTML(article.category);
+            const safeDate = escapeHTML(article.date);
+            const safeImg = escapeHTML(article.img);
 
             container.innerHTML = `
                 <header class="mb-6 pb-6 border-b border-amber-100">
                     <div class="flex items-center gap-2.5 mb-3">
-                        <span class="${badgeColor} text-white text-xs font-bold px-3 py-1 rounded-full">${article.category}</span>
-                        <time datetime="${article.publishedAt || ''}" class="text-xs font-bold text-gray-400">${article.date}</time>
+                        <span class="${badgeColor} text-white text-xs font-bold px-3 py-1 rounded-full">${safeCategory}</span>
+                        <time datetime="${escapeHTML(article.publishedAt || '')}" class="text-xs font-bold text-gray-400">${safeDate}</time>
                     </div>
-                    <h1 class="text-xl sm:text-3xl font-black text-choco-950 leading-snug mb-4">${article.title}</h1>
+                    <h1 class="text-xl sm:text-3xl font-black text-choco-950 leading-snug mb-4">${safeTitle}</h1>
                     <div class="flex items-center gap-2.5 text-xs text-gray-600 font-bold">
                         <img src="kentaro.webp" alt="齋藤 健太郎" class="w-8 h-8 rounded-full object-cover border border-amber-300" onerror="this.onerror=null; this.src='kentaro.jpg';">
                         <span>執筆：齋藤 健太郎（チョコ＆モカ オーナー／ドッグトレーナー）</span>
                     </div>
                 </header>
                 <div class="rounded-2xl overflow-hidden mb-6 border border-amber-100 bg-amber-50">
-                    <img src="${article.img}" alt="${article.title}" class="w-full max-h-[420px] object-cover" onerror="this.onerror=null; this.src='${fallback}';">
+                    <img src="${safeImg}" alt="${safeTitle}" class="w-full max-h-[420px] object-cover" onerror="this.onerror=null; this.src='${fallback}';">
                 </div>
                 <div class="article-body text-sm sm:text-base text-gray-800 font-medium">
-                    ${article.content}
+                    ${sanitizeHTML(article.content)}
                 </div>
             `;
             updateCategoryCTA(article.category);
         }
 
+        function renderNotFound() {
+            document.getElementById('breadcrumb-title').textContent = "記事が見つかりません";
+            document.getElementById('article-container').innerHTML = `
+                <div class="text-center py-8 space-y-4">
+                    <p class="text-lg sm:text-xl font-black text-choco-950">お探しの記事が見つかりませんでした</p>
+                    <p class="text-xs sm:text-sm text-gray-600">記事が削除されたか、URLが変更された可能性があります。</p>
+                    <div class="pt-2">
+                        <a href="index.html#column" class="inline-flex items-center gap-1.5 bg-amber-900 text-white font-extrabold text-xs sm:text-sm px-6 py-3 rounded-full shadow">
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                            <span>コラム一覧へ戻る</span>
+                        </a>
+                    </div>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+
         function renderRelatedArticles(allArticles, currentId) {
             const grid = document.getElementById('related-articles-grid');
-            if (!grid) return;
+            const section = document.getElementById('related-section');
+            if (!grid || !section) return;
+
             const others = allArticles.filter(a => a.id !== currentId).slice(0, 2);
+            if (others.length === 0) {
+                section.classList.add('hidden');
+                return;
+            }
+
             grid.innerHTML = others.map(item => `
                 <a href="article.html?id=${encodeURIComponent(item.id)}" class="bg-white rounded-2xl p-4 border border-amber-200 shadow-sm hover:shadow-md transition flex gap-3 items-center group">
-                    <img src="${item.img}" alt="${item.title}" class="w-20 h-20 rounded-xl object-cover shrink-0 bg-amber-100" loading="lazy" onerror="this.onerror=null; this.src='${item.fallbackImg || '12.jpg'}';">
+                    <img src="${escapeHTML(item.img)}" alt="${escapeHTML(item.title)}" class="w-20 h-20 rounded-xl object-cover shrink-0 bg-amber-100" loading="lazy" onerror="this.onerror=null; this.src='${escapeHTML(item.fallbackImg || '12.jpg')}';">
                     <div class="min-w-0">
-                        <span class="text-[10px] font-bold text-emerald-700 block mb-0.5">${item.category}</span>
-                        <h3 class="text-xs sm:text-sm font-extrabold text-choco-950 line-clamp-2 group-hover:text-emerald-700 transition">${item.title}</h3>
+                        <span class="text-[10px] font-bold text-emerald-700 block mb-0.5">${escapeHTML(item.category)}</span>
+                        <h3 class="text-xs sm:text-sm font-extrabold text-choco-950 line-clamp-2 group-hover:text-emerald-700 transition">${escapeHTML(item.title)}</h3>
                     </div>
                 </a>
             `).join('');
@@ -464,12 +538,24 @@
         async function initArticlePage() {
             lucide.createIcons();
             const params = new URLSearchParams(window.location.search);
-            const articleId = params.get('id') || "1";
-            const canonicalUrl = `https://chocomoka.com/article.html?id=${encodeURIComponent(articleId)}`;
+            const rawId = params.get('id') || "1";
+
+            // 不正なID文字列のブロック（英数字・ハイフン・アンダースコアのみ許可）
+            if (!/^[a-zA-Z0-9_-]+$/.test(rawId)) {
+                renderNotFound();
+                renderRelatedArticles(LOCAL_FALLBACK_ARTICLES, "");
+                return;
+            }
+
+            const canonicalUrl = `https://chocomoka.com/article.html?id=${encodeURIComponent(rawId)}`;
 
             try {
-                // 全記事一覧と対象記事を取得
-                const listUrl = `https://${MICROCMS_CONFIG.serviceDomain}.microcms.io/api/v1/${MICROCMS_CONFIG.endpoint}?orders=-publishedAt&limit=20`;
+                const query = new URLSearchParams({
+                    orders: '-publishedAt',
+                    limit: '20',
+                    fields: 'id,title,publishedAt,createdAt,updatedAt,category,eyecatch,summary,description,content'
+                });
+                const listUrl = `https://${MICROCMS_CONFIG.serviceDomain}.microcms.io/api/v1/${MICROCMS_CONFIG.endpoint}?${query.toString()}`;
                 const res = await fetch(listUrl, {
                     headers: { 'X-MICROCMS-API-KEY': MICROCMS_CONFIG.apiKey }
                 });
@@ -494,18 +580,29 @@
                         };
                     });
 
-                    const target = mapped.find(a => a.id === articleId) || mapped[0];
-                    renderArticle(target);
-                    updateSEOMetadata(target, canonicalUrl);
-                    renderRelatedArticles(mapped, target.id);
+                    // microCMS内に該当IDがあれば表示、なければローカルフォールバックを確認
+                    const target = mapped.find(a => a.id === rawId) || LOCAL_FALLBACK_ARTICLES.find(a => a.id === rawId);
+                    if (target) {
+                        renderArticle(target);
+                        updateSEOMetadata(target, canonicalUrl);
+                        renderRelatedArticles(mapped, target.id);
+                    } else {
+                        renderNotFound();
+                        renderRelatedArticles(mapped, "");
+                    }
                     return;
                 }
                 throw new Error('No contents');
             } catch (e) {
-                const target = LOCAL_FALLBACK_ARTICLES.find(a => a.id === articleId) || LOCAL_FALLBACK_ARTICLES[0];
-                renderArticle(target);
-                updateSEOMetadata(target, canonicalUrl);
-                renderRelatedArticles(LOCAL_FALLBACK_ARTICLES, target.id);
+                const target = LOCAL_FALLBACK_ARTICLES.find(a => a.id === rawId);
+                if (target) {
+                    renderArticle(target);
+                    updateSEOMetadata(target, canonicalUrl);
+                    renderRelatedArticles(LOCAL_FALLBACK_ARTICLES, target.id);
+                } else {
+                    renderNotFound();
+                    renderRelatedArticles(LOCAL_FALLBACK_ARTICLES, "");
+                }
             }
         }
 
