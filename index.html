@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Schema.org 構造化データ (ペットホテル・VIP24時間お泊りシッター¥9,900・1日の過ごし方・FAQPage・NAP完全連動版) -->
+    <!-- Schema.org 構造化データ (ペットホテル・VIP24時間お泊りシッター¥9,900・口コミ評価・1日の過ごし方・FAQPage完全連動版) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -82,6 +82,33 @@
             "opens": "09:00",
             "closes": "19:00"
           },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "7",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": {"@type": "Person", "name": "堺市北区 豆柴きなこちゃんオーナー様"},
+              "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+              "reviewBody": "堺市北区から冠婚葬祭の用事で半日ほどのショートステイ（一時預かり）を利用しました。ケージに閉じ込められることなく、フリースペースでのびのびと過ごせたようで大満足です。"
+            },
+            {
+              "@type": "Review",
+              "author": {"@type": "Person", "name": "高石市 ヨーキーレオくんオーナー様"},
+              "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+              "reviewBody": "11歳になるシニアのヨークシャーテリア・レオを1泊2日でお願いしました。夜間も24時間スタッフが同じ建物内に常駐してくださるため、高齢犬を預ける不安が一気に吹き飛びました。"
+            },
+            {
+              "@type": "Review",
+              "author": {"@type": "Person", "name": "和泉市 マルプーココちゃんオーナー様"},
+              "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+              "reviewBody": "和泉市（和泉中央エリア）の自宅に泊まり込みでお世話してくださる1日1組限定の24時間お泊りシッターを利用しました。自宅のリビングでシッターさんを24時間独り占めでき安心でした。"
+            }
+          ],
           "areaServed": [
             {"@type": "City", "name": "堺市"},
             {"@type": "City", "name": "高石市"},
@@ -158,6 +185,33 @@
           "url": "https://chocomoka.com/",
           "name": "堺市・高石市・和泉市のペットホテル・しつけ教室・ペットシッター｜小型犬専門 チョコ＆モカ",
           "isPartOf": {"@id": "https://chocomoka.com/#organization"}
+        },
+        {
+          "@type": "HowTo",
+          "name": "プレミアムペットホテル チョコ＆モカでの1日の過ごし方（ピクルスとチーズの例）",
+          "description": "ケージに入れっぱなしにせず、24時間スタッフ常駐のもと自宅のように過ごす1日のタイムスケジュール",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "09:00〜 朝のお散歩＆ごはん",
+              "text": "ワンちゃんのペースに合わせて朝のお散歩へ。体調や排泄、ごはんの食べ具合も丁寧にチェックします。"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "11:00〜 ケージフリーの時間",
+              "text": "広々とした室内フリースペースで、相性の良いお友達やスタッフと自由に遊んだりお昼寝したりして過ごします。"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "15:00〜 写真・動画レポート送信",
+              "text": "お散歩や遊んでいる楽しそうな様子を、写真・動画付きのレポート（LINEやメール）で飼い主様へ毎日お送りします。"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "18:00〜 夕食・見守り・就寝",
+              "text": "夕食後は個室ベッドで安心就寝。夜間も同じ建物内にスタッフが24時間常駐し、体調変化に目を配ります。"
+            }
+          ]
         },
         {
           "@type": "FAQPage",
@@ -363,18 +417,18 @@
         </div>
     </section>
 
-    <!-- ③＆④ 1日の過ごし方（4コマ漫画） ＆ 堺市・高石市・和泉市の飼い主様の声（最新6件＋save_blog.htmlリンク） -->
+    <!-- ③＆④ 1日の過ごし方（4コマ漫画） ＆ 堺市・高石市・和泉市の飼い主様の声 -->
     <section id="schedule-voice" class="py-10 sm:py-16 bg-amber-50/40 border-b border-amber-100">
         <div class="max-w-5xl mx-auto px-4 space-y-14">
 
-            <!-- ③ ホテルでの1日のスケジュール（スマホ最適化＆サイズ拡大版） -->
-            <div class="max-w-2xl mx-auto bg-white rounded-3xl p-4 sm:p-7 border-2 border-amber-200 shadow-md space-y-5">
-                <div class="text-center space-y-1.5">
-                    <span class="inline-block bg-orange-100 text-orange-800 text-xs font-extrabold px-3.5 py-1 rounded-full border border-orange-200">1-Day Schedule</span>
-                    <h2 class="text-lg sm:text-2xl font-black text-amber-950 leading-snug">
+            <!-- ③ ホテルでの1日のスケジュール（さらにひと回り大きく見やすい拡大版） -->
+            <div class="max-w-3xl mx-auto bg-white rounded-3xl p-5 sm:p-9 border-2 border-amber-200 shadow-md space-y-6">
+                <div class="text-center space-y-2">
+                    <span class="inline-block bg-orange-100 text-orange-800 text-xs sm:text-sm font-extrabold px-4 py-1 rounded-full border border-orange-200">1-Day Schedule</span>
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-amber-950 leading-snug">
                         🕒 プレミアムペットホテルでの<br class="sm:hidden">1日の過ごし方（ピクルスとチーズの例）
                     </h2>
-                    <p class="text-xs sm:text-sm text-amber-900 font-bold leading-relaxed">
+                    <p class="text-xs sm:text-base text-amber-900 font-bold leading-relaxed">
                         ケージに入れっぱなしにせず、24時間スタッフ常駐のもと自宅のように過ごします
                     </p>
                 </div>
@@ -382,53 +436,53 @@
                 <!-- 1日の過ごし方4コマ漫画画像 -->
                 <figure class="w-full rounded-2xl overflow-hidden shadow-sm border-2 border-amber-300 bg-white">
                     <img src="premium-pet-hotel-1day-manga.webp" alt="プレミアムペットホテルでの1日の過ごし方（ピクルスとチーズの例）：09:00朝のお散歩＆ごはん、11:00ケージフリーの時間、15:00LINEやメールで画像を送信、18:00夕食・24時間スタッフ見守り就寝" width="1280" height="720" class="w-full h-auto object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='premium-pet-hotel-1day-manga.jpg';">
-                    <figcaption class="bg-amber-100/80 text-amber-950 text-[11px] sm:text-xs font-bold text-center py-2.5 px-3 border-t border-amber-200 leading-relaxed">
+                    <figcaption class="bg-amber-100/80 text-amber-950 text-xs sm:text-sm font-bold text-center py-3 px-4 border-t border-amber-200 leading-relaxed">
                         ▲ チョコ＆モカのペットホテルでの1日（朝のお散歩・ケージフリー遊び・LINE写真レポート・24時間常駐見守り）
                     </figcaption>
                 </figure>
 
-                <!-- スマホで読みやすい大きめフォント＆ゆとり余白のタイムスケジュール -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-amber-950">
-                    <div class="bg-amber-50/80 p-4 rounded-2xl border border-amber-200 space-y-1.5 shadow-sm">
-                        <span class="font-black text-orange-600 block text-sm sm:text-base border-b border-amber-200 pb-1.5">
+                <!-- 大きめフォント＆ゆとり余白のタイムスケジュール -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-amber-950">
+                    <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
+                        <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
                             09:00〜 朝のお散歩＆ごはん
                         </span>
-                        <p class="text-[13px] sm:text-sm text-gray-800 font-medium leading-relaxed">
+                        <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
                             ワンちゃんのペースに合わせて朝のお散歩へ。体調や排泄、ごはんの食べ具合も丁寧にチェックします。
                         </p>
                     </div>
-                    <div class="bg-amber-50/80 p-4 rounded-2xl border border-amber-200 space-y-1.5 shadow-sm">
-                        <span class="font-black text-orange-600 block text-sm sm:text-base border-b border-amber-200 pb-1.5">
+                    <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
+                        <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
                             11:00〜 ケージフリーの時間
                         </span>
-                        <p class="text-[13px] sm:text-sm text-gray-800 font-medium leading-relaxed">
+                        <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
                             広々とした室内フリースペースで、相性の良いお友達やスタッフと自由に遊んだりお昼寝したりして過ごします。
                         </p>
                     </div>
-                    <div class="bg-amber-50/80 p-4 rounded-2xl border border-amber-200 space-y-1.5 shadow-sm">
-                        <span class="font-black text-orange-600 block text-sm sm:text-base border-b border-amber-200 pb-1.5">
+                    <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
+                        <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
                             15:00〜 写真・動画レポート送信
                         </span>
-                        <p class="text-[13px] sm:text-sm text-gray-800 font-medium leading-relaxed">
+                        <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
                             お散歩や遊んでいる楽しそうな様子を、写真・動画付きのレポート（LINEやメール）で飼い主様へ毎日お送りします。
                         </p>
                     </div>
-                    <div class="bg-amber-50/80 p-4 rounded-2xl border border-amber-200 space-y-1.5 shadow-sm">
-                        <span class="font-black text-orange-600 block text-sm sm:text-base border-b border-amber-200 pb-1.5">
+                    <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
+                        <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
                             18:00〜 夕食・見守り・就寝
                         </span>
-                        <p class="text-[13px] sm:text-sm text-gray-800 font-medium leading-relaxed">
+                        <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
                             夕食後は個室ベッドで安心就寝。夜間も同じ建物内にスタッフが24時間常駐し、体調変化に目を配ります。
                         </p>
                     </div>
                 </div>
             </div>
 
-            <!-- ④ 堺市・高石市・和泉市のお客様の声（最新6件を3列×2段で表示） -->
+            <!-- ④ 堺市・高石市・和泉市のお客様の声（💬を削除・最新6件を3列×2段で表示） -->
             <div id="voice" class="space-y-6">
                 <div class="text-center">
                     <span class="bg-amber-100 text-amber-900 text-[10px] sm:text-xs font-bold px-3.5 py-1 rounded-full border border-amber-300 uppercase tracking-wider">Customer Feedback</span>
-                    <h2 class="text-xl sm:text-3xl font-black text-amber-950 mt-2.5">💬 堺市・高石市・和泉市の飼い主様の声</h2>
+                    <h2 class="text-xl sm:text-3xl font-black text-amber-950 mt-2.5">堺市・高石市・和泉市の飼い主様の声</h2>
                     <p class="text-xs sm:text-sm text-gray-600 mt-1.5">実際にご利用いただいた小型犬オーナー様からの、喜びの声と愛犬の様子をご紹介します 🐾</p>
                 </div>
 
