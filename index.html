@@ -3,29 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    
+    <meta name="theme-color" content="#3D2010">
+    <meta name="format-detection" content="telephone=no">
+
     <!-- Google SEO・MEO 徹底強化メタタグ（堺市・高石市・和泉市 ペットホテル＆しつけ教室） -->
     <title>堺市・高石市・和泉市のペットホテル・しつけ教室・ペットシッター｜小型犬専門 チョコ＆モカ</title>
     <meta name="description" content="堺市・高石市・和泉市対応の小型犬専門の社会化教室＆ペットホテル「チョコ＆モカ」（大阪府高石市高師浜４丁目８−１６・高師浜駅徒歩3分）。1日3組限定のプレミアムペットホテル、1日1組限定24時間お泊りシッター（¥9,900）、パピー・成犬の犬のしつけ教室までプロが一貫サポート。">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://chocomoka.com/">
 
-    <!-- OGP -->
+    <!-- OGP & Twitter Cards（SNS・検索リッチ表示最適化） -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="堺市・高石市・和泉市のペットホテル・しつけ教室・ペットシッター｜小型犬専門 チョコ＆モカ">
     <meta property="og:description" content="【1日3組限定】堺市・高石市・和泉市で人気の小型犬専門の社会化教室＆ペットホテル。24時間スタッフ常駐ホテル・24時間お泊りシッター（¥9,900）・犬のしつけ教室対応。">
     <meta property="og:url" content="https://chocomoka.com/">
     <meta property="og:site_name" content="小型犬専門の社会化教室＆ペットホテル チョコ＆モカ">
-    <meta property="og:image" content="https://chocomoka.com/11.jpg">
+    <meta property="og:image" content="https://chocomoka.com/chocomoka_new_year.webp">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
     <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="堺市・高石市・和泉市のペットホテル・しつけ教室｜小型犬専門 チョコ＆モカ">
+    <meta name="twitter:description" content="【1日3組限定・24時間スタッフ常駐】堺市・高石市・和泉市の小型犬専門プレミアムペットホテル＆しつけ教室。送迎対応。">
+    <meta name="twitter:image" content="https://chocomoka.com/chocomoka_new_year.webp">
 
-    <!-- CDN & フォント -->
+    <!-- LCP（最大視覚コンテンツ）最速読み込み＆外部接続事前確立 -->
+    <link rel="preload" as="image" href="chocomoka_new_year.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="logo.webp" fetchpriority="high">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://chocomoka.microcms.io">
+    <link rel="dns-prefetch" href="https://www.google.com">
+
+    <!-- Webフォント非同期読み込み（レンダーブロッキング解消） -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+JP:wght@400;700;900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Schema.org 構造化データ (ペットホテル・VIP24時間お泊りシッター¥9,900・口コミ評価・1日の過ごし方・FAQPage完全連動版) -->
+    <!-- Schema.org 構造化データ（LocalBusiness・LodgingBusiness・Service・OfferCatalog・HowTo・FAQPage・BreadcrumbList・Review 完全網羅） -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -44,28 +65,44 @@
             {
               "@type": "ImageObject",
               "url": "https://chocomoka.com/logo.webp",
+              "width": 400,
+              "height": 400,
               "caption": "小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 公式ロゴ"
             },
             {
               "@type": "ImageObject",
-              "url": "https://chocomoka.com/11.webp",
+              "url": "https://chocomoka.com/chocomoka_new_year.webp",
+              "width": 1280,
+              "height": 720,
               "caption": "1日3組限定の小型犬専門プレミアムペットホテル 24時間スタッフ常駐"
             },
             {
               "@type": "ImageObject",
               "url": "https://chocomoka.com/14.webp",
+              "width": 800,
+              "height": 800,
               "caption": "1日1組限定の愛犬専属・24時間お泊りシッター"
             },
             {
               "@type": "ImageObject",
               "url": "https://chocomoka.com/premium-pet-hotel-1day-manga.webp",
+              "width": 1280,
+              "height": 720,
               "caption": "堺市・高石市・和泉市のプレミアムペットホテル チョコ＆モカでの1日の過ごし方（ピクルスとチーズの例）"
             }
           ],
+          "logo": "https://chocomoka.com/logo.webp",
           "url": "https://chocomoka.com/",
           "priceRange": "¥1,650 - ¥9,900",
+          "currenciesAccepted": "JPY",
+          "paymentAccepted": "Cash, Credit Card, Electronic Money, QR Code Payment",
           "telephone": "+81-70-9440-8118",
           "email": "admin@chocomoka.com",
+          "founder": {
+            "@type": "Person",
+            "name": "齋藤 健太郎",
+            "jobTitle": "オーナー・ドッグトレーナー・動物取扱責任者"
+          },
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "高師浜４丁目８−１６",
@@ -74,14 +111,20 @@
             "postalCode": "592-0004",
             "addressCountry": "JP"
           },
-          "geo": { "@type": "GeoCoordinates", "latitude": 34.5323, "longitude": 135.4363113 },
-          "hasMap": "https://www.google.com/maps/search/?api=1&query=小型犬専門の社会化教室＆ペットホテル+チョコ＆モカ+大阪府高石市高師浜４丁目８−１６",
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-            "opens": "09:00",
-            "closes": "19:00"
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.5323,
+            "longitude": 135.4363113
           },
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=小型犬専門の社会化教室＆ペットホテル+チョコ＆モカ+大阪府高石市高師浜４丁目８−１６",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+              "opens": "09:00",
+              "closes": "19:00"
+            }
+          ],
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5.0",
@@ -92,21 +135,31 @@
           "review": [
             {
               "@type": "Review",
+              "datePublished": "2026-10-15",
               "author": {"@type": "Person", "name": "堺市北区 豆柴きなこちゃんオーナー様"},
               "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
               "reviewBody": "堺市北区から冠婚葬祭の用事で半日ほどのショートステイ（一時預かり）を利用しました。ケージに閉じ込められることなく、フリースペースでのびのびと過ごせたようで大満足です。"
             },
             {
               "@type": "Review",
+              "datePublished": "2026-10-22",
               "author": {"@type": "Person", "name": "高石市 ヨーキーレオくんオーナー様"},
               "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
               "reviewBody": "11歳になるシニアのヨークシャーテリア・レオを1泊2日でお願いしました。夜間も24時間スタッフが同じ建物内に常駐してくださるため、高齢犬を預ける不安が一気に吹き飛びました。"
             },
             {
               "@type": "Review",
+              "datePublished": "2026-11-02",
               "author": {"@type": "Person", "name": "和泉市 マルプーココちゃんオーナー様"},
               "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
               "reviewBody": "和泉市（和泉中央エリア）の自宅に泊まり込みでお世話してくださる1日1組限定の24時間お泊りシッターを利用しました。自宅のリビングでシッターさんを24時間独り占めでき安心でした。"
+            },
+            {
+              "@type": "Review",
+              "datePublished": "2026-11-08",
+              "author": {"@type": "Person", "name": "堺市南区 ポメラニアンモコちゃんオーナー様"},
+              "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+              "reviewBody": "家族旅行で2泊3日利用しました。堺市南区の自宅まで専用車で送迎してくださり、少人数制のおかげで他の小型犬ともすぐに打ち解けて楽しそうに過ごす動画が毎日届き安心でした。"
             }
           ],
           "areaServed": [
@@ -132,10 +185,21 @@
                 "itemOffered": {
                   "@type": "Service",
                   "name": "堺市・高石市・和泉市 ペットホテル（1日3組限定・24時間常駐）",
-                  "url": "https://chocomoka.com/",
+                  "url": "https://chocomoka.com/#hotel-price",
                   "description": "堺市・高石市・和泉市のご自宅まで送迎対応。1日3組限定・24時間スタッフ常駐の小型犬専門プレミアムペットホテル。"
                 },
                 "price": "4400",
+                "priceCurrency": "JPY"
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "ショートステイ（一時預かり 180分）",
+                  "url": "https://chocomoka.com/#hotel-price",
+                  "description": "冠婚葬祭やお出かけ、ホテル慣らしに最適な180分一時預かりプラン。"
+                },
+                "price": "1650",
                 "priceCurrency": "JPY"
               },
               {
@@ -180,34 +244,66 @@
           "description": "大阪府高石市高師浜（南海高師浜線「高師浜駅」徒歩3分）を拠点に、高石市・堺市（西区・南区・北区・中区・堺区・東区・美原区）・和泉市（和泉府中・和泉中央・光明池・のぞみ野・はつが野・トリヴェール和泉周辺）・泉大津市・大阪市の飼い主様向けに1日3組限定のプレミアムペットホテルを提供しています。"
         },
         {
+          "@type": "WebSite",
+          "@id": "https://chocomoka.com/#website",
+          "url": "https://chocomoka.com/",
+          "name": "小型犬専門の社会化教室＆ペットホテル チョコ＆モカ",
+          "inLanguage": "ja",
+          "publisher": {"@id": "https://chocomoka.com/#organization"}
+        },
+        {
           "@type": "WebPage",
           "@id": "https://chocomoka.com/#webpage",
           "url": "https://chocomoka.com/",
           "name": "堺市・高石市・和泉市のペットホテル・しつけ教室・ペットシッター｜小型犬専門 チョコ＆モカ",
-          "isPartOf": {"@id": "https://chocomoka.com/#organization"}
+          "isPartOf": {"@id": "https://chocomoka.com/#website"},
+          "about": {"@id": "https://chocomoka.com/#organization"},
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://chocomoka.com/chocomoka_new_year.webp"
+          },
+          "breadcrumb": {"@id": "https://chocomoka.com/#breadcrumb"}
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://chocomoka.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "堺市・高石市・和泉市の小型犬専門ペットホテル チョコ＆モカ（TOP）",
+              "item": "https://chocomoka.com/"
+            }
+          ]
         },
         {
           "@type": "HowTo",
           "name": "プレミアムペットホテル チョコ＆モカでの1日の過ごし方（ピクルスとチーズの例）",
           "description": "ケージに入れっぱなしにせず、24時間スタッフ常駐のもと自宅のように過ごす1日のタイムスケジュール",
+          "totalTime": "PT24H",
           "step": [
             {
               "@type": "HowToStep",
+              "position": 1,
               "name": "09:00〜 朝のお散歩＆ごはん",
               "text": "ワンちゃんのペースに合わせて朝のお散歩へ。体調や排泄、ごはんの食べ具合も丁寧にチェックします。"
             },
             {
               "@type": "HowToStep",
+              "position": 2,
+              "position": 2,
               "name": "11:00〜 ケージフリーの時間",
               "text": "広々とした室内フリースペースで、相性の良いお友達やスタッフと自由に遊んだりお昼寝したりして過ごします。"
             },
             {
               "@type": "HowToStep",
+              "position": 3,
               "name": "15:00〜 写真・動画レポート送信",
               "text": "お散歩や遊んでいる楽しそうな様子を、写真・動画付きのレポート（LINEやメール）で飼い主様へ毎日お送りします。"
             },
             {
               "@type": "HowToStep",
+              "position": 4,
               "name": "18:00〜 夕食・見守り・就寝",
               "text": "夕食後は個室ベッドで安心就寝。夜間も同じ建物内にスタッフが24時間常駐し、体調変化に目を配ります。"
             }
@@ -266,12 +362,28 @@
         }
     </script>
     <style>
-        body { font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif; color: #3D2010; background-color: #FAF6F0; -webkit-tap-highlight-color: transparent; }
+        body {
+            font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Hiragino Maru Gothic ProN", sans-serif;
+            color: #3D2010;
+            background-color: #FAF6F0;
+            -webkit-tap-highlight-color: transparent;
+            text-rendering: optimizeSpeed;
+        }
+        /* スマホでの高速スクロール・レンダリング最適化（画面外セクションの描画コスト削減） */
+        .cv-auto {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 650px;
+        }
+        /* タップ遅延（300ms）解消 */
+        a, button, summary, label {
+            touch-action: manipulation;
+        }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .gold-gradient-bg {
             background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 30%, #B38728 70%, #AA771C 100%);
-            color: #3D2010; box-shadow: 0 4px 15px rgba(179, 135, 40, 0.35);
+            color: #3D2010;
+            box-shadow: 0 4px 15px rgba(179, 135, 40, 0.35);
         }
         details > summary::-webkit-details-marker { display: none; }
     </style>
@@ -282,794 +394,793 @@
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex justify-between items-center gap-2">
             <a href="index.html" class="flex items-center space-x-2 shrink-0 group text-left py-1">
-                <img src="logo.webp" alt="堺市・高石市・和泉市の小型犬専門の社会化教室＆ペットホテル チョコ＆モカ ロゴ" width="48" height="48" class="h-10 sm:h-12 w-auto object-contain" fetchpriority="high" decoding="async" onerror="this.onerror=null; this.src='logo.jpg';">
+                <img src="logo.webp" alt="堺市・高石市・和泉市の小型犬専門の社会化教室＆ペットホテル チョコ＆モカ ロゴ" width="48" height="48" class="h-10 sm:h-12 w-auto object-contain" fetchpriority="high" decoding="sync" onerror="this.onerror=null; this.src='logo.jpg';">
                 <div class="min-w-0">
                     <p class="text-[9px] sm:text-xs font-bold text-amber-900 leading-none mb-0.5 truncate">小型犬専門の社会化教室＆ペットホテル</p>
                     <span class="font-black text-base sm:text-xl text-amber-900 tracking-tight leading-none block">チョコ＆モカ</span>
                 </div>
             </a>
             
-            <nav class="hidden md:flex flex-1 justify-center items-center space-x-2 text-xs font-bold">
-                <a href="index.html" class="bg-amber-800 text-white px-4 py-2 rounded-full shadow-sm flex items-center gap-1.5 ring-2 ring-amber-400">
-                    <i data-lucide="hotel" class="w-4 h-4"></i> ペットホテル（TOP）
+            <nav aria-label="メインナビゲーション" class="hidden md:flex flex-1 justify-center items-center space-x-2 text-xs font-bold">
+                <a href="index.html" aria-current="page" class="bg-amber-800 text-white px-4 py-2 rounded-full shadow-sm flex items-center gap-1.5 ring-2 ring-amber-400">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 22v-6.57"/><path d="M12 11h.01"/><path d="M12 7h.01"/><path d="M14 15.43V22"/><path d="M15 16a5 5 0 0 0-6 0"/><path d="M16 11h.01"/><path d="M16 7h.01"/><path d="M8 11h.01"/><path d="M8 7h.01"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
+                    ペットホテル（TOP）
                 </a>
                 <a href="school.html" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-full transition shadow-sm flex items-center gap-1.5">
-                    <i data-lucide="graduation-cap" class="w-4 h-4"></i> しつけ教室・社会化
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                    しつけ教室・社会化
                 </a>
                 <a href="sitter.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition shadow-sm flex items-center gap-1.5">
-                    <i data-lucide="home" class="w-4 h-4"></i> ペットシッター・散歩代行
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                    ペットシッター・散歩代行
                 </a>
             </nav>
 
-            <button onclick="openModal()" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold text-xs px-3.5 py-2 rounded-full shadow shrink-0">
+            <button type="button" onclick="openModal()" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold text-xs px-3.5 py-2 rounded-full shadow shrink-0 active:scale-95 transition">
                 【初回】予約・相談
             </button>
         </div>
 
-        <div class="md:hidden bg-amber-50/90 border-t border-amber-200 px-2 py-1.5 flex justify-center gap-1.5 overflow-x-auto no-scrollbar text-[11px] font-black">
-            <a href="index.html" class="bg-amber-800 text-white px-3 py-1 rounded-full shrink-0 shadow-sm">🏨 ペットホテル</a>
+        <nav aria-label="モバイルナビゲーション" class="md:hidden bg-amber-50/90 border-t border-amber-200 px-2 py-1.5 flex justify-center gap-1.5 overflow-x-auto no-scrollbar text-[11px] font-black">
+            <a href="index.html" aria-current="page" class="bg-amber-800 text-white px-3 py-1 rounded-full shrink-0 shadow-sm">🏨 ペットホテル</a>
             <a href="school.html" class="bg-white text-emerald-800 border border-emerald-300 px-3 py-1 rounded-full shrink-0">🏫 しつけ教室</a>
             <a href="sitter.html" class="bg-white text-blue-800 border border-blue-300 px-3 py-1 rounded-full shrink-0">🐾 ペットシッター</a>
-        </div>
+        </nav>
     </header>
 
-    <!-- ① ヒーローセクション -->
-    <section class="bg-gradient-to-b from-amber-50 to-orange-50 py-8 sm:py-14 border-b border-amber-100">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <div class="inline-block bg-amber-900 text-white text-[11px] sm:text-xs font-extrabold px-3.5 py-1 rounded-full mb-3 shadow-sm">
-                🚗 送迎・出張対応エリア：堺市・高石市・和泉市（泉大津市・大阪市）
-            </div>
-            
-            <h1 class="text-xl sm:text-3xl md:text-4xl font-black text-amber-950 mb-3 leading-snug">
-                <span class="block text-xs sm:text-base text-orange-700 font-extrabold mb-1">堺市・高石市・和泉市の小型犬専門ペットホテル・しつけ教室</span>
-                小型犬専門の社会化教室＆ペットホテル<br class="sm:hidden"> チョコ＆モカ
-            </h1>
-
-            <div class="mb-6 inline-block max-w-full">
-                <div class="inline-flex items-center justify-center gap-1.5 gold-gradient-bg text-amber-950 text-xs sm:text-lg font-black px-4 sm:px-5 py-2.5 rounded-full border-2 border-yellow-300 shadow-lg">
-                    <i data-lucide="crown" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-900 shrink-0"></i>
-                    <span>1日3組限定 | 24時間スタッフ常駐プレミアムホテル</span>
+    <main>
+        <!-- ① ヒーローセクション（LCP最速表示エリア） -->
+        <section class="bg-gradient-to-b from-amber-50 to-orange-50 py-8 sm:py-14 border-b border-amber-100">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <div class="inline-block bg-amber-900 text-white text-[11px] sm:text-xs font-extrabold px-3.5 py-1 rounded-full mb-3 shadow-sm">
+                    🚗 送迎・出張対応エリア：堺市・高石市・和泉市（泉大津市・大阪市）
                 </div>
-            </div>
+                
+                <h1 class="text-xl sm:text-3xl md:text-4xl font-black text-amber-950 mb-3 leading-snug">
+                    <span class="block text-xs sm:text-base text-orange-700 font-extrabold mb-1">堺市・高石市・和泉市の小型犬専門ペットホテル・しつけ教室</span>
+                    小型犬専門の社会化教室＆ペットホテル<br class="sm:hidden"> チョコ＆モカ
+                </h1>
 
-            <!-- ペットホテル専用ビジュアル -->
-            <div class="max-w-4xl mx-auto mb-6 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-                <div class="rounded-2xl overflow-hidden shadow-lg border-2 border-amber-300">
-                    <img src="11.webp" alt="堺市・高石市・和泉市の1日3組限定 小型犬専門プレミアムペットホテル チョコ＆モカ 24時間スタッフ常駐" width="800" height="800" class="w-full h-auto block" fetchpriority="high" decoding="async" onerror="this.onerror=null; this.src='11.jpg';">
-                </div>
-                <div class="rounded-2xl overflow-hidden shadow-lg border-2 border-amber-300">
-                    <img src="14.webp" alt="1日1組限定の愛犬専属・24時間お泊りシッター 堺市・高石市・和泉市出張対応 チョコ＆モカ" width="800" height="800" class="w-full h-auto block" fetchpriority="high" decoding="async" onerror="this.onerror=null; this.src='14.jpg';">
-                </div>
-            </div>
-
-            <div class="bg-white/95 p-5 sm:p-8 rounded-3xl shadow-xl border border-amber-100 max-w-3xl mx-auto space-y-4">
-                <p class="text-base sm:text-2xl font-extrabold text-amber-900 leading-snug">「ケージに入れっぱなし」のホテル、<br class="sm:hidden">卒業しませんか？</p>
-                <p class="text-xs sm:text-base text-gray-700 leading-relaxed text-left sm:text-center">
-                    <strong>大阪府高石市高師浜（高師浜駅徒歩3分）</strong>にある「チョコ＆モカ」は、<strong>堺市・高石市・和泉市エリアの飼い主様に選ばれている「1日3組限定・完全会員制」小型犬専門ペットホテル</strong>です。日中は広々としたフリースペースで遊びながら社会化を育み、夜間も24時間スタッフが常駐して大切にお預かりします。<strong>堺市・高石市・和泉市</strong>（和泉府中・和泉中央・光明池エリアなど）へのご自宅送迎も大好評です。
-                </p>
-                <div class="pt-1 flex flex-col sm:flex-row justify-center gap-2.5">
-                    <button onclick="openModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs sm:text-base font-extrabold px-6 sm:px-8 py-3.5 rounded-full shadow-md active:scale-95 transition">
-                        <i data-lucide="sparkles" class="w-4 h-4 shrink-0"></i>
-                        <span>【初回】ペットホテル事前打合せを予約する</span>
-                    </button>
-                    <a href="#schedule-voice" class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-amber-100/80 hover:bg-amber-100 text-amber-950 text-xs sm:text-sm font-extrabold px-5 py-3.5 rounded-full transition">
-                        <span>1日の過ごし方・口コミを見る ↓</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ② 直近の空き状況 ＆ 3つの専門サービス案内 -->
-    <section class="py-10 sm:py-12 bg-white border-b border-amber-100">
-        <div class="max-w-5xl mx-auto px-4 space-y-10">
-            <!-- 直近の空き状況 -->
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-amber-50/50 rounded-2xl p-3.5 sm:p-5 shadow-sm border-2 border-amber-300 text-left">
-                    <h2 class="font-black text-amber-950 text-xs sm:text-base flex items-center gap-1.5 mb-2.5 pb-2 border-b border-amber-200">
-                        <i data-lucide="calendar-check" class="w-4 h-4 text-orange-600"></i>
-                        <span>ペットホテル 直近の空き状況（1日3組限定）</span>
-                    </h2>
-                    <div id="availability-grid" class="grid grid-cols-7 gap-1 sm:gap-1.5 text-center font-bold"></div>
-                </div>
-            </div>
-
-            <!-- 3つの専門サービス -->
-            <div>
-                <div class="text-center mb-6 sm:mb-8">
-                    <span class="text-xs font-bold text-amber-600 uppercase">Our Services</span>
-                    <h2 class="text-lg sm:text-2xl font-black text-amber-950">堺市・高石市・和泉市対応 3つの専門サービス</h2>
-                    <p class="text-xs sm:text-sm text-gray-600 mt-1">愛犬の性格やご予定に合わせて選べる3つのサポート</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                    <div class="gold-gradient-bg p-5 sm:p-6 rounded-2xl shadow-lg border-2 border-yellow-300 flex flex-col justify-between">
-                        <div>
-                            <span class="bg-amber-950 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full">堺市・高石市・和泉市 送迎対応</span>
-                            <h3 class="font-black text-amber-950 text-base sm:text-lg mt-2 mb-1">🏨 プレミアムペットホテル</h3>
-                            <p class="text-xl sm:text-2xl font-black text-amber-950 mb-2">¥4,400〜 <span class="text-xs font-bold">/ 24時間(税込)</span></p>
-                            <p class="text-xs text-amber-950 font-bold leading-relaxed">1日3組限定・24時間スタッフ常駐。ショートステイ（一時預かり 180分 ¥1,650）や24時間お泊りシッター（¥9,900）も対応。</p>
-                        </div>
-                        <a href="#hotel-price" class="mt-4 block text-center bg-amber-950 text-white font-bold text-xs py-2.5 rounded-xl">ホテル料金・詳細を見る ↓</a>
+                <div class="mb-6 inline-block max-w-full">
+                    <div class="inline-flex items-center justify-center gap-1.5 gold-gradient-bg text-amber-950 text-xs sm:text-lg font-black px-4 sm:px-5 py-2.5 rounded-full border-2 border-yellow-300 shadow-lg">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-amber-900 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/></svg>
+                        <span>1日3組限定 | 24時間スタッフ常駐プレミアムホテル</span>
                     </div>
-
-                    <a href="school.html" class="bg-emerald-50/70 hover:bg-emerald-50 p-5 sm:p-6 rounded-2xl shadow-md border-2 border-emerald-400 flex flex-col justify-between transition group">
-                        <div>
-                            <span class="bg-emerald-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full">堺市・高石市・和泉市 送迎OK</span>
-                            <h3 class="font-black text-emerald-950 text-base sm:text-lg mt-2 mb-1 group-hover:text-emerald-700">🏫 犬のしつけ教室・社会化</h3>
-                            <p class="text-xl sm:text-2xl font-black text-emerald-800 mb-2">¥6,600 <span class="text-xs font-bold">/ 1日(09:00〜17:00)</span></p>
-                            <p class="text-xs text-gray-700 font-bold leading-relaxed">パピー期の社会化黄金期トレーニングや、無駄吠え・噛み癖・トイレ失敗の改善をサポート。</p>
-                        </div>
-                        <span class="mt-4 block text-center bg-emerald-600 text-white font-bold text-xs py-2.5 rounded-xl">しつけ教室専用ページへ →</span>
-                    </a>
-
-                    <a href="sitter.html" class="bg-blue-50/70 hover:bg-blue-50 p-5 sm:p-6 rounded-2xl shadow-md border-2 border-blue-400 flex flex-col justify-between transition group">
-                        <div>
-                            <span class="bg-blue-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full">堺市・高石市・和泉市 出張訪問</span>
-                            <h3 class="font-black text-blue-950 text-base sm:text-lg mt-2 mb-1 group-hover:text-blue-700">🐾 ペットシッター・散歩代行</h3>
-                            <p class="text-xl sm:text-2xl font-black text-blue-800 mb-2">¥3,300〜 <span class="text-xs font-bold">/ 1回60分(税込)</span></p>
-                            <p class="text-xs text-gray-700 font-bold leading-relaxed">ご自宅へ有資格スタッフが訪問。小型犬・猫・小動物のお世話や、お散歩代行（¥1,650〜）。</p>
-                        </div>
-                        <span class="mt-4 block text-center bg-blue-600 text-white font-bold text-xs py-2.5 rounded-xl">ペットシッター専用ページへ →</span>
-                    </a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ③＆④ 1日の過ごし方（4コマ漫画） ＆ 堺市・高石市・和泉市の飼い主様の声 -->
-    <section id="schedule-voice" class="py-10 sm:py-16 bg-amber-50/40 border-b border-amber-100">
-        <div class="max-w-5xl mx-auto px-4 space-y-14">
+                <!-- ペットホテル専用ビジュアル（CLSゼロ固定比率＋LCP最優先デコード） -->
+                <div class="max-w-4xl mx-auto mb-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+                    <div class="md:col-span-7 rounded-2xl overflow-hidden shadow-lg border-2 border-amber-300 bg-amber-100/50 aspect-video md:aspect-auto">
+                        <img src="chocomoka_new_year.webp" alt="1日3組限定の小型犬専門プレミアムペットホテル チョコ＆モカ 24時間スタッフ常駐" width="1280" height="720" class="w-full h-full object-cover block" fetchpriority="high" decoding="sync" onerror="this.onerror=null; this.src='chocomoka_new_year.jpg';">
+                    </div>
+                    <div class="md:col-span-5 rounded-2xl overflow-hidden shadow-lg border-2 border-amber-300 bg-amber-100/50 aspect-square md:aspect-auto">
+                        <img src="14.webp" alt="1日1組限定の愛犬専属・24時間お泊りシッター 堺市・高石市・和泉市出張対応 チョコ＆モカ" width="800" height="800" class="w-full h-full object-cover block" fetchpriority="high" decoding="async" onerror="this.onerror=null; this.src='14.jpg';">
+                    </div>
+                </div>
 
-            <!-- ③ ホテルでの1日のスケジュール（さらにひと回り大きく見やすい拡大版） -->
-            <div class="max-w-3xl mx-auto bg-white rounded-3xl p-5 sm:p-9 border-2 border-amber-200 shadow-md space-y-6">
-                <div class="text-center space-y-2">
-                    <span class="inline-block bg-orange-100 text-orange-800 text-xs sm:text-sm font-extrabold px-4 py-1 rounded-full border border-orange-200">1-Day Schedule</span>
-                    <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-amber-950 leading-snug">
-                        🕒 プレミアムペットホテルでの<br class="sm:hidden">1日の過ごし方（ピクルスとチーズの例）
-                    </h2>
-                    <p class="text-xs sm:text-base text-amber-900 font-bold leading-relaxed">
-                        ケージに入れっぱなしにせず、24時間スタッフ常駐のもと自宅のように過ごします
+                <div class="bg-white/95 p-5 sm:p-8 rounded-3xl shadow-xl border border-amber-100 max-w-3xl mx-auto space-y-4">
+                    <p class="text-base sm:text-2xl font-extrabold text-amber-900 leading-snug">「ケージに入れっぱなし」のホテル、<br class="sm:hidden">卒業しませんか？</p>
+                    <p class="text-xs sm:text-base text-gray-700 leading-relaxed text-left sm:text-center">
+                        <strong>大阪府高石市高師浜（高師浜駅徒歩3分）</strong>にある「チョコ＆モカ」は、<strong>堺市・高石市・和泉市エリアの飼い主様に選ばれている「1日3組限定・完全会員制」小型犬専門ペットホテル</strong>です。日中は広々としたフリースペースで遊びながら社会化を育み、夜間も24時間スタッフが常駐して大切にお預かりします。<strong>堺市・高石市・和泉市</strong>（和泉府中・和泉中央・光明池エリアなど）へのご自宅送迎も大好評です。
                     </p>
-                </div>
-
-                <!-- 1日の過ごし方4コマ漫画画像 -->
-                <figure class="w-full rounded-2xl overflow-hidden shadow-sm border-2 border-amber-300 bg-white">
-                    <img src="premium-pet-hotel-1day-manga.webp" alt="プレミアムペットホテルでの1日の過ごし方（ピクルスとチーズの例）：09:00朝のお散歩＆ごはん、11:00ケージフリーの時間、15:00LINEやメールで画像を送信、18:00夕食・24時間スタッフ見守り就寝" width="1280" height="720" class="w-full h-auto object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='premium-pet-hotel-1day-manga.jpg';">
-                    <figcaption class="bg-amber-100/80 text-amber-950 text-xs sm:text-sm font-bold text-center py-3 px-4 border-t border-amber-200 leading-relaxed">
-                        ▲ チョコ＆モカのペットホテルでの1日（朝のお散歩・ケージフリー遊び・LINE写真レポート・24時間常駐見守り）
-                    </figcaption>
-                </figure>
-
-                <!-- 大きめフォント＆ゆとり余白のタイムスケジュール -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-amber-950">
-                    <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
-                        <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
-                            09:00〜 朝のお散歩＆ごはん
-                        </span>
-                        <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
-                            ワンちゃんのペースに合わせて朝のお散歩へ。体調や排泄、ごはんの食べ具合も丁寧にチェックします。
-                        </p>
-                    </div>
-                    <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
-                        <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
-                            11:00〜 ケージフリーの時間
-                        </span>
-                        <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
-                            広々とした室内フリースペースで、相性の良いお友達やスタッフと自由に遊んだりお昼寝したりして過ごします。
-                        </p>
-                    </div>
-                    <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
-                        <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
-                            15:00〜 写真・動画レポート送信
-                        </span>
-                        <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
-                            お散歩や遊んでいる楽しそうな様子を、写真・動画付きのレポート（LINEやメール）で飼い主様へ毎日お送りします。
-                        </p>
-                    </div>
-                    <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
-                        <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
-                            18:00〜 夕食・見守り・就寝
-                        </span>
-                        <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
-                            夕食後は個室ベッドで安心就寝。夜間も同じ建物内にスタッフが24時間常駐し、体調変化に目を配ります。
-                        </p>
+                    <div class="pt-1 flex flex-col sm:flex-row justify-center gap-2.5">
+                        <button type="button" onclick="openModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs sm:text-base font-extrabold px-6 sm:px-8 py-3.5 rounded-full shadow-md active:scale-95 transition">
+                            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+                            <span>【初回】ペットホテル事前打合せを予約する</span>
+                        </button>
+                        <a href="#schedule-voice" class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-amber-100/80 hover:bg-amber-100 text-amber-950 text-xs sm:text-sm font-extrabold px-5 py-3.5 rounded-full transition">
+                            <span>1日の過ごし方・口コミを見る ↓</span>
+                        </a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- ④ 堺市・高石市・和泉市のお客様の声（💬を削除・最新6件を3列×2段で表示） -->
-            <div id="voice" class="space-y-6">
-                <div class="text-center">
-                    <span class="bg-amber-100 text-amber-900 text-[10px] sm:text-xs font-bold px-3.5 py-1 rounded-full border border-amber-300 uppercase tracking-wider">Customer Feedback</span>
-                    <h2 class="text-xl sm:text-3xl font-black text-amber-950 mt-2.5">堺市・高石市・和泉市の飼い主様の声</h2>
-                    <p class="text-xs sm:text-sm text-gray-600 mt-1.5">実際にご利用いただいた小型犬オーナー様からの、喜びの声と愛犬の様子をご紹介します 🐾</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
-                    <!-- 最新1：堺市北区 きなこちゃん -->
-                    <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
-                        <div class="relative rounded-xl overflow-hidden border border-amber-300 bg-white aspect-[4/3]">
-                            <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow z-10">NEW</span>
-                            <img src="chocomoka_hotel_kinako.webp" alt="堺市北区の豆柴「きなこちゃん」がチョコ＆モカのフリースペースでおもちゃで遊ぶ様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_kinako.jpg';">
-                        </div>
-                        <div class="flex items-center justify-between gap-1 min-h-[26px]">
-                            <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">堺市北区・豆柴 1歳</span>
-                            <span class="text-amber-500 text-[11px] font-black shrink-0">Kinakoちゃん ★★★★★</span>
-                        </div>
-                        <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
-                            「一時預かりから利用！他の小型犬と上手に遊べるようになりました」
-                        </h3>
-                        <p id="review-text-kinako" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
-                            堺市北区から、冠婚葬祭の用事で半日ほどのショートステイ（一時預かり）を利用しました。将来お泊りホテルを利用する前の慣らしも兼ねてお願いしたのですが、ドッグトレーナーさんが常駐されているので、他の穏やかな小型犬との挨拶の仕方や遊び方も優しく見守っていただけました。ケージに閉じ込められることなく、フリースペースでのびのびと過ごせたようで、帰宅後は満足してぐっすり眠っていました。まずは一時預かりから試せるので、初めてホテルを検討している方にもぴったりだと思います！
-                        </p>
-                        <button type="button" onclick="toggleReview('review-text-kinako', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
-                            ▼ 続きを読む
-                        </button>
-                    </article>
-
-                    <!-- 最新2：高石市 レオくん -->
-                    <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
-                        <div class="relative rounded-xl overflow-hidden border border-amber-300 bg-white aspect-[4/3]">
-                            <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow z-10">NEW</span>
-                            <img src="chocomoka_hotel_reo.webp" alt="高石市のシニア犬ヨークシャーテリア「レオくん」が24時間常駐ペットホテルのベッドで休む様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_reo.jpg';">
-                        </div>
-                        <div class="flex items-center justify-between gap-1 min-h-[26px]">
-                            <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">高石市・ヨーキー 11歳</span>
-                            <span class="text-amber-500 text-[11px] font-black shrink-0">Reoくん ★★★★★</span>
-                        </div>
-                        <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
-                            「シニア犬で毎日の投薬がありましたが、24時間常駐で安心でした」
-                        </h3>
-                        <p id="review-text-reo" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
-                            11歳になるシニアのヨークシャーテリア・レオを1泊2日でお願いしました。高石市内から近く、事前に個別カルテで朝晩のお薬の飲ませ方や食事のふやかし方、足腰への配慮まで細かく共有できたのが決め手です。大型ホテルと違い、夜間も24時間スタッフが同じ建物内に常駐してくださるため、高齢犬を預ける不安が一気に吹き飛びました。お泊り中もレオの体力に合わせて無理なく過ごさせてくださり、お迎えに行った時も穏やかな表情でしっぽを振ってくれました。シニア犬の飼い主様に心からおすすめしたいホテルです。
-                        </p>
-                        <button type="button" onclick="toggleReview('review-text-reo', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
-                            ▼ 続きを読む
-                        </button>
-                    </article>
-
-                    <!-- 最新3：和泉市 ココちゃん -->
-                    <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
-                        <div class="relative rounded-xl overflow-hidden border border-amber-300 bg-white aspect-[4/3]">
-                            <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow z-10">NEW</span>
-                            <img src="chocomoka_hotel_koko.webp" alt="和泉市のマルプー「ココちゃん」が自宅での24時間お泊りシッターでリラックスして眠る様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_koko.jpg';">
-                        </div>
-                        <div class="flex items-center justify-between gap-1 min-h-[26px]">
-                            <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">和泉市・マルプー 4歳</span>
-                            <span class="text-amber-500 text-[11px] font-black shrink-0">Kokoちゃん ★★★★★</span>
-                        </div>
-                        <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
-                            「和泉中央の自宅にお泊り！シッターさん独り占めで大喜びでした」
-                        </h3>
-                        <p id="review-text-koko" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
-                            急な出張が入り、和泉市（和泉中央エリア）の自宅に泊まり込みでお世話してくださる「1日1組限定の24時間お泊りシッター」を利用しました。他のワンちゃんがいる環境だと緊張してしまうマルプーのココですが、住み慣れた自宅のリビングでシッターさんを24時間独り占めできたのが最高だったようです。いつものお散歩コースでの様子や、夜にベッドで寄り添って眠る写真もこまめに送ってくださり、出張先でも全く心配せずに仕事に集中できました。この手厚さでこの価格は本当に良心的だと思います！
-                        </p>
-                        <button type="button" onclick="toggleReview('review-text-koko', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
-                            ▼ 続きを読む
-                        </button>
-                    </article>
-
-                    <!-- 最新4：堺市南区 モコちゃん -->
-                    <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
-                        <div class="rounded-xl overflow-hidden border border-amber-300 bg-white aspect-[4/3]">
-                            <img src="chocomoka_hotel_moko.webp" alt="堺市南区のポメラニアン「モコちゃん」がチョコ＆モカのフリースペースで笑顔で過ごす様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_moko.jpg';">
-                        </div>
-                        <div class="flex items-center justify-between gap-1 min-h-[26px]">
-                            <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">堺市南区・ポメラニアン 2歳</span>
-                            <span class="text-amber-500 text-[11px] font-black shrink-0">Mokoちゃん ★★★★★</span>
-                        </div>
-                        <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
-                            「堺市南区まで送迎していただき、初めての2泊も大満足でした！」
-                        </h3>
-                        <p id="review-text-moko" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
-                            家族旅行で2泊3日、ポメラニアンのモコをデラックスルームでお預かりいただきました。堺市南区の自宅まで時間通りに専用車で送迎してくださり、出発前のバタバタした時間帯に本当に助かりました。少し警戒心が強い性格ですが、1日3組限定という少人数制のおかげで他の小型犬ともすぐに打ち解け、広々とした室内フリースペースで楽しそうに遊ぶ姿が毎日LINE動画で届きました。お迎え時も毛並みまで綺麗に整えてくださっており、帰宅後もいつも通りリラックスしていました。次回の旅行も迷わずお願いします！
-                        </p>
-                        <button type="button" onclick="toggleReview('review-text-moko', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
-                            ▼ 続きを読む
-                        </button>
-                    </article>
-
-                    <!-- 最新5：和泉市 ロンちゃん -->
-                    <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
-                        <div class="rounded-xl overflow-hidden border border-amber-300 bg-white aspect-[4/3]">
-                            <img src="chocomoka_hotel_ron.webp" alt="和泉市のミニチュアダックス「ロンちゃん」が自宅での24時間お泊りシッターでベッドでくつろぐ様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_ron.jpg';">
-                        </div>
-                        <div class="flex items-center justify-between gap-1 min-h-[26px]">
-                            <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">和泉市・ミニチュアダックス 5歳</span>
-                            <span class="text-amber-500 text-[11px] font-black shrink-0">Ronちゃん ★★★★★</span>
-                        </div>
-                        <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
-                            「腰への配慮も徹底！自宅だからこそ100%安心してお任せできました」
-                        </h3>
-                        <p id="review-text-3" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
-                            和泉市から、5歳のミニチュアダックスのロンの24時間お泊りシッターを利用しました。ダックス特有の腰への負担が心配だったため、段差やフローリングでの過ごし方に気を遣っていましたが、住み慣れた自宅の環境のままプロの方が24時間体制で付き添ってくださるので本当に安心感がありました。「無理なジャンプをさせない」「いつものお散歩コースをゆっくり歩く」といった細かいお願いも完璧に守ってくださり、日中はベッドでのんびりお昼寝したり、優しく撫でてもらったりと大満喫していたようです。留守中の戸締まりやレポート報告も非常に丁寧で、またぜひお願いしたいです！
-                        </p>
-                        <button type="button" onclick="toggleReview('review-text-3', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
-                            ▼ 続きを読む
-                        </button>
-                    </article>
-
-                    <!-- 最新6：高石市 ちょびちゃん -->
-                    <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
-                        <div class="rounded-xl overflow-hidden border border-amber-300 bg-white aspect-[4/3]">
-                            <img src="chocomoka_hotel_chobi.webp" alt="高石市のチワワ「ちょびちゃん」が自宅での24時間お泊りシッターで安心しておもちゃで遊ぶ様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_chobi.jpg';">
-                        </div>
-                        <div class="flex items-center justify-between gap-1 min-h-[26px]">
-                            <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">高石市・チワワ 1歳</span>
-                            <span class="text-amber-500 text-[11px] font-black shrink-0">Chobiちゃん ★★★★★</span>
-                        </div>
-                        <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
-                            「怖がりなうちの子が初お泊まりでリラックス！」
-                        </h3>
-                        <p id="review-text-2" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
-                            極度の怖がりで、環境が変わるとご飯を食べなくなってしまうチワワのちょびのために、高石市の自宅に泊まり込みでお世話してくださる「1日1組限定の24時間お泊りシッター」をお願いしました。事前の打ち合わせでちょびの性格や普段の寝る場所、お気に入りのおもちゃでの遊び方まで丁寧にカルテにまとめてくださり、当日もずっとちょび専属で寄り添ってくださいました。夜間も一人ぼっちにならず、自分のハウスとベッドで安心しきって眠る姿や、リビングで楽しそうに遊ぶ動画をLINEで送っていただき、旅行中も心から安心できました。帰宅後もストレスの様子が一切なく大満足です！
-                        </p>
-                        <button type="button" onclick="toggleReview('review-text-2', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
-                            ▼ 続きを読む
-                        </button>
-                    </article>
-                </div>
-
-                <!-- お客様の声一覧ページ（save_blog.html）への導線ボタン -->
-                <div class="text-center pt-3">
-                    <a href="save_blog.html" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-black text-xs sm:text-sm px-6 sm:px-8 py-3.5 rounded-full shadow-sm transition">
-                        <span>📜 これまでの飼い主様の声をもっと見る（全7件）</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 text-amber-800"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ⑤ 選ばれる『7つの約束』 ＆ スタッフ紹介 -->
-    <section id="promise" class="py-10 sm:py-16 bg-white border-b border-amber-100">
-        <div class="max-w-5xl mx-auto px-4 space-y-12">
-            <!-- 7つの約束 -->
-            <div>
-                <div class="text-center mb-6 sm:mb-8">
-                    <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">Safety &amp; Quality</span>
-                    <h2 class="text-lg sm:text-3xl font-black text-amber-950 mt-2">堺市・高石市・和泉市の飼い主様に選ばれる『7つの約束』</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
-                    <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>1. 24時間スタッフ常駐＆救急対応：</strong>夜間もスタッフが常駐し、体調変化に即対応します。</div>
-                    <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>2. 徹底した衛生管理・感染予防：</strong>24時間空気清浄・脱臭稼働＆毎回の消毒を徹底。</div>
-                    <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>3. 怖がりな小型犬も安心の受け入れ基準：</strong>攻撃性の高い犬の受け入れを制限し安全を確保。</div>
-                    <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>4. 賠償責任保険加入店：</strong>三井住友海上の賠償責任保険に加入済み。</div>
-                    <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>5. ワクチン・予防接種証明の確認必須：</strong>狂犬病・5種以上混合ワクチン・ノミダニ予防必須。</div>
-                    <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>6. 個別カルテ作成：</strong>事前ヒアリングで性格・持病・食事を細かく把握。</div>
-                    <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200 md:col-span-2"><strong>7. 第一種動物取扱業登録済み：</strong>大阪府第5186ー2号（保管）取得の正規事業者です。</div>
-                </div>
-            </div>
-
-            <!-- スタッフ紹介 -->
-            <div id="staff" class="pt-4 border-t border-amber-100">
-                <div class="text-center mb-5 sm:mb-6">
-                    <span class="text-xs font-bold text-amber-700 uppercase">Our Staff</span>
-                    <h2 class="text-lg sm:text-2xl font-black text-choco-900 mt-1">👥 経験豊富な有資格スタッフがお世話いたします</h2>
-                </div>
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 text-center">
-                    <div class="bg-amber-50/40 p-3.5 sm:p-4 rounded-2xl border border-choco-100 shadow-sm">
-                        <img src="kentaro.webp" alt="チョコ＆モカ オーナー・ドッグトレーナー 齋藤 健太郎" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto object-cover border-2 border-amber-400 mb-2" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='kentaro.jpg';">
-                        <span class="text-[10px] bg-choco-800 text-white px-2 py-0.5 rounded-full font-bold">オーナー/トレーナー</span>
-                        <h3 class="font-bold text-xs sm:text-sm mt-1">齋藤 健太郎</h3>
-                    </div>
-                    <div class="bg-amber-50/40 p-3.5 sm:p-4 rounded-2xl border border-choco-100 shadow-sm">
-                        <img src="yoshi.webp" alt="チョコ＆モカ ペットシッター ヨッシー" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto object-cover border-2 border-amber-300 mb-2" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='yoshi.jpg';">
-                        <span class="text-[10px] bg-choco-100 text-choco-900 px-2 py-0.5 rounded-full font-bold">ペットシッター</span>
-                        <h3 class="font-bold text-xs sm:text-sm mt-1">ヨッシー</h3>
-                    </div>
-                    <div class="bg-amber-50/40 p-3.5 sm:p-4 rounded-2xl border border-choco-100 shadow-sm">
-                        <img src="fumi.webp" alt="チョコ＆モカ ペットシッター ふみ" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto object-cover border-2 border-amber-300 mb-2" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='fumi.jpg';">
-                        <span class="text-[10px] bg-choco-100 text-choco-900 px-2 py-0.5 rounded-full font-bold">ペットシッター</span>
-                        <h3 class="font-bold text-xs sm:text-sm mt-1">ふみ</h3>
-                    </div>
-                    <div class="bg-amber-50/40 p-3.5 sm:p-4 rounded-2xl border border-choco-100 shadow-sm">
-                        <img src="kana.webp" alt="チョコ＆モカ トリマー かな" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto object-cover border-2 border-amber-300 mb-2" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='kana.jpg';">
-                        <span class="text-[10px] bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full font-bold">トリマー</span>
-                        <h3 class="font-bold text-xs sm:text-sm mt-1">かな</h3>
+        <!-- ② 直近の空き状況 ＆ 3つの専門サービス案内 -->
+        <section class="py-10 sm:py-12 bg-white border-b border-amber-100">
+            <div class="max-w-5xl mx-auto px-4 space-y-10">
+                <!-- 直近の空き状況（CLS防止のため最小高さを確保） -->
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-amber-50/50 rounded-2xl p-3.5 sm:p-5 shadow-sm border-2 border-amber-300 text-left">
+                        <h2 class="font-black text-amber-950 text-xs sm:text-base flex items-center gap-1.5 mb-2.5 pb-2 border-b border-amber-200">
+                            <svg class="w-4 h-4 text-orange-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+                            <span>ペットホテル 直近の空き状況（1日3組限定）</span>
+                        </h2>
+                        <div id="availability-grid" class="grid grid-cols-7 gap-1 sm:gap-1.5 text-center font-bold min-h-[60px]"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ⑥ プレミアムペットホテル料金表（VIP出張お泊りプラン シャンパンゴールド・ラグジュアリー仕様） -->
-    <section id="hotel-price" class="py-10 sm:py-16 bg-amber-50/50 border-b border-amber-100">
-        <div class="max-w-4xl mx-auto px-4 space-y-6">
-            <div class="text-center">
-                <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">Hotel &amp; VIP Stay Price</span>
-                <h2 class="text-lg sm:text-3xl font-black text-amber-950 mt-2">🏨 プレミアムペットホテル・一時預かり料金表</h2>
-                <p class="text-xs text-gray-600 mt-1">すべて税込価格・24時間スタッフ見守り込み（堺市・高石市・和泉市 送迎・出張対応）</p>
-            </div>
-
-            <!-- 店舗お預かりプラン（スタンダード・デラックス） -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="border-2 border-choco-200 rounded-2xl p-4 sm:p-5 bg-white shadow-sm">
-                    <h3 class="text-sm sm:text-base font-black text-choco-900 mb-2">スタンダードルーム（24時間）</h3>
-                    <div class="space-y-2 border-t border-choco-100 pt-2 text-xs sm:text-sm font-bold">
-                        <div class="flex justify-between"><span>小型犬 (5kg以下)</span><span class="text-base sm:text-lg font-black">¥4,400</span></div>
-                        <div class="flex justify-between"><span>小型犬 (8kg以下)</span><span class="text-base sm:text-lg font-black">¥5,500</span></div>
+                <!-- 3つの専門サービス -->
+                <div>
+                    <div class="text-center mb-6 sm:mb-8">
+                        <span class="text-xs font-bold text-amber-600 uppercase">Our Services</span>
+                        <h2 class="text-lg sm:text-2xl font-black text-amber-950">堺市・高石市・和泉市対応 3つの専門サービス</h2>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-1">愛犬の性格やご予定に合わせて選べる3つのサポート</p>
                     </div>
-                </div>
-                <div class="border-2 border-amber-400 rounded-2xl p-4 sm:p-5 bg-white shadow-sm">
-                    <h3 class="text-sm sm:text-base font-black text-choco-900 mb-2">デラックスルーム（24時間）</h3>
-                    <div class="space-y-2 border-t border-amber-200 pt-2 text-xs sm:text-sm font-bold">
-                        <div class="flex justify-between"><span>小型犬 (5kg以下)</span><span class="text-base sm:text-lg font-black">¥6,600</span></div>
-                        <div class="flex justify-between"><span>小型犬 (8kg以下)</span><span class="text-base sm:text-lg font-black">¥7,700</span></div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- VIP出張お泊りプラン（明るく見やすいシャンパンゴールド・ラグジュアリー仕様） -->
-            <article id="vip-stay-plan" class="relative rounded-3xl p-1.5 bg-gradient-to-br from-[#BF953F] via-[#F5E08E] to-[#AA771C] shadow-xl">
-                <div class="bg-gradient-to-b from-[#FFFDF7] via-amber-50/90 to-orange-50/70 text-choco-950 rounded-[20px] p-5 sm:p-8 space-y-5">
-                    
-                    <!-- 上部バッジ＆タイトル -->
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-300/70 pb-4">
-                        <div class="space-y-1.5">
-                            <div class="inline-flex items-center gap-1.5 gold-gradient-bg text-amber-950 text-[10px] sm:text-xs font-black px-3.5 py-1 rounded-full border border-yellow-300 shadow-sm">
-                                <i data-lucide="crown" class="w-3.5 h-3.5 text-amber-950"></i>
-                                <span>最高峰ラグジュアリー・VIP出張お泊りプラン</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                        <div class="gold-gradient-bg p-5 sm:p-6 rounded-2xl shadow-lg border-2 border-yellow-300 flex flex-col justify-between">
+                            <div>
+                                <span class="bg-amber-950 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full">堺市・高石市・和泉市 送迎対応</span>
+                                <h3 class="font-black text-amber-950 text-base sm:text-lg mt-2 mb-1">🏨 プレミアムペットホテル</h3>
+                                <p class="text-xl sm:text-2xl font-black text-amber-950 mb-2">¥4,400〜 <span class="text-xs font-bold">/ 24時間(税込)</span></p>
+                                <p class="text-xs text-amber-950 font-bold leading-relaxed">1日3組限定・24時間スタッフ常駐。ショートステイ（一時預かり 180分 ¥1,650）や24時間お泊りシッター（¥9,900）も対応。</p>
                             </div>
-                            <h3 class="text-base sm:text-2xl font-black text-amber-950 leading-snug pt-1">
-                                👑 1日1組限定の愛犬専属・24時間お泊りシッター
-                            </h3>
-                            <p class="text-[11px] sm:text-xs text-choco-800 font-bold">
-                                堺市・高石市・和泉市のご自宅へ有資格シッターが宿泊し、愛犬専属で24時間お世話をいたします
+                            <a href="#hotel-price" class="mt-4 block text-center bg-amber-950 text-white font-bold text-xs py-2.5 rounded-xl">ホテル料金・詳細を見る ↓</a>
+                        </div>
+
+                        <a href="school.html" class="bg-emerald-50/70 hover:bg-emerald-50 p-5 sm:p-6 rounded-2xl shadow-md border-2 border-emerald-400 flex flex-col justify-between transition group">
+                            <div>
+                                <span class="bg-emerald-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full">堺市・高石市・和泉市 送迎OK</span>
+                                <h3 class="font-black text-emerald-950 text-base sm:text-lg mt-2 mb-1 group-hover:text-emerald-700">🏫 犬のしつけ教室・社会化</h3>
+                                <p class="text-xl sm:text-2xl font-black text-emerald-800 mb-2">¥6,600 <span class="text-xs font-bold">/ 1日(09:00〜17:00)</span></p>
+                                <p class="text-xs text-gray-700 font-bold leading-relaxed">パピー期の社会化黄金期トレーニングや、無駄吠え・噛み癖・トイレ失敗の改善をサポート。</p>
+                            </div>
+                            <span class="mt-4 block text-center bg-emerald-600 text-white font-bold text-xs py-2.5 rounded-xl">しつけ教室専用ページへ →</span>
+                        </a>
+
+                        <a href="sitter.html" class="bg-blue-50/70 hover:bg-blue-50 p-5 sm:p-6 rounded-2xl shadow-md border-2 border-blue-400 flex flex-col justify-between transition group">
+                            <div>
+                                <span class="bg-blue-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full">堺市・高石市・和泉市 出張訪問</span>
+                                <h3 class="font-black text-blue-950 text-base sm:text-lg mt-2 mb-1 group-hover:text-blue-700">🐾 ペットシッター・散歩代行</h3>
+                                <p class="text-xl sm:text-2xl font-black text-blue-800 mb-2">¥3,300〜 <span class="text-xs font-bold">/ 1回60分(税込)</span></p>
+                                <p class="text-xs text-gray-700 font-bold leading-relaxed">ご自宅へ有資格スタッフが訪問。小型犬・猫・小動物のお世話や、お散歩代行（¥1,650〜）。</p>
+                            </div>
+                            <span class="mt-4 block text-center bg-blue-600 text-white font-bold text-xs py-2.5 rounded-xl">ペットシッター専用ページへ →</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ③＆④ 1日の過ごし方（4コマ漫画） ＆ 堺市・高石市・和泉市の飼い主様の声 -->
+        <section id="schedule-voice" class="cv-auto py-10 sm:py-16 bg-amber-50/40 border-b border-amber-100">
+            <div class="max-w-5xl mx-auto px-4 space-y-14">
+
+                <!-- ③ ホテルでの1日のスケジュール -->
+                <div class="max-w-3xl mx-auto bg-white rounded-3xl p-5 sm:p-9 border-2 border-amber-200 shadow-md space-y-6">
+                    <div class="text-center space-y-2">
+                        <span class="inline-block bg-orange-100 text-orange-800 text-xs sm:text-sm font-extrabold px-4 py-1 rounded-full border border-orange-200">1-Day Schedule</span>
+                        <h2 class="text-xl sm:text-2xl md:text-3xl font-black text-amber-950 leading-snug">
+                            🕒 プレミアムペットホテルでの<br class="sm:hidden">1日の過ごし方（ピクルスとチーズの例）
+                        </h2>
+                        <p class="text-xs sm:text-base text-amber-900 font-bold leading-relaxed">
+                            ケージに入れっぱなしにせず、24時間スタッフ常駐のもと自宅のように過ごします
+                        </p>
+                    </div>
+
+                    <!-- 1日の過ごし方4コマ漫画画像 -->
+                    <figure class="w-full rounded-2xl overflow-hidden shadow-sm border-2 border-amber-300 bg-white">
+                        <img src="premium-pet-hotel-1day-manga.webp" alt="プレミアムペットホテルでの1日の過ごし方（ピクルスとチーズの例）：09:00朝のお散歩＆ごはん、11:00ケージフリーの時間、15:00LINEやメールで画像を送信、18:00夕食・24時間スタッフ見守り就寝" width="1280" height="720" class="w-full h-auto object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='premium-pet-hotel-1day-manga.jpg';">
+                        <figcaption class="bg-amber-100/80 text-amber-950 text-xs sm:text-sm font-bold text-center py-3 px-4 border-t border-amber-200 leading-relaxed">
+                            ▲ チョコ＆モカのペットホテルでの1日（朝のお散歩・ケージフリー遊び・LINE写真レポート・24時間常駐見守り）
+                        </figcaption>
+                    </figure>
+
+                    <!-- 大きめフォント＆ゆとり余白のタイムスケジュール -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-amber-950">
+                        <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
+                            <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
+                                09:00〜 朝のお散歩＆ごはん
+                            </span>
+                            <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
+                                ワンちゃんのペースに合わせて朝のお散歩へ。体調や排泄、ごはんの食べ具合も丁寧にチェックします。
                             </p>
                         </div>
-                        <div class="bg-white border-2 border-amber-400 rounded-2xl px-4 py-3 text-left sm:text-right shrink-0 shadow-sm">
-                            <span class="block text-[11px] text-amber-900 font-bold">小型犬 (8kg以下) / 24時間専属</span>
-                            <span class="text-2xl sm:text-3xl font-black text-amber-950 tracking-tight">¥9,900</span>
-                            <span class="text-xs font-bold text-choco-800">(税込)</span>
+                        <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
+                            <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
+                                11:00〜 ケージフリーの時間
+                            </span>
+                            <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
+                                広々とした室内フリースペースで、相性の良いお友達やスタッフと自由に遊んだりお昼寝したりして過ごします。
+                            </p>
+                        </div>
+                        <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
+                            <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
+                                15:00〜 写真・動画レポート送信
+                            </span>
+                            <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
+                                お散歩や遊んでいる楽しそうな様子を、写真・動画付きのレポート（LINEやメール）で飼い主様へ毎日お送りします。
+                            </p>
+                        </div>
+                        <div class="bg-amber-50/80 p-4 sm:p-5 rounded-2xl border border-amber-200 space-y-2 shadow-sm">
+                            <span class="font-black text-orange-600 block text-base sm:text-lg border-b border-amber-200 pb-1.5">
+                                18:00〜 夕食・見守り・就寝
+                            </span>
+                            <p class="text-sm sm:text-[15px] text-gray-800 font-medium leading-relaxed">
+                                夕食後は個室ベッドで安心就寝。夜間も同じ建物内にスタッフが24時間常駐し、体調変化に目を配ります。
+                            </p>
                         </div>
                     </div>
+                </div>
 
-                    <!-- 4つのプレミアム特典 -->
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-[11px] sm:text-xs font-bold">
-                        <div class="bg-white border border-amber-300 rounded-xl p-3 text-center space-y-1 shadow-sm">
-                            <span class="text-base block">🏠</span>
-                            <span class="text-amber-950 block font-black">ご自宅そのまま</span>
-                            <span class="text-[10px] text-gray-700 block leading-tight">環境変化が苦手な子・シニア犬も安心</span>
-                        </div>
-                        <div class="bg-white border border-amber-300 rounded-xl p-3 text-center space-y-1 shadow-sm">
-                            <span class="text-base block">👑</span>
-                            <span class="text-amber-950 block font-black">1日1組・完全専属</span>
-                            <span class="text-[10px] text-gray-700 block leading-tight">他の犬と一緒にならず独占ケア</span>
-                        </div>
-                        <div class="bg-white border border-amber-300 rounded-xl p-3 text-center space-y-1 shadow-sm">
-                            <span class="text-base block">🌙</span>
-                            <span class="text-amber-950 block font-black">24時間つきっきり</span>
-                            <span class="text-[10px] text-gray-700 block leading-tight">夜間も添い寝・見守りで寂しさゼロ</span>
-                        </div>
-                        <div class="bg-white border border-amber-300 rounded-xl p-3 text-center space-y-1 shadow-sm">
-                            <span class="text-base block">📱</span>
-                            <span class="text-amber-950 block font-black">随時写真・動画報告</span>
-                            <span class="text-[10px] text-gray-700 block leading-tight">ご旅行・出張中もリアルタイム安心</span>
-                        </div>
+                <!-- ④ 堺市・高石市・和泉市のお客様の声 -->
+                <div id="voice" class="space-y-6">
+                    <div class="text-center">
+                        <span class="bg-amber-100 text-amber-900 text-[10px] sm:text-xs font-bold px-3.5 py-1 rounded-full border border-amber-300 uppercase tracking-wider">Customer Feedback</span>
+                        <h2 class="text-xl sm:text-3xl font-black text-amber-950 mt-2.5">堺市・高石市・和泉市の飼い主様の声</h2>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-1.5">実際にご利用いただいた小型犬オーナー様からの、喜びの声と愛犬の様子をご紹介します 🐾</p>
                     </div>
 
-                    <!-- ご利用条件・注意事項 -->
-                    <div class="bg-white border border-red-200 rounded-xl p-3.5 text-xs space-y-1 leading-relaxed shadow-sm">
-                        <p class="font-bold text-red-700">
-                            ※こちらのサービスは、飼い主様が自宅にいないことが条件です。飼い主様が自宅に戻られた場合、その時点でサービスを終了させていただきます。
-                        </p>
-                        <p class="text-[11px] text-choco-800 font-medium">
-                            ※出張訪問対応エリア：堺市全域・高石市・和泉市・泉大津市・大阪市（別途、店舗からの距離に応じた出張費がかかります）。
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- ショートステイ・送迎補足 -->
-            <div class="bg-white border border-amber-300 rounded-2xl p-4 text-xs sm:text-sm space-y-1 font-bold shadow-sm">
-                <p class="font-black text-amber-950">🕒 ショートステイ（一時預かり）：基本料金（180分） ¥1,650</p>
-                <p class="text-red-600">※お預かり・お渡し時間は 09:00〜19:00 です。超過は60分ごとに¥550加算されます。</p>
-                <p>🚗 送迎・出張料金：当店（高石市高師浜）から5km以内 ¥550（以降5kmごとに+¥550）。堺市・高石市・和泉市・泉大津市・大阪市対応。</p>
-            </div>
-
-            <!-- 料金納得後の予約CTA -->
-            <div class="text-center pt-2">
-                <button onclick="openModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs sm:text-base font-extrabold px-7 sm:px-9 py-3.5 rounded-full shadow-lg active:scale-95 transition">
-                    <i data-lucide="sparkles" class="w-4 h-4 shrink-0"></i>
-                    <span>【初回】事前打合せ・空き状況を予約する</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ⑦ よくある質問（FAQ） ＆ 対応エリア -->
-    <section id="area-faq" class="py-10 sm:py-16 bg-white border-b border-amber-100">
-        <div class="max-w-5xl mx-auto px-4 space-y-10 sm:space-y-12">
-            <!-- ペットホテル専用FAQ -->
-            <div>
-                <div class="text-center mb-6">
-                    <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3.5 py-1 rounded-full border border-amber-300">FAQ</span>
-                    <h2 class="text-lg sm:text-2xl font-black text-amber-950 mt-2">
-                        ペットホテルに関するよくあるご質問（宿泊・送迎・持ち物）
-                    </h2>
-                </div>
-
-                <div class="space-y-4">
-                    <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
-                        <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-black text-amber-950 leading-snug">
-                            <span class="bg-amber-900 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                            <span>ペットホテル利用時、堺市・和泉市・高石市の自宅まで送迎してもらえますか？</span>
-                        </h3>
-                        <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
-                            <span class="bg-orange-500 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
-                            <p>はい、ご旅行や出張の出発・ご帰宅に合わせて、高石市・堺市全域（西区・南区・北区・中区・堺区・東区・美原区）・和泉市全域（和泉府中・和泉中央・光明池・はつが野・のぞみ野エリアなど）・泉大津市・大阪市のご自宅まで専用車で送迎いたします（5km以内¥550、以降5kmごとに+¥550）。</p>
-                        </div>
-                    </article>
-
-                    <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
-                        <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-black text-amber-950 leading-snug">
-                            <span class="bg-amber-900 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                            <span>夜間もスタッフは常駐していますか？ケージに入れっぱなしになりませんか？</span>
-                        </h3>
-                        <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
-                            <span class="bg-orange-500 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
-                            <p>はい、24時間スタッフが常駐しており、夜間も目が届く環境でお預かりいたします。日中は広々としたフリースペースで他の穏やかな小型犬と遊びながら過ごし、就寝時のみ安心できる個室スペースで休むスタイルのため、ケージに入れっぱなしになることはありません。</p>
-                        </div>
-                    </article>
-
-                    <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
-                        <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-black text-amber-950 leading-snug">
-                            <span class="bg-amber-900 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                            <span>ホテルお預かり中の愛犬の様子は写真や動画で報告してもらえますか？</span>
-                        </h3>
-                        <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
-                            <span class="bg-orange-500 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
-                            <p>はい、お預かり中のお食事・お散歩・フリースペースで遊んでいる様子を、写真や動画付きのレポート（LINEまたはメール）で毎日お送りいたします。離れた場所からでも愛犬の元気な姿をご確認いただけます。</p>
-                        </div>
-                    </article>
-
-                    <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
-                        <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-black text-amber-950 leading-snug">
-                            <span class="bg-amber-900 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                            <span>宿泊の持ち物は何が必要ですか？初回利用時の条件はありますか？</span>
-                        </h3>
-                        <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
-                            <span class="bg-orange-500 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
-                            <p>いつも食べているご飯（1回分ずつ小分けしたもの）、首輪・ハーネス・リード、狂犬病および5種以上の混合ワクチン接種証明書、飼い主様の本人確認書類をお持ちください。なお、安全確保のため初回宿泊前に事前打ち合わせ（初回カルテ作成料¥2,200税込）をお願いしております。</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- ホテル専用エリア紹介 -->
-            <div>
-                <div class="text-center mb-5 sm:mb-6">
-                    <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3.5 py-1 rounded-full border border-amber-300">
-                        Service Area
-                    </span>
-                    <h2 class="text-lg sm:text-2xl md:text-3xl font-black text-amber-950 mt-2 leading-snug">
-                        堺市・高石市・和泉市から通いやすい<br class="sm:hidden">1日3組限定の小型犬専門ペットホテル
-                    </h2>
-                </div>
-
-                <div class="bg-amber-50/40 p-5 sm:p-8 rounded-3xl border border-amber-200 shadow-sm space-y-4">
-                    <p class="text-xs sm:text-base text-gray-700 leading-relaxed font-medium">
-                        ご旅行・出張・冠婚葬祭・急なご予定の際の愛犬のお預かりなら、南海高師浜線「高師浜駅」徒歩3分の「チョコ＆モカ」へお任せください。高石市内はもちろん、隣接する堺市（西区・南区・北区・中区・堺区・東区・美原区）や和泉市（和泉府中・和泉中央・光明池・のぞみ野・はつが野・トリヴェール和泉周辺）、泉大津市、大阪市からもお車でアクセスしやすく、ご自宅までのドアツードア送迎にも対応しています。1日3組限定・24時間スタッフ常駐体制で、初めてのお泊まりや怖がりな小型犬でも自宅のようにリラックスして過ごせる環境を整えています。
-                    </p>
-                    <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-3 border-t border-amber-100">
-                        <span class="bg-white text-amber-950 border border-amber-200 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full">高石市（高師浜駅徒歩3分・駐車場あり）</span>
-                        <span class="bg-white text-amber-950 border border-amber-200 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full">堺市全域（西区・南区・北区・中区・堺区・東区・美原区）送迎対応</span>
-                        <span class="bg-white text-amber-950 border border-amber-200 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full">和泉市全域（和泉府中・和泉中央・光明池・はつが野・のぞみ野）送迎対応</span>
-                        <span class="bg-white text-amber-950 border border-amber-200 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full">泉大津市・大阪市（関西空港方面へのご出発前にも便利）</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ⑧ プロトレーナーの「犬のしつけ・社会化」コラム -->
-    <section id="column" class="py-10 sm:py-16 bg-amber-50/20 border-b border-amber-100">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-                <span class="bg-emerald-100 text-emerald-800 text-[10px] sm:text-xs font-bold px-3.5 py-1 rounded-full border border-emerald-300">
-                    Training &amp; Socialization Column
-                </span>
-                <h2 class="text-lg sm:text-2xl md:text-3xl font-black text-choco-950 mt-2 leading-snug">
-                    📚 プロトレーナーの<br class="sm:hidden">「犬のしつけ・社会化」コラム
-                </h2>
-                <p class="text-xs sm:text-sm text-choco-800 font-bold mt-1.5">
-                    堺市・高石市・和泉市の飼い主様へ｜パピー期の社会化や無駄吠え・お留守番の疑問をプロが解説
-                </p>
-            </div>
-
-            <!-- カテゴリータブ（ペットホテル・ケア・その他） -->
-            <div class="flex items-center justify-start sm:justify-center gap-2 mb-6 overflow-x-auto no-scrollbar pb-1">
-                <button onclick="filterBlog('all')" class="blog-tab-btn active bg-emerald-700 text-white font-bold text-xs px-4 py-2 rounded-full shadow-sm transition shrink-0" data-category="all">
-                    すべて
-                </button>
-                <button onclick="filterBlog('ペットホテル')" class="blog-tab-btn bg-amber-50 hover:bg-emerald-50 text-choco-900 font-bold text-xs px-4 py-2 rounded-full border border-amber-200 shadow-sm transition shrink-0" data-category="ペットホテル">
-                    ペットホテル
-                </button>
-                <button onclick="filterBlog('ケア・その他')" class="blog-tab-btn bg-amber-50 hover:bg-emerald-50 text-choco-900 font-bold text-xs px-4 py-2 rounded-full border border-amber-200 shadow-sm transition shrink-0" data-category="ケア・その他">
-                    ケア・その他
-                </button>
-            </div>
-
-            <!-- コラム記事一覧 -->
-            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5 mb-8">
-                <a href="article.html?id=1" class="bg-white rounded-2xl overflow-hidden border border-choco-200 shadow-sm hover:shadow-md transition flex flex-row md:flex-col group active:bg-amber-50/50">
-                    <div class="relative w-28 sm:w-36 md:w-full h-auto md:h-44 bg-amber-100 shrink-0 overflow-hidden">
-                        <span class="hidden md:inline-block absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow z-10">社会化・パピー</span>
-                        <img src="12.webp" alt="生後3ヶ月までに決まる！一生を左右する「パピー期社会化」の秘訣" width="400" height="250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='12.jpg';">
-                    </div>
-                    <div class="p-3 sm:p-4 md:p-5 flex-1 flex flex-col justify-between min-w-0">
-                        <div>
-                            <div class="flex items-center flex-wrap gap-1.5 mb-1">
-                                <span class="md:hidden bg-orange-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0">社会化・パピー</span>
-                                <time class="text-[10px] font-bold text-gray-400">2026.11.14</time>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
+                        <!-- 最新1：堺市北区 きなこちゃん -->
+                        <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
+                            <div class="relative rounded-xl overflow-hidden border border-amber-300 bg-amber-50 aspect-[4/3]">
+                                <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow z-10">NEW</span>
+                                <img src="chocomoka_hotel_kinako.webp" alt="堺市北区の豆柴「きなこちゃん」がチョコ＆モカのフリースペースでおもちゃで遊ぶ様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_kinako.jpg';">
                             </div>
-                            <h3 class="text-xs sm:text-sm md:text-base font-extrabold text-choco-950 mb-1.5 leading-snug line-clamp-2 group-hover:text-emerald-700 transition">生後3ヶ月までに決まる！一生を左右する「パピー期社会化」の秘訣</h3>
-                            <p class="hidden sm:block text-xs text-choco-800 line-clamp-2 leading-relaxed">パピー期（社会化期）に様々な刺激や音、犬や人に慣れさせることがなぜ必要なのか？プロのトレーナーが分かりやすく解説します。</p>
-                        </div>
-                        <span class="inline-flex items-center gap-1 text-emerald-700 font-bold text-[11px] sm:text-xs mt-1.5 md:mt-3 group-hover:underline">
-                            記事を読む <i data-lucide="arrow-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
-                        </span>
-                    </div>
-                </a>
-
-                <a href="article.html?id=2" class="bg-white rounded-2xl overflow-hidden border border-choco-200 shadow-sm hover:shadow-md transition flex flex-row md:flex-col group active:bg-amber-50/50">
-                    <div class="relative w-28 sm:w-36 md:w-full h-auto md:h-44 bg-amber-100 shrink-0 overflow-hidden">
-                        <span class="hidden md:inline-block absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow z-10">ケア・その他</span>
-                        <img src="heya.webp" alt="嫌がる愛犬を「歯磨き好き」にするハズバンダリートレーニングとは？" width="400" height="250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
-                    </div>
-                    <div class="p-3 sm:p-4 md:p-5 flex-1 flex flex-col justify-between min-w-0">
-                        <div>
-                            <div class="flex items-center flex-wrap gap-1.5 mb-1">
-                                <span class="md:hidden bg-blue-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0">ケア・その他</span>
-                                <time class="text-[10px] font-bold text-gray-400">2026.11.01</time>
+                            <div class="flex items-center justify-between gap-1 min-h-[26px]">
+                                <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">堺市北区・豆柴 1歳</span>
+                                <span class="text-amber-500 text-[11px] font-black shrink-0">Kinakoちゃん ★★★★★</span>
                             </div>
-                            <h3 class="text-xs sm:text-sm md:text-base font-extrabold text-choco-950 mb-1.5 leading-snug line-clamp-2 group-hover:text-emerald-700 transition">嫌がる愛犬を「歯磨き好き」にするハズバンダリートレーニングとは？</h3>
-                            <p class="hidden sm:block text-xs text-choco-800 line-clamp-2 leading-relaxed">歯周病予防のための毎日の歯磨き。強引にやるのではなく、愛犬が自らお口を開けてくれる慣らし方のコツをお教えします。</p>
-                        </div>
-                        <span class="inline-flex items-center gap-1 text-emerald-700 font-bold text-[11px] sm:text-xs mt-1.5 md:mt-3 group-hover:underline">
-                            記事を読む <i data-lucide="arrow-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
-                        </span>
-                    </div>
-                </a>
+                            <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
+                                「一時預かりから利用！他の小型犬と上手に遊べるようになりました」
+                            </h3>
+                            <p id="review-text-kinako" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
+                                堺市北区から、冠婚葬祭の用事で半日ほどのショートステイ（一時預かり）を利用しました。将来お泊りホテルを利用する前の慣らしも兼ねてお願いしたのですが、ドッグトレーナーさんが常駐されているので、他の穏やかな小型犬との挨拶の仕方や遊び方も優しく見守っていただけました。ケージに閉じ込められることなく、フリースペースでのびのびと過ごせたようで、帰宅後は満足してぐっすり眠っていました。まずは一時預かりから試せるので、初めてホテルを検討している方にもぴったりだと思います！
+                            </p>
+                            <button type="button" onclick="toggleReview('review-text-kinako', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
+                                ▼ 続きを読む
+                            </button>
+                        </article>
 
-                <a href="article.html?id=3" class="bg-white rounded-2xl overflow-hidden border border-choco-200 shadow-sm hover:shadow-md transition flex flex-row md:flex-col group active:bg-amber-50/50">
-                    <div class="relative w-28 sm:w-36 md:w-full h-auto md:h-44 bg-amber-100 shrink-0 overflow-hidden">
-                        <span class="hidden md:inline-block absolute top-3 left-3 bg-rose-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow z-10">キャンペーン</span>
-                        <img src="11.webp" alt="【お得な特典】お知り合い紹介キャンペーンのご案内" width="400" height="250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='11.jpg';">
-                    </div>
-                    <div class="p-3 sm:p-4 md:p-5 flex-1 flex flex-col justify-between min-w-0">
-                        <div>
-                            <div class="flex items-center flex-wrap gap-1.5 mb-1">
-                                <span class="md:hidden bg-rose-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0">キャンペーン</span>
-                                <time class="text-[10px] font-bold text-gray-400">2026.10.18</time>
+                        <!-- 最新2：高石市 レオくん -->
+                        <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
+                            <div class="relative rounded-xl overflow-hidden border border-amber-300 bg-amber-50 aspect-[4/3]">
+                                <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow z-10">NEW</span>
+                                <img src="chocomoka_hotel_reo.webp" alt="高石市のシニア犬ヨークシャーテリア「レオくん」が24時間常駐ペットホテルのベッドで休む様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_reo.jpg';">
                             </div>
-                            <h3 class="text-xs sm:text-sm md:text-base font-extrabold text-choco-950 mb-1.5 leading-snug line-clamp-2 group-hover:text-emerald-700 transition">【お得な特典】お知り合い紹介キャンペーンのご案内</h3>
-                            <p class="hidden sm:block text-xs text-choco-800 line-clamp-2 leading-relaxed">ご紹介いただいた飼い主様＆お知り合いに次回使える特別割引特典をプレゼント！詳しくはこちら。</p>
-                        </div>
-                        <span class="inline-flex items-center gap-1 text-emerald-700 font-bold text-[11px] sm:text-xs mt-1.5 md:mt-3 group-hover:underline">
-                            記事を読む <i data-lucide="arrow-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
-                        </span>
+                            <div class="flex items-center justify-between gap-1 min-h-[26px]">
+                                <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">高石市・ヨーキー 11歳</span>
+                                <span class="text-amber-500 text-[11px] font-black shrink-0">Reoくん ★★★★★</span>
+                            </div>
+                            <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
+                                「シニア犬で毎日の投薬がありましたが、24時間常駐で安心でした」
+                            </h3>
+                            <p id="review-text-reo" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
+                                11歳になるシニアのヨークシャーテリア・レオを1泊2日でお願いしました。高石市内から近く、事前に個別カルテで朝晩のお薬の飲ませ方や食事のふやかし方、足腰への配慮まで細かく共有できたのが決め手です。大型ホテルと違い、夜間も24時間スタッフが同じ建物内に常駐してくださるため、高齢犬を預ける不安が一気に吹き飛びました。お泊り中もレオの体力に合わせて無理なく過ごさせてくださり、お迎えに行った時も穏やかな表情でしっぽを振ってくれました。シニア犬の飼い主様に心からおすすめしたいホテルです。
+                            </p>
+                            <button type="button" onclick="toggleReview('review-text-reo', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
+                                ▼ 続きを読む
+                            </button>
+                        </article>
+
+                        <!-- 最新3：和泉市 ココちゃん -->
+                        <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
+                            <div class="relative rounded-xl overflow-hidden border border-amber-300 bg-amber-50 aspect-[4/3]">
+                                <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow z-10">NEW</span>
+                                <img src="chocomoka_hotel_koko.webp" alt="和泉市のマルプー「ココちゃん」が自宅での24時間お泊りシッターでリラックスして眠る様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_koko.jpg';">
+                            </div>
+                            <div class="flex items-center justify-between gap-1 min-h-[26px]">
+                                <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">和泉市・マルプー 4歳</span>
+                                <span class="text-amber-500 text-[11px] font-black shrink-0">Kokoちゃん ★★★★★</span>
+                            </div>
+                            <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
+                                「和泉中央の自宅にお泊り！シッターさん独り占めで大喜びでした」
+                            </h3>
+                            <p id="review-text-koko" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
+                                急な出張が入り、和泉市（和泉中央エリア）の自宅に泊まり込みでお世話してくださる「1日1組限定の24時間お泊りシッター」を利用しました。他のワンちゃんがいる環境だと緊張してしまうマルプーのココですが、住み慣れた自宅のリビングでシッターさんを24時間独り占めできたのが最高だったようです。いつものお散歩コースでの様子や、夜にベッドで寄り添って眠る写真もこまめに送ってくださり、出張先でも全く心配せずに仕事に集中できました。この手厚さでこの価格は本当に良心的だと思います！
+                            </p>
+                            <button type="button" onclick="toggleReview('review-text-koko', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
+                                ▼ 続きを読む
+                            </button>
+                        </article>
+
+                        <!-- 最新4：堺市南区 モコちゃん -->
+                        <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
+                            <div class="rounded-xl overflow-hidden border border-amber-300 bg-amber-50 aspect-[4/3]">
+                                <img src="chocomoka_hotel_moko.webp" alt="堺市南区のポメラニアン「モコちゃん」がチョコ＆モカのフリースペースで笑顔で過ごす様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_moko.jpg';">
+                            </div>
+                            <div class="flex items-center justify-between gap-1 min-h-[26px]">
+                                <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">堺市南区・ポメラニアン 2歳</span>
+                                <span class="text-amber-500 text-[11px] font-black shrink-0">Mokoちゃん ★★★★★</span>
+                            </div>
+                            <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
+                                「堺市南区まで送迎していただき、初めての2泊も大満足でした！」
+                            </h3>
+                            <p id="review-text-moko" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
+                                家族旅行で2泊3日、ポメラニアンのモコをデラックスルームでお預かりいただきました。堺市南区の自宅まで時間通りに専用車で送迎してくださり、出発前のバタバタした時間帯に本当に助かりました。少し警戒心が強い性格ですが、1日3組限定という少人数制のおかげで他の小型犬ともすぐに打ち解け、広々とした室内フリースペースで楽しそうに遊ぶ姿が毎日LINE動画で届きました。お迎え時も毛並みまで綺麗に整えてくださっており、帰宅後もいつも通りリラックスしていました。次回の旅行も迷わずお願いします！
+                            </p>
+                            <button type="button" onclick="toggleReview('review-text-moko', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
+                                ▼ 続きを読む
+                            </button>
+                        </article>
+
+                        <!-- 最新5：和泉市 ロンちゃん -->
+                        <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
+                            <div class="rounded-xl overflow-hidden border border-amber-300 bg-amber-50 aspect-[4/3]">
+                                <img src="chocomoka_hotel_ron.webp" alt="和泉市のミニチュアダックス「ロンちゃん」が自宅での24時間お泊りシッターでベッドでくつろぐ様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_ron.jpg';">
+                            </div>
+                            <div class="flex items-center justify-between gap-1 min-h-[26px]">
+                                <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">和泉市・ミニチュアダックス 5歳</span>
+                                <span class="text-amber-500 text-[11px] font-black shrink-0">Ronちゃん ★★★★★</span>
+                            </div>
+                            <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
+                                「腰への配慮も徹底！自宅だからこそ100%安心してお任せできました」
+                            </h3>
+                            <p id="review-text-3" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
+                                和泉市から、5歳のミニチュアダックスのロンの24時間お泊りシッターを利用しました。ダックス特有の腰への負担が心配だったため、段差やフローリングでの過ごし方に気を遣っていましたが、住み慣れた自宅の環境のままプロの方が24時間体制で付き添ってくださるので本当に安心感がありました。「無理なジャンプをさせない」「いつものお散歩コースをゆっくり歩く」といった細かいお願いも完璧に守ってくださり、日中はベッドでのんびりお昼寝したり、優しく撫でてもらったりと大満喫していたようです。留守中の戸締まりやレポート報告も非常に丁寧で、またぜひお願いしたいです！
+                            </p>
+                            <button type="button" onclick="toggleReview('review-text-3', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
+                                ▼ 続きを読む
+                            </button>
+                        </article>
+
+                        <!-- 最新6：高石市 ちょびちゃん -->
+                        <article class="bg-white p-4 rounded-2xl border border-amber-200 shadow-sm flex flex-col space-y-2.5">
+                            <div class="rounded-xl overflow-hidden border border-amber-300 bg-amber-50 aspect-[4/3]">
+                                <img src="chocomoka_hotel_chobi.webp" alt="高石市のチワワ「ちょびちゃん」が自宅での24時間お泊りシッターで安心しておもちゃで遊ぶ様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_hotel_chobi.jpg';">
+                            </div>
+                            <div class="flex items-center justify-between gap-1 min-h-[26px]">
+                                <span class="bg-amber-900 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">高石市・チワワ 1歳</span>
+                                <span class="text-amber-500 text-[11px] font-black shrink-0">Chobiちゃん ★★★★★</span>
+                            </div>
+                            <h3 class="font-black text-sm text-amber-950 leading-snug md:min-h-[2.75rem] flex items-center">
+                                「怖がりなうちの子が初お泊まりでリラックス！」
+                            </h3>
+                            <p id="review-text-2" class="text-xs text-gray-700 leading-relaxed font-medium line-clamp-3">
+                                極度の怖がりで、環境が変わるとご飯を食べなくなってしまうチワワのちょびのために、高石市の自宅に泊まり込みでお世話してくださる「1日1組限定の24時間お泊りシッター」をお願いしました。事前の打ち合わせでちょびの性格や普段の寝る場所、お気に入りのおもちゃでの遊び方まで丁寧にカルテにまとめてくださり、当日もずっとちょび専属で寄り添ってくださいました。夜間も一人ぼっちにならず、自分のハウスとベッドで安心しきって眠る姿や、リビングで楽しそうに遊ぶ動画をLINEで送っていただき、旅行中も心から安心できました。帰宅後もストレスの様子が一切なく大満足です！
+                            </p>
+                            <button type="button" onclick="toggleReview('review-text-2', this)" class="text-[11px] font-extrabold text-amber-800 hover:text-orange-600 text-left inline-flex items-center gap-1 pt-0.5">
+                                ▼ 続きを読む
+                            </button>
+                        </article>
                     </div>
-                </a>
+
+                    <!-- お客様の声一覧ページ（save_blog.html）への導線ボタン -->
+                    <div class="text-center pt-3">
+                        <a href="save_blog.html" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-amber-100 text-amber-950 border-2 border-amber-400 font-black text-xs sm:text-sm px-6 sm:px-8 py-3.5 rounded-full shadow-sm transition">
+                            <span>📜 これまでの飼い主様の声をもっと見る（全7件）</span>
+                            <svg class="w-4 h-4 text-amber-800 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+
             </div>
+        </section>
 
-            <!-- しつけ教室ページ＆Instagram案内 -->
-            <div class="max-w-3xl mx-auto space-y-4">
+        <!-- ⑤ 選ばれる『7つの約束』 ＆ スタッフ紹介 -->
+        <section id="promise" class="cv-auto py-10 sm:py-16 bg-white border-b border-amber-100">
+            <div class="max-w-5xl mx-auto px-4 space-y-12">
+                <!-- 7つの約束 -->
+                <div>
+                    <div class="text-center mb-6 sm:mb-8">
+                        <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">Safety &amp; Quality</span>
+                        <h2 class="text-lg sm:text-3xl font-black text-amber-950 mt-2">堺市・高石市・和泉市の飼い主様に選ばれる『7つの約束』</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
+                        <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>1. 24時間スタッフ常駐＆救急対応：</strong>夜間もスタッフが常駐し、体調変化に即対応します。</div>
+                        <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>2. 徹底した衛生管理・感染予防：</strong>24時間空気清浄・脱臭稼働＆毎回の消毒を徹底。</div>
+                        <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>3. 怖がりな小型犬も安心の受け入れ基準：</strong>攻撃性の高い犬の受け入れを制限し安全を確保。</div>
+                        <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>4. 賠償責任保険加入店：</strong>三井住友海上の賠償責任保険に加入済み。</div>
+                        <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>5. ワクチン・予防接種証明の確認必須：</strong>狂犬病・5種以上混合ワクチン・ノミダニ予防必須。</div>
+                        <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200"><strong>6. 個別カルテ作成：</strong>事前ヒアリングで性格・持病・食事を細かく把握。</div>
+                        <div class="bg-amber-50/50 p-4 rounded-2xl border border-amber-200 md:col-span-2"><strong>7. 第一種動物取扱業登録済み：</strong>大阪府第5186ー2号（保管）取得の正規事業者です。</div>
+                    </div>
+                </div>
+
+                <!-- スタッフ紹介 -->
+                <div id="staff" class="pt-4 border-t border-amber-100">
+                    <div class="text-center mb-5 sm:mb-6">
+                        <span class="text-xs font-bold text-amber-700 uppercase">Our Staff</span>
+                        <h2 class="text-lg sm:text-2xl font-black text-choco-900 mt-1">👥 経験豊富な有資格スタッフがお世話いたします</h2>
+                    </div>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 text-center">
+                        <div class="bg-amber-50/40 p-3.5 sm:p-4 rounded-2xl border border-choco-100 shadow-sm">
+                            <img src="kentaro.webp" alt="チョコ＆モカ オーナー・ドッグトレーナー 齋藤 健太郎" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto object-cover border-2 border-amber-400 mb-2" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='kentaro.jpg';">
+                            <span class="text-[10px] bg-choco-800 text-white px-2 py-0.5 rounded-full font-bold">オーナー/トレーナー</span>
+                            <h3 class="font-bold text-xs sm:text-sm mt-1">齋藤 健太郎</h3>
+                        </div>
+                        <div class="bg-amber-50/40 p-3.5 sm:p-4 rounded-2xl border border-choco-100 shadow-sm">
+                            <img src="yoshi.webp" alt="チョコ＆モカ ペットシッター ヨッシー" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto object-cover border-2 border-amber-300 mb-2" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='yoshi.jpg';">
+                            <span class="text-[10px] bg-choco-100 text-choco-900 px-2 py-0.5 rounded-full font-bold">ペットシッター</span>
+                            <h3 class="font-bold text-xs sm:text-sm mt-1">ヨッシー</h3>
+                        </div>
+                        <div class="bg-amber-50/40 p-3.5 sm:p-4 rounded-2xl border border-choco-100 shadow-sm">
+                            <img src="fumi.webp" alt="チョコ＆モカ ペットシッター ふみ" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto object-cover border-2 border-amber-300 mb-2" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='fumi.jpg';">
+                            <span class="text-[10px] bg-choco-100 text-choco-900 px-2 py-0.5 rounded-full font-bold">ペットシッター</span>
+                            <h3 class="font-bold text-xs sm:text-sm mt-1">ふみ</h3>
+                        </div>
+                        <div class="bg-amber-50/40 p-3.5 sm:p-4 rounded-2xl border border-choco-100 shadow-sm">
+                            <img src="kana.webp" alt="チョコ＆モカ トリマー かな" width="80" height="80" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto object-cover border-2 border-amber-300 mb-2" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='kana.jpg';">
+                            <span class="text-[10px] bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full font-bold">トリマー</span>
+                            <h3 class="font-bold text-xs sm:text-sm mt-1">かな</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ⑥ プレミアムペットホテル料金表 -->
+        <section id="hotel-price" class="cv-auto py-10 sm:py-16 bg-amber-50/50 border-b border-amber-100">
+            <div class="max-w-4xl mx-auto px-4 space-y-6">
                 <div class="text-center">
-                    <a href="school.html" class="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm px-6 py-3 rounded-full shadow transition">
-                        <span>🏫 犬のしつけ教室・パピー社会化の詳細を見る</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">Hotel &amp; VIP Stay Price</span>
+                    <h2 class="text-lg sm:text-3xl font-black text-amber-950 mt-2">🏨 プレミアムペットホテル・一時預かり料金表</h2>
+                    <p class="text-xs text-gray-600 mt-1">すべて税込価格・24時間スタッフ見守り込み（堺市・高石市・和泉市 送迎・出張対応）</p>
+                </div>
+
+                <!-- 店舗お預かりプラン（スタンダード・デラックス） -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="border-2 border-choco-200 rounded-2xl p-4 sm:p-5 bg-white shadow-sm">
+                        <h3 class="text-sm sm:text-base font-black text-choco-900 mb-2">スタンダードルーム（24時間）</h3>
+                        <div class="space-y-2 border-t border-choco-100 pt-2 text-xs sm:text-sm font-bold">
+                            <div class="flex justify-between"><span>小型犬 (5kg以下)</span><span class="text-base sm:text-lg font-black">¥4,400</span></div>
+                            <div class="flex justify-between"><span>小型犬 (8kg以下)</span><span class="text-base sm:text-lg font-black">¥5,500</span></div>
+                        </div>
+                    </div>
+                    <div class="border-2 border-amber-400 rounded-2xl p-4 sm:p-5 bg-white shadow-sm">
+                        <h3 class="text-sm sm:text-base font-black text-choco-900 mb-2">デラックスルーム（24時間）</h3>
+                        <div class="space-y-2 border-t border-amber-200 pt-2 text-xs sm:text-sm font-bold">
+                            <div class="flex justify-between"><span>小型犬 (5kg以下)</span><span class="text-base sm:text-lg font-black">¥6,600</span></div>
+                            <div class="flex justify-between"><span>小型犬 (8kg以下)</span><span class="text-base sm:text-lg font-black">¥7,700</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIP出張お泊りプラン -->
+                <article id="vip-stay-plan" class="relative rounded-3xl p-1.5 bg-gradient-to-br from-[#BF953F] via-[#F5E08E] to-[#AA771C] shadow-xl">
+                    <div class="bg-gradient-to-b from-[#FFFDF7] via-amber-50/90 to-orange-50/70 text-choco-950 rounded-[20px] p-5 sm:p-8 space-y-5">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-300/70 pb-4">
+                            <div class="space-y-1.5">
+                                <div class="inline-flex items-center gap-1.5 gold-gradient-bg text-amber-950 text-[10px] sm:text-xs font-black px-3.5 py-1 rounded-full border border-yellow-300 shadow-sm">
+                                    <svg class="w-3.5 h-3.5 text-amber-950 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/></svg>
+                                    <span>最高峰ラグジュアリー・VIP出張お泊りプラン</span>
+                                </div>
+                                <h3 class="text-base sm:text-2xl font-black text-amber-950 leading-snug pt-1">
+                                    👑 1日1組限定の愛犬専属・24時間お泊りシッター
+                                </h3>
+                                <p class="text-[11px] sm:text-xs text-choco-800 font-bold">
+                                    堺市・高石市・和泉市のご自宅へ有資格シッターが宿泊し、愛犬専属で24時間お世話をいたします
+                                </p>
+                            </div>
+                            <div class="bg-white border-2 border-amber-400 rounded-2xl px-4 py-3 text-left sm:text-right shrink-0 shadow-sm">
+                                <span class="block text-[11px] text-amber-900 font-bold">小型犬 (8kg以下) / 24時間専属</span>
+                                <span class="text-2xl sm:text-3xl font-black text-amber-950 tracking-tight">¥9,900</span>
+                                <span class="text-xs font-bold text-choco-800">(税込)</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-[11px] sm:text-xs font-bold">
+                            <div class="bg-white border border-amber-300 rounded-xl p-3 text-center space-y-1 shadow-sm">
+                                <span class="text-base block">🏠</span>
+                                <span class="text-amber-950 block font-black">ご自宅そのまま</span>
+                                <span class="text-[10px] text-gray-700 block leading-tight">環境変化が苦手な子・シニア犬も安心</span>
+                            </div>
+                            <div class="bg-white border border-amber-300 rounded-xl p-3 text-center space-y-1 shadow-sm">
+                                <span class="text-base block">👑</span>
+                                <span class="text-amber-950 block font-black">1日1組・完全専属</span>
+                                <span class="text-[10px] text-gray-700 block leading-tight">他の犬と一緒にならず独占ケア</span>
+                            </div>
+                            <div class="bg-white border border-amber-300 rounded-xl p-3 text-center space-y-1 shadow-sm">
+                                <span class="text-base block">🌙</span>
+                                <span class="text-amber-950 block font-black">24時間つきっきり</span>
+                                <span class="text-[10px] text-gray-700 block leading-tight">夜間も添い寝・見守りで寂しさゼロ</span>
+                            </div>
+                            <div class="bg-white border border-amber-300 rounded-xl p-3 text-center space-y-1 shadow-sm">
+                                <span class="text-base block">📱</span>
+                                <span class="text-amber-950 block font-black">随時写真・動画報告</span>
+                                <span class="text-[10px] text-gray-700 block leading-tight">ご旅行・出張中もリアルタイム安心</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-red-200 rounded-xl p-3.5 text-xs space-y-1 leading-relaxed shadow-sm">
+                            <p class="font-bold text-red-700">
+                                ※こちらのサービスは、飼い主様が自宅にいないことが条件です。飼い主様が自宅に戻られた場合、その時点でサービスを終了させていただきます。
+                            </p>
+                            <p class="text-[11px] text-choco-800 font-medium">
+                                ※出張訪問対応エリア：堺市全域・高石市・和泉市・泉大津市・大阪市（別途、店舗からの距離に応じた出張費がかかります）。
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ショートステイ・送迎補足 -->
+                <div class="bg-white border border-amber-300 rounded-2xl p-4 text-xs sm:text-sm space-y-1 font-bold shadow-sm">
+                    <p class="font-black text-amber-950">🕒 ショートステイ（一時預かり）：基本料金（180分） ¥1,650</p>
+                    <p class="text-red-600">※お預かり・お渡し時間は 09:00〜19:00 です。超過は60分ごとに¥550加算されます。</p>
+                    <p>🚗 送迎・出張料金：当店（高石市高師浜）から5km以内 ¥550（以降5kmごとに+¥550）。堺市・高石市・和泉市・泉大津市・大阪市対応。</p>
+                </div>
+
+                <!-- 料金納得後の予約CTA -->
+                <div class="text-center pt-2">
+                    <button type="button" onclick="openModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs sm:text-base font-extrabold px-7 sm:px-9 py-3.5 rounded-full shadow-lg active:scale-95 transition">
+                        <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+                        <span>【初回】事前打合せ・空き状況を予約する</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ⑦ よくある質問（FAQ） ＆ 対応エリア -->
+        <section id="area-faq" class="cv-auto py-10 sm:py-16 bg-white border-b border-amber-100">
+            <div class="max-w-5xl mx-auto px-4 space-y-10 sm:space-y-12">
+                <!-- ペットホテル専用FAQ -->
+                <div>
+                    <div class="text-center mb-6">
+                        <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3.5 py-1 rounded-full border border-amber-300">FAQ</span>
+                        <h2 class="text-lg sm:text-2xl font-black text-amber-950 mt-2">
+                            ペットホテルに関するよくあるご質問（宿泊・送迎・持ち物）
+                        </h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
+                            <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-black text-amber-950 leading-snug">
+                                <span class="bg-amber-900 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                <span>ペットホテル利用時、堺市・和泉市・高石市の自宅まで送迎してもらえますか？</span>
+                            </h3>
+                            <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                                <span class="bg-orange-500 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
+                                <p>はい、ご旅行や出張の出発・ご帰宅に合わせて、高石市・堺市全域（西区・南区・北区・中区・堺区・東区・美原区）・和泉市全域（和泉府中・和泉中央・光明池・はつが野・のぞみ野エリアなど）・泉大津市・大阪市のご自宅まで専用車で送迎いたします（5km以内¥550、以降5kmごとに+¥550）。</p>
+                            </div>
+                        </article>
+
+                        <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
+                            <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-black text-amber-950 leading-snug">
+                                <span class="bg-amber-900 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                <span>夜間もスタッフは常駐していますか？ケージに入れっぱなしになりませんか？</span>
+                            </h3>
+                            <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                                <span class="bg-orange-500 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
+                                <p>はい、24時間スタッフが常駐しており、夜間も目が届く環境でお預かりいたします。日中は広々としたフリースペースで他の穏やかな小型犬と遊びながら過ごし、就寝時のみ安心できる個室スペースで休むスタイルのため、ケージに入れっぱなしになることはありません。</p>
+                            </div>
+                        </article>
+
+                        <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
+                            <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-black text-amber-950 leading-snug">
+                                <span class="bg-amber-900 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                <span>ホテルお預かり中の愛犬の様子は写真や動画で報告してもらえますか？</span>
+                            </h3>
+                            <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                                <span class="bg-orange-500 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
+                                <p>はい、お預かり中のお食事・お散歩・フリースペースで遊んでいる様子を、写真や動画付きのレポート（LINEまたはメール）で毎日お送りいたします。離れた場所からでも愛犬の元気な姿をご確認いただけます。</p>
+                            </div>
+                        </article>
+
+                        <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
+                            <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-black text-amber-950 leading-snug">
+                                <span class="bg-amber-900 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                <span>宿泊の持ち物は何が必要ですか？初回利用時の条件はありますか？</span>
+                            </h3>
+                            <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                                <span class="bg-orange-500 text-white text-xs font-black w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
+                                <p>いつも食べているご飯（1回分ずつ小分けしたもの）、首輪・ハーネス・リード、狂犬病および5種以上の混合ワクチン接種証明書、飼い主様の本人確認書類をお持ちください。なお、安全確保のため初回宿泊前に事前打ち合わせ（初回カルテ作成料¥2,200税込）をお願いしております。</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- ホテル専用エリア紹介 -->
+                <div>
+                    <div class="text-center mb-5 sm:mb-6">
+                        <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3.5 py-1 rounded-full border border-amber-300">
+                            Service Area
+                        </span>
+                        <h2 class="text-lg sm:text-2xl md:text-3xl font-black text-amber-950 mt-2 leading-snug">
+                            堺市・高石市・和泉市から通いやすい<br class="sm:hidden">1日3組限定の小型犬専門ペットホテル
+                        </h2>
+                    </div>
+
+                    <div class="bg-amber-50/40 p-5 sm:p-8 rounded-3xl border border-amber-200 shadow-sm space-y-4">
+                        <p class="text-xs sm:text-base text-gray-700 leading-relaxed font-medium">
+                            ご旅行・出張・冠婚葬祭・急なご予定の際の愛犬のお預かりなら、南海高師浜線「高師浜駅」徒歩3分の「チョコ＆モカ」へお任せください。高石市内はもちろん、隣接する堺市（西区・南区・北区・中区・堺区・東区・美原区）や和泉市（和泉府中・和泉中央・光明池・のぞみ野・はつが野・トリヴェール和泉周辺）、泉大津市、大阪市からもお車でアクセスしやすく、ご自宅までのドアツードア送迎にも対応しています。1日3組限定・24時間スタッフ常駐体制で、初めてのお泊まりや怖がりな小型犬でも自宅のようにリラックスして過ごせる環境を整えています。
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-3 border-t border-amber-100">
+                            <span class="bg-white text-amber-950 border border-amber-200 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full">高石市（高師浜駅徒歩3分・駐車場あり）</span>
+                            <span class="bg-white text-amber-950 border border-amber-200 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full">堺市全域（西区・南区・北区・中区・堺区・東区・美原区）送迎対応</span>
+                            <span class="bg-white text-amber-950 border border-amber-200 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full">和泉市全域（和泉府中・和泉中央・光明池・はつが野・のぞみ野）送迎対応</span>
+                            <span class="bg-white text-amber-950 border border-amber-200 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full">泉大津市・大阪市（関西空港方面へのご出発前にも便利）</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ⑧ プロトレーナーの「犬のしつけ・社会化」コラム -->
+        <section id="column" class="cv-auto py-10 sm:py-16 bg-amber-50/20 border-b border-amber-100">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+                    <span class="bg-emerald-100 text-emerald-800 text-[10px] sm:text-xs font-bold px-3.5 py-1 rounded-full border border-emerald-300">
+                        Training &amp; Socialization Column
+                    </span>
+                    <h2 class="text-lg sm:text-2xl md:text-3xl font-black text-choco-950 mt-2 leading-snug">
+                        📚 プロトレーナーの<br class="sm:hidden">「犬のしつけ・社会化」コラム
+                    </h2>
+                    <p class="text-xs sm:text-sm text-choco-800 font-bold mt-1.5">
+                        堺市・高石市・和泉市の飼い主様へ｜パピー期の社会化や無駄吠え・お留守番の疑問をプロが解説
+                    </p>
+                </div>
+
+                <!-- カテゴリータブ -->
+                <div class="flex items-center justify-start sm:justify-center gap-2 mb-6 overflow-x-auto no-scrollbar pb-1">
+                    <button type="button" onclick="filterBlog('all')" class="blog-tab-btn active bg-emerald-700 text-white font-bold text-xs px-4 py-2 rounded-full shadow-sm transition shrink-0" data-category="all">
+                        すべて
+                    </button>
+                    <button type="button" onclick="filterBlog('ペットホテル')" class="blog-tab-btn bg-amber-50 hover:bg-emerald-50 text-choco-900 font-bold text-xs px-4 py-2 rounded-full border border-amber-200 shadow-sm transition shrink-0" data-category="ペットホテル">
+                        ペットホテル
+                    </button>
+                    <button type="button" onclick="filterBlog('ケア・その他')" class="blog-tab-btn bg-amber-50 hover:bg-emerald-50 text-choco-900 font-bold text-xs px-4 py-2 rounded-full border border-amber-200 shadow-sm transition shrink-0" data-category="ケア・その他">
+                        ケア・その他
+                    </button>
+                </div>
+
+                <!-- コラム記事一覧 -->
+                <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5 mb-8">
+                    <a href="article.html?id=1" class="bg-white rounded-2xl overflow-hidden border border-choco-200 shadow-sm hover:shadow-md transition flex flex-row md:flex-col group active:bg-amber-50/50">
+                        <div class="relative w-28 sm:w-36 md:w-full h-auto md:h-44 bg-amber-100 shrink-0 overflow-hidden">
+                            <span class="hidden md:inline-block absolute top-3 left-3 bg-orange-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow z-10">社会化・パピー</span>
+                            <img src="12.webp" alt="生後3ヶ月までに決まる！一生を左右する「パピー期社会化」の秘訣" width="400" height="250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='12.jpg';">
+                        </div>
+                        <div class="p-3 sm:p-4 md:p-5 flex-1 flex flex-col justify-between min-w-0">
+                            <div>
+                                <div class="flex items-center flex-wrap gap-1.5 mb-1">
+                                    <span class="md:hidden bg-orange-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0">社会化・パピー</span>
+                                    <time class="text-[10px] font-bold text-gray-400">2026.11.14</time>
+                                </div>
+                                <h3 class="text-xs sm:text-sm md:text-base font-extrabold text-choco-950 mb-1.5 leading-snug line-clamp-2 group-hover:text-emerald-700 transition">生後3ヶ月までに決まる！一生を左右する「パピー期社会化」の秘訣</h3>
+                                <p class="hidden sm:block text-xs text-choco-800 line-clamp-2 leading-relaxed">パピー期（社会化期）に様々な刺激や音、犬や人に慣れさせることがなぜ必要なのか？プロのトレーナーが分かりやすく解説します。</p>
+                            </div>
+                            <span class="inline-flex items-center gap-1 text-emerald-700 font-bold text-[11px] sm:text-xs mt-1.5 md:mt-3 group-hover:underline">
+                                記事を読む →
+                            </span>
+                        </div>
+                    </a>
+
+                    <a href="article.html?id=2" class="bg-white rounded-2xl overflow-hidden border border-choco-200 shadow-sm hover:shadow-md transition flex flex-row md:flex-col group active:bg-amber-50/50">
+                        <div class="relative w-28 sm:w-36 md:w-full h-auto md:h-44 bg-amber-100 shrink-0 overflow-hidden">
+                            <span class="hidden md:inline-block absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow z-10">ケア・その他</span>
+                            <img src="heya.webp" alt="嫌がる愛犬を「歯磨き好き」にするハズバンダリートレーニングとは？" width="400" height="250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
+                        </div>
+                        <div class="p-3 sm:p-4 md:p-5 flex-1 flex flex-col justify-between min-w-0">
+                            <div>
+                                <div class="flex items-center flex-wrap gap-1.5 mb-1">
+                                    <span class="md:hidden bg-blue-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0">ケア・その他</span>
+                                    <time class="text-[10px] font-bold text-gray-400">2026.11.01</time>
+                                </div>
+                                <h3 class="text-xs sm:text-sm md:text-base font-extrabold text-choco-950 mb-1.5 leading-snug line-clamp-2 group-hover:text-emerald-700 transition">嫌がる愛犬を「歯磨き好き」にするハズバンダリートレーニングとは？</h3>
+                                <p class="hidden sm:block text-xs text-choco-800 line-clamp-2 leading-relaxed">歯周病予防のための毎日の歯磨き。強引にやるのではなく、愛犬が自らお口を開けてくれる慣らし方のコツをお教えします。</p>
+                            </div>
+                            <span class="inline-flex items-center gap-1 text-emerald-700 font-bold text-[11px] sm:text-xs mt-1.5 md:mt-3 group-hover:underline">
+                                記事を読む →
+                            </span>
+                        </div>
+                    </a>
+
+                    <a href="article.html?id=3" class="bg-white rounded-2xl overflow-hidden border border-choco-200 shadow-sm hover:shadow-md transition flex flex-row md:flex-col group active:bg-amber-50/50">
+                        <div class="relative w-28 sm:w-36 md:w-full h-auto md:h-44 bg-amber-100 shrink-0 overflow-hidden">
+                            <span class="hidden md:inline-block absolute top-3 left-3 bg-rose-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow z-10">キャンペーン</span>
+                            <img src="chocomoka_new_year.webp" alt="【お得な特典】お知り合い紹介キャンペーンのご案内" width="400" height="250" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='11.jpg';">
+                        </div>
+                        <div class="p-3 sm:p-4 md:p-5 flex-1 flex flex-col justify-between min-w-0">
+                            <div>
+                                <div class="flex items-center flex-wrap gap-1.5 mb-1">
+                                    <span class="md:hidden bg-rose-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shrink-0">キャンペーン</span>
+                                    <time class="text-[10px] font-bold text-gray-400">2026.10.18</time>
+                                </div>
+                                <h3 class="text-xs sm:text-sm md:text-base font-extrabold text-choco-950 mb-1.5 leading-snug line-clamp-2 group-hover:text-emerald-700 transition">【お得な特典】お知り合い紹介キャンペーンのご案内</h3>
+                                <p class="hidden sm:block text-xs text-choco-800 line-clamp-2 leading-relaxed">ご紹介いただいた飼い主様＆お知り合いに次回使える特別割引特典をプレゼント！詳しくはこちら。</p>
+                            </div>
+                            <span class="inline-flex items-center gap-1 text-emerald-700 font-bold text-[11px] sm:text-xs mt-1.5 md:mt-3 group-hover:underline">
+                                記事を読む →
+                            </span>
+                        </div>
                     </a>
                 </div>
 
-                <div class="bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 p-0.5 rounded-2xl shadow-sm">
-                    <div class="bg-white rounded-[15px] p-4 sm:p-6 text-center">
-                        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 text-white text-xl mb-2 shadow">
-                            <i class="fa-brands fa-instagram"></i>
+                <!-- しつけ教室ページ＆Instagram案内 -->
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="text-center">
+                        <a href="school.html" class="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm px-6 py-3 rounded-full shadow transition">
+                            <span>🏫 犬のしつけ教室・パピー社会化の詳細を見る →</span>
+                        </a>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 p-0.5 rounded-2xl shadow-sm">
+                        <div class="bg-white rounded-[15px] p-4 sm:p-6 text-center">
+                            <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 text-white mb-2 shadow">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            </div>
+                            <h3 class="font-black text-amber-950 text-sm sm:text-base mb-1">公式Instagramで日々の様子を公開中！</h3>
+                            <p class="text-xs text-gray-600 mb-3">ワンちゃんたちの過ごし方やストーリーを更新しています 🐾</p>
+                            <a href="https://www.instagram.com/pet_hotel_osaka_sakai_izumi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 text-white font-extrabold text-xs px-5 py-2.5 rounded-full shadow transition">
+                                <span>Instagramを見る（@pet_hotel_osaka_sakai_izumi）</span>
+                            </a>
                         </div>
-                        <h3 class="font-black text-amber-950 text-sm sm:text-base mb-1">公式Instagramで日々の様子を公開中！</h3>
-                        <p class="text-xs text-gray-600 mb-3">ワンちゃんたちの過ごし方やストーリーを更新しています 🐾</p>
-                        <a href="https://www.instagram.com/pet_hotel_osaka_sakai_izumi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-gradient-to-r from-purple-600 to-pink-500 hover:opacity-90 text-white font-extrabold text-xs px-5 py-2.5 rounded-full shadow transition">
-                            <i class="fa-brands fa-instagram text-sm"></i>
-                            <span>Instagramを見る（@pet_hotel_osaka_sakai_izumi）</span>
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ⑨ 店舗情報・アクセス -->
-    <section id="access" class="py-10 sm:py-12 bg-amber-50/30 border-b border-amber-100">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="text-center mb-6">
-                <span class="bg-blue-100 text-blue-900 text-xs font-bold px-3 py-1 rounded-full">Google Maps &amp; Access</span>
-                <h2 class="text-lg sm:text-2xl font-black text-amber-950 mt-2">店舗情報・アクセス（堺市・高石市・和泉市エリア）</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-5 rounded-2xl border border-amber-200 flex flex-col justify-between space-y-4 shadow-sm">
-                    <dl class="space-y-2.5 text-xs sm:text-sm">
-                        <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">店名</dt><dd class="font-bold">小型犬専門の社会化教室＆ペットホテル チョコ＆モカ</dd></div>
-                        <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">住所</dt><dd class="font-bold">〒592-0004 大阪府高石市高師浜４丁目８−１６<br><span class="text-xs font-normal text-gray-600">（南海高師浜線「高師浜駅」徒歩3分 / 駐車場1台）</span></dd></div>
-                        <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">対応エリア</dt><dd class="font-bold text-amber-950">堺市・高石市・和泉市・泉大津市・大阪市（送迎・出張対応）</dd></div>
-                        <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">電話番号</dt><dd><a href="tel:07094408118" class="font-bold text-amber-900 underline">070-9440-8118</a></dd></div>
-                        <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">営業時間</dt><dd>9:00〜19:00（不定休）</dd></div>
-                        <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">動物取扱業</dt><dd>大阪府第5186ー2号（保管）/ 責任者：齋藤 健太郎</dd></div>
-                        <div class="flex"><dt class="w-24 font-bold text-amber-900 shrink-0">専門ページ</dt><dd class="space-x-2"><a href="school.html" class="text-emerald-700 underline font-bold">しつけ教室</a> / <a href="sitter.html" class="text-blue-700 underline font-bold">ペットシッター</a></dd></div>
-                    </dl>
+        <!-- ⑨ 店舗情報・アクセス（MEO・ローカルSEO強化＋軽量マップ読み込み） -->
+        <section id="access" class="cv-auto py-10 sm:py-12 bg-amber-50/30 border-b border-amber-100">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="text-center mb-6">
+                    <span class="bg-blue-100 text-blue-900 text-xs font-bold px-3 py-1 rounded-full">Google Maps &amp; Access</span>
+                    <h2 class="text-lg sm:text-2xl font-black text-amber-950 mt-2">店舗情報・アクセス（堺市・高石市・和泉市エリア）</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-5 rounded-2xl border border-amber-200 flex flex-col justify-between space-y-4 shadow-sm">
+                        <dl class="space-y-2.5 text-xs sm:text-sm">
+                            <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">店名</dt><dd class="font-bold">小型犬専門の社会化教室＆ペットホテル チョコ＆モカ</dd></div>
+                            <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">住所</dt><dd class="font-bold">〒592-0004 大阪府高石市高師浜４丁目８−１６<br><span class="text-xs font-normal text-gray-600">（南海高師浜線「高師浜駅」徒歩3分 / 駐車場1台）</span></dd></div>
+                            <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">対応エリア</dt><dd class="font-bold text-amber-950">堺市・高石市・和泉市・泉大津市・大阪市（送迎・出張対応）</dd></div>
+                            <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">電話番号</dt><dd><a href="tel:07094408118" class="font-bold text-amber-900 underline">070-9440-8118</a></dd></div>
+                            <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">営業時間</dt><dd>9:00〜19:00（不定休）</dd></div>
+                            <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">動物取扱業</dt><dd>大阪府第5186ー2号（保管）/ 責任者：齋藤 健太郎</dd></div>
+                            <div class="flex"><dt class="w-24 font-bold text-amber-900 shrink-0">専門ページ</dt><dd class="space-x-2"><a href="school.html" class="text-emerald-700 underline font-bold">しつけ教室</a> / <a href="sitter.html" class="text-blue-700 underline font-bold">ペットシッター</a></dd></div>
+                        </dl>
 
-                    <div class="pt-2 border-t border-amber-200 flex flex-col sm:flex-row gap-2">
-                        <a href="https://www.google.com/maps/search/?api=1&query=小型犬専門の社会化教室＆ペットホテル+チョコ＆モカ+大阪府高石市高師浜４丁目８−１６" target="_blank" rel="noopener noreferrer" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 px-3 rounded-xl text-center shadow flex items-center justify-center gap-1.5 transition">
-                            <i class="fa-solid fa-location-dot"></i> Googleマップで経路・詳細を見る
-                        </a>
+                        <div class="pt-2 border-t border-amber-200 flex flex-col sm:flex-row gap-2">
+                            <a href="https://www.google.com/maps/search/?api=1&query=小型犬専門の社会化教室＆ペットホテル+チョコ＆モカ+大阪府高石市高師浜４丁目８−１６" target="_blank" rel="noopener noreferrer" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 px-3 rounded-xl text-center shadow flex items-center justify-center gap-1.5 transition">
+                                📍 Googleマップで経路・クチコミを見る
+                            </a>
+                        </div>
+                    </div>
+                    <div class="h-72 md:h-auto rounded-2xl overflow-hidden border border-amber-200 shadow-sm bg-amber-100/40">
+                        <iframe title="小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 地図" src="https://www.google.com/maps?q=大阪府高石市高師浜４丁目８−１６+小型犬専門の社会化教室＆ペットホテル+チョコ＆モカ&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
                     </div>
                 </div>
-                <div class="h-72 md:h-auto rounded-2xl overflow-hidden border border-amber-200 shadow-sm">
-                    <iframe title="小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 地図" src="https://www.google.com/maps?q=大阪府高石市高師浜４丁目８−１６+小型犬専門の社会化教室＆ペットホテル+チョコ＆モカ&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- プライバシーポリシー & 特定商取引法に基づく表記 -->
-    <section id="legal" class="py-8 sm:py-12 bg-white">
-        <div class="max-w-4xl mx-auto px-4 space-y-4">
-            <details class="bg-amber-50/40 rounded-2xl border border-amber-200 shadow-sm overflow-hidden group">
-                <summary class="p-4 sm:p-5 font-black text-gray-900 text-xs sm:text-sm cursor-pointer list-none flex items-center justify-between gap-2 select-none hover:bg-amber-50 transition">
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-amber-700 text-base"></i><span>プライバシーポリシー（個人情報・本人確認書類の取扱い）</span></span>
-                    <span class="inline-flex items-center gap-1 text-[11px] font-bold text-amber-800 bg-white px-2.5 py-1 rounded-full border border-amber-200 shrink-0"><span>開閉する</span><i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-open:rotate-180"></i></span>
-                </summary>
-                <div class="p-4 sm:p-6 pt-3 bg-white border-t border-amber-200 space-y-3 text-xs text-gray-800 leading-relaxed">
-                    <p class="font-bold text-amber-950">チョコ＆モカ、ペットホテル利用規約兼同意書 第9条（個人情報・本人確認書類の取扱い）抜粋</p>
-                    <ol class="list-decimal list-inside space-y-2.5 font-medium">
-                        <li>チョコ＆モカ（以下、当店）が、お客様から取得した個人情報および本人確認書類の写しは、当店サービスの適切な運営、本人確認、緊急連絡、料金管理の目的にのみ利用します。</li>
-                        <li>原則として第三者へ開示・提供いたしませんが、以下の場合に限り、行政機関・警察・弁護士等へ開示・提供することがあります。
-                            <ul class="list-disc list-inside pl-4 mt-1.5 space-y-1 text-gray-700">
-                                <li>利用終了後72時間が経過しても連絡が取れず、代金未払いまたはペットの放置（放棄）が発生した場合</li>
-                                <li>人命、身体、財産、または動物の生命の保護のため緊急の必要があると判断した場合</li>
-                                <li>法令に基づく開示要請があった場合</li>
-                            </ul>
-                        </li>
-                        <li>利用者（本人）の同意（許可）があった場合、ペットの写真・動画を、公式サイト、SNS（InstagramやXなど）へ公開させていただきます。</li>
-                        <li>個人情報および本人確認書類の写しは、施錠管理のもと厳重に保管し、最終ご利用日から3年経過後、シュレッダー等により速やかに安全破棄いたします。</li>
-                    </ol>
-                </div>
-            </details>
+        <!-- プライバシーポリシー & 特定商取引法に基づく表記 -->
+        <section id="legal" class="cv-auto py-8 sm:py-12 bg-white">
+            <div class="max-w-4xl mx-auto px-4 space-y-4">
+                <details class="bg-amber-50/40 rounded-2xl border border-amber-200 shadow-sm overflow-hidden group">
+                    <summary class="p-4 sm:p-5 font-black text-gray-900 text-xs sm:text-sm cursor-pointer list-none flex items-center justify-between gap-2 select-none hover:bg-amber-50 transition">
+                        <span class="flex items-center gap-2">🛡️ <span>プライバシーポリシー（個人情報・本人確認書類の取扱い）</span></span>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-bold text-amber-800 bg-white px-2.5 py-1 rounded-full border border-amber-200 shrink-0"><span>開閉する</span><span class="transition-transform duration-200 group-open:rotate-180">▼</span></span>
+                    </summary>
+                    <div class="p-4 sm:p-6 pt-3 bg-white border-t border-amber-200 space-y-3 text-xs text-gray-800 leading-relaxed">
+                        <p class="font-bold text-amber-950">チョコ＆モカ、ペットホテル利用規約兼同意書 第9条（個人情報・本人確認書類の取扱い）抜粋</p>
+                        <ol class="list-decimal list-inside space-y-2.5 font-medium">
+                            <li>チョコ＆モカ（以下、当店）が、お客様から取得した個人情報および本人確認書類の写しは、当店サービスの適切な運営、本人確認、緊急連絡、料金管理の目的にのみ利用します。</li>
+                            <li>原則として第三者へ開示・提供いたしませんが、以下の場合に限り、行政機関・警察・弁護士等へ開示・提供することがあります。
+                                <ul class="list-disc list-inside pl-4 mt-1.5 space-y-1 text-gray-700">
+                                    <li>利用終了後72時間が経過しても連絡が取れず、代金未払いまたはペットの放置（放棄）が発生した場合</li>
+                                    <li>人命、身体、財産、または動物の生命の保護のため緊急の必要があると判断した場合</li>
+                                    <li>法令に基づく開示要請があった場合</li>
+                                </ul>
+                            </li>
+                            <li>利用者（本人）の同意（許可）があった場合、ペットの写真・動画を、公式サイト、SNS（InstagramやXなど）へ公開させていただきます。</li>
+                            <li>個人情報および本人確認書類の写しは、施錠管理のもと厳重に保管し、最終ご利用日から3年経過後、シュレッダー等により速やかに安全破棄いたします。</li>
+                        </ol>
+                    </div>
+                </details>
 
-            <details class="bg-amber-50/40 rounded-2xl border border-amber-200 shadow-sm overflow-hidden group">
-                <summary class="p-4 sm:p-5 font-black text-gray-900 text-xs sm:text-sm cursor-pointer list-none flex items-center justify-between gap-2 select-none hover:bg-amber-50 transition">
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-scale-balanced text-amber-700 text-base"></i><span>特定商取引法に基づく表記</span></span>
-                    <span class="inline-flex items-center gap-1 text-[11px] font-bold text-amber-800 bg-white px-2.5 py-1 rounded-full border border-amber-200 shrink-0"><span>開閉する</span><i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-open:rotate-180"></i></span>
-                </summary>
-                <div class="p-4 sm:p-6 pt-3 bg-white border-t border-amber-200 text-xs text-gray-800 leading-relaxed">
-                    <dl class="divide-y divide-gray-200">
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">事業者の名称</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 font-bold">チョコ＆モカ</dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">運営統括責任者</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 font-bold">齋藤 健太郎</dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">店舗所在地</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 font-bold">〒592-0004 大阪府高石市高師浜４丁目８−１６</dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">電話番号</dt><dd class="sm:col-span-2 mt-1 sm:mt-0"><a href="tel:07094408118" class="text-amber-900 font-bold underline">070-9440-8118</a><br><span class="text-[11px] text-gray-500">※お問い合わせは原則として「予約フォーム」より受付けております。</span></dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">問い合わせ先メールアドレス</dt><dd class="sm:col-span-2 mt-1 sm:mt-0"><a href="mailto:admin@chocomoka.com" class="text-amber-900 font-bold underline">admin@chocomoka.com</a></dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">ホームページURL</dt><dd class="sm:col-span-2 mt-1 sm:mt-0"><a href="https://chocomoka.com" target="_blank" rel="noopener noreferrer" class="text-amber-900 font-bold underline">https://chocomoka.com</a></dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">販売価格（サービス料金）</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-1"><p>各サービス・メニューページに記載している価格（消費税込み）に準じます。</p><p>・ペットシッティング：1回 ￥3,300（税込）～</p><p>・プレミアムホテル：24時間 ￥4,400（税込）～</p><p>・24時間お泊りシッター：￥9,900（税込）</p><p>・ドッグウォーカー（散歩代行）：30分 ￥1,650（税込）～</p><p>・初回カルテ作成料（対面打合せ）：￥2,200（税込）</p></dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">サービス料金以外に必要な費用</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-1"><p>・出張料金: 当店より片道5kmを超える場合、5kmごとに￥550（税込）加算</p><p>・有料道路・駐車場代: 実費が必要な場合</p><p>・オプション料金: 歯磨き・肉球ケア（各￥550）、ドッグラン利用代行等</p><p>・インターネット接続・通信料・通話代: お客様のご負担となります。</p></dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">支払方法</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-1"><p>・事前決済（ネット予約）: クレジットカード決済（Square決済等）</p><p>・対面決済: クレジットカード、電子マネー、QRコード決済、現金</p></dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">お支払い時期</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-1"><p>・事前ネット予約: 予約申し込み完了時に決済処理が行われます。</p><p class="text-amber-900 font-bold">※【初回】ご予約・事前打合せおよび初回サービスご利用時のお支払い方法は、クレジットカード決済をお願いいたします。</p><p>・対面決済: サービス提供当日（ご利用前）にお支払いいただきます。</p></dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">サービス提供の時期</dt><dd class="sm:col-span-2 mt-1 sm:mt-0">事前打ち合わせ（初回）の完了後、ご予約いただいた日時および期間においてサービスを提供いたします。</dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">キャンセル・変更について</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-1.5"><p><strong class="underline">キャンセル手続き</strong>: 変更・キャンセルは「予約サイト」または「店舗電話番号(<a href="tel:07094408118" class="text-amber-900 underline">070-9440-8118</a>)宛のSMS」にて受け付けます。トラブル防止のため、お電話でのキャンセル受付は行いません。</p><p><strong class="underline">キャンセル料</strong>:<br>・予約日前日 13:00まで: 無料<br>・予約日前日 13:00以降〜19:00まで: 予約サービス料金の 50%<br>・予約日前日 19:00以降、当日キャンセル、連絡なしの無断キャンセル(ノーショー): 予約サービス料金の 100%</p><p><strong class="underline">遅刻に関する規定</strong>:<br>・10分以上遅れる場合は必ずSMSにてご連絡ください。<br>・連絡なく15分以上経過した場合は無断キャンセル扱いとし、100%のキャンセル料が発生します。<br>・ご予約時間を過ぎてご来店・ご訪問された場合、サービス時間を短縮させていただく場合があります(返金不可)。</p></dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">返金について</dt><dd class="sm:col-span-2 mt-1 sm:mt-0">役務（サービス）の性質上、サービス提供完了後の返金は応じられません。<br>万が一、当店の過失により提供内容に不備が生じた場合は、法令および加入保険（賠償責任保険）の範囲内で迅速に対応いたします。</dd></div>
-                        <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">第一種動物取扱業標識</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-0.5"><p>・氏名（事業者名）: 齋藤 健太郎（チョコ＆モカ）</p><p>・事業所の名称: チョコ＆モカ</p><p>・事業所の所在地: 大阪府高石市高師浜４丁目８−１６</p><p>・第一種動物取扱業の種別: 保管</p><p>・登録番号: 大阪府第5186ー2号</p><p>・登録年月日: 令和8年4月7日</p><p>・有効期間の末日: 令和13年4月6日</p><p>・動物取扱責任者: 齋藤 健太郎</p></dd></div>
-                    </dl>
-                </div>
-            </details>
-        </div>
-    </section>
+                <details class="bg-amber-50/40 rounded-2xl border border-amber-200 shadow-sm overflow-hidden group">
+                    <summary class="p-4 sm:p-5 font-black text-gray-900 text-xs sm:text-sm cursor-pointer list-none flex items-center justify-between gap-2 select-none hover:bg-amber-50 transition">
+                        <span class="flex items-center gap-2">⚖️ <span>特定商取引法に基づく表記</span></span>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-bold text-amber-800 bg-white px-2.5 py-1 rounded-full border border-amber-200 shrink-0"><span>開閉する</span><span class="transition-transform duration-200 group-open:rotate-180">▼</span></span>
+                    </summary>
+                    <div class="p-4 sm:p-6 pt-3 bg-white border-t border-amber-200 text-xs text-gray-800 leading-relaxed">
+                        <dl class="divide-y divide-gray-200">
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">事業者の名称</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 font-bold">チョコ＆モカ</dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">運営統括責任者</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 font-bold">齋藤 健太郎</dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">店舗所在地</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 font-bold">〒592-0004 大阪府高石市高師浜４丁目８−１６</dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">電話番号</dt><dd class="sm:col-span-2 mt-1 sm:mt-0"><a href="tel:07094408118" class="text-amber-900 font-bold underline">070-9440-8118</a><br><span class="text-[11px] text-gray-500">※お問い合わせは原則として「予約フォーム」より受付けております。</span></dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">問い合わせ先メールアドレス</dt><dd class="sm:col-span-2 mt-1 sm:mt-0"><a href="mailto:admin@chocomoka.com" class="text-amber-900 font-bold underline">admin@chocomoka.com</a></dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">ホームページURL</dt><dd class="sm:col-span-2 mt-1 sm:mt-0"><a href="https://chocomoka.com" target="_blank" rel="noopener noreferrer" class="text-amber-900 font-bold underline">https://chocomoka.com</a></dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">販売価格（サービス料金）</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-1"><p>各サービス・メニューページに記載している価格（消費税込み）に準じます。</p><p>・ペットシッティング：1回 ￥3,300（税込）～</p><p>・プレミアムホテル：24時間 ￥4,400（税込）～</p><p>・24時間お泊りシッター：￥9,900（税込）</p><p>・ドッグウォーカー（散歩代行）：30分 ￥1,650（税込）～</p><p>・初回カルテ作成料（対面打合せ）：￥2,200（税込）</p></dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">サービス料金以外に必要な費用</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-1"><p>・出張料金: 当店より片道5kmを超える場合、5kmごとに￥550（税込）加算</p><p>・有料道路・駐車場代: 実費が必要な場合</p><p>・オプション料金: 歯磨き・肉球ケア（各￥550）、ドッグラン利用代行等</p><p>・インターネット接続・通信料・通話代: お客様のご負担となります。</p></dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">支払方法</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-1"><p>・事前決済（ネット予約）: クレジットカード決済（Square決済等）</p><p>・対面決済: クレジットカード、電子マネー、QRコード決済、現金</p></dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">お支払い時期</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-1"><p>・事前ネット予約: 予約申し込み完了時に決済処理が行われます。</p><p class="text-amber-900 font-bold">※【初回】ご予約・事前打合せおよび初回サービスご利用時のお支払い方法は、クレジットカード決済をお願いいたします。</p><p>・対面決済: サービス提供当日（ご利用前）にお支払いいただきます。</p></dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">サービス提供の時期</dt><dd class="sm:col-span-2 mt-1 sm:mt-0">事前打ち合わせ（初回）の完了後、ご予約いただいた日時および期間においてサービスを提供いたします。</dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">キャンセル・変更について</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-1.5"><p><strong class="underline">キャンセル手続き</strong>: 変更・キャンセルは「予約サイト」または「店舗電話番号(<a href="tel:07094408118" class="text-amber-900 underline">070-9440-8118</a>)宛のSMS」にて受け付けます。トラブル防止のため、お電話でのキャンセル受付は行いません。</p><p><strong class="underline">キャンセル料</strong>:<br>・予約日前日 13:00まで: 無料<br>・予約日前日 13:00以降〜19:00まで: 予約サービス料金の 50%<br>・予約日前日 19:00以降、当日キャンセル、連絡なしの無断キャンセル(ノーショー): 予約サービス料金の 100%</p><p><strong class="underline">遅刻に関する規定</strong>:<br>・10分以上遅れる場合は必ずSMSにてご連絡ください。<br>・連絡なく15分以上経過した場合は無断キャンセル扱いとし、100%のキャンセル料が発生します。<br>・ご予約時間を過ぎてご来店・ご訪問された場合、サービス時間を短縮させていただく場合があります(返金不可)。</p></dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">返金について</dt><dd class="sm:col-span-2 mt-1 sm:mt-0">役務（サービス）の性質上、サービス提供完了後の返金は応じられません。<br>万が一、当店の過失により提供内容に不備が生じた場合は、法令および加入保険（賠償責任保険）の範囲内で迅速に対応いたします。</dd></div>
+                            <div class="py-2.5 sm:grid sm:grid-cols-3 sm:gap-4"><dt class="text-amber-950 font-extrabold">第一種動物取扱業標識</dt><dd class="sm:col-span-2 mt-1 sm:mt-0 space-y-0.5"><p>・氏名（事業者名）: 齋藤 健太郎（チョコ＆モカ）</p><p>・事業所の名称: チョコ＆モカ</p><p>・事業所の所在地: 大阪府高石市高師浜４丁目８−１６</p><p>・第一種動物取扱業の種別: 保管</p><p>・登録番号: 大阪府第5186ー2号</p><p>・登録年月日: 令和8年4月7日</p><p>・有効期間の末日: 令和13年4月6日</p><p>・動物取扱責任者: 齋藤 健太郎</p></dd></div>
+                        </dl>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
 
     <!-- フッター -->
     <footer class="bg-amber-950 text-amber-200 py-6 text-center text-xs">
         <div class="max-w-4xl mx-auto px-4 space-y-2">
-            <div class="flex justify-center gap-4 font-bold text-amber-300">
+            <div class="flex flex-wrap justify-center gap-4 font-bold text-amber-300">
                 <a href="index.html" class="hover:underline">ペットホテルTOP</a>
                 <a href="save_blog.html" class="hover:underline">飼い主様の声一覧</a>
                 <a href="school.html" class="hover:underline">しつけ教室・社会化</a>
@@ -1081,20 +1192,29 @@
         </div>
     </footer>
 
-    <!-- 追随ボトムバー -->
+    <!-- 追随ボトムバー（軽量インラインSVGで外部Iconフォント読込ゼロ化） -->
     <div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-amber-200 p-2 shadow-2xl">
         <div class="max-w-4xl mx-auto flex justify-center items-center gap-2">
-            <a href="https://www.instagram.com/pet_hotel_osaka_sakai_izumi/" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[42px]"><i class="fa-brands fa-instagram"></i> Instagram</a>
-            <button onclick="openModal()" class="flex-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[42px]"><i data-lucide="sparkles" class="w-3.5 h-3.5"></i> 【初回】予約</button>
-            <a href="https://chocomoka.square.site" target="_blank" rel="noopener noreferrer" class="flex-1 bg-amber-900 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[42px]"><i data-lucide="repeat" class="w-3.5 h-3.5"></i> リピーター</a>
+            <a href="https://www.instagram.com/pet_hotel_osaka_sakai_izumi/" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px]">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                Instagram
+            </a>
+            <button type="button" onclick="openModal()" class="flex-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px] active:scale-95 transition">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+                【初回】予約
+            </button>
+            <a href="https://chocomoka.square.site" target="_blank" rel="noopener noreferrer" class="flex-1 bg-amber-900 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px]">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+                リピーター
+            </a>
         </div>
     </div>
 
     <!-- 初回予約モーダル -->
-    <div id="firstTimeModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+    <div id="firstTimeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-3xl max-w-lg w-full p-6 relative shadow-2xl space-y-4">
-            <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-400 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="閉じる"><i data-lucide="x" class="w-5 h-5"></i></button>
-            <h3 class="text-lg font-black text-amber-950">初回ご利用者様へのお願い（事前打合せ）</h3>
+            <button type="button" onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center font-bold text-lg" aria-label="閉じる">✕</button>
+            <h3 id="modalTitle" class="text-lg font-black text-amber-950">初回ご利用者様へのお願い（事前打合せ）</h3>
             <p class="text-xs text-gray-600 leading-relaxed">安全確保のため、初回お預かり前にご自宅での事前打ち合わせ（初回カルテ作成料 ￥2,200税込）を行っております。</p>
             <label class="flex items-center gap-2 bg-amber-50 p-3 rounded-xl border border-amber-200 text-xs font-bold cursor-pointer">
                 <input type="checkbox" id="agreeCheckbox" onchange="toggleSubmitButton()" class="w-4 h-4 shrink-0">
@@ -1131,8 +1251,7 @@
 
         function extractPlainSummary(htmlStr, maxLen = 65) {
             if (!htmlStr) return '';
-            const doc = new DOMParser().parseFromString(htmlStr, 'text/html');
-            const text = (doc.body.textContent || '').replace(/\s+/g, ' ').trim();
+            const text = String(htmlStr).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
             return text.length > maxLen ? text.substring(0, maxLen) + '...' : text;
         }
 
@@ -1172,18 +1291,12 @@
                 publishedAt: "2026-10-18T10:00:00Z",
                 title: "【お得な特典】お知り合い紹介キャンペーンのご案内",
                 summary: "ご紹介いただいた飼い主様＆お知り合いに次回使える特別割引特典をプレゼント！詳しくはこちら。",
-                img: "11.webp",
+                img: "chocomoka_new_year.webp",
                 fallbackImg: "11.jpg"
             }
         ];
 
         let fetchedArticles = LOCAL_BLOG_ARTICLES;
-
-        document.addEventListener('DOMContentLoaded', function() {
-            lucide.createIcons();
-            generateWeeklyAvailability();
-            loadMicroCMSArticles();
-        });
 
         function generateWeeklyAvailability() {
             const gridContainer = document.getElementById('availability-grid');
@@ -1199,12 +1312,14 @@
                 { code: '〇', label: '残り2枠', color: 'text-emerald-600' },
                 { code: '×', label: '満室', color: 'text-red-600' }
             ];
+            let html = '';
             for (let i = 0; i < 7; i++) {
                 const d = new Date(now);
                 d.setDate(now.getDate() + i);
                 const st = baseStatuses[i];
-                gridContainer.insertAdjacentHTML('beforeend', `<div class="bg-white p-1.5 rounded-xl border border-amber-200"><div class="text-[9px] sm:text-[10px] text-gray-600">${d.getMonth()+1}/${d.getDate()}(${dayNames[d.getDay()]})</div><div class="${st.color} text-xs sm:text-sm font-black my-0.5">${st.code}</div><div class="text-[8px] sm:text-[9px] ${st.color} truncate">${st.label}</div></div>`);
+                html += `<div class="bg-white p-1.5 rounded-xl border border-amber-200"><div class="text-[9px] sm:text-[10px] text-gray-600">${d.getMonth()+1}/${d.getDate()}(${dayNames[d.getDay()]})</div><div class="${st.color} text-xs sm:text-sm font-black my-0.5">${st.code}</div><div class="text-[8px] sm:text-[9px] ${st.color} truncate">${st.label}</div></div>`;
             }
+            gridContainer.innerHTML = html;
         }
 
         async function loadMicroCMSArticles() {
@@ -1263,7 +1378,6 @@
         function renderBlogCards(filterCategory) {
             const grid = document.getElementById('blog-grid');
             if (!grid) return;
-            grid.innerHTML = '';
 
             const filtered = fetchedArticles.filter(item => {
                 if (filterCategory === 'all') return true;
@@ -1275,6 +1389,7 @@
                 return;
             }
 
+            let html = '';
             filtered.forEach((article) => {
                 const isNew = isNewArticle(article.publishedAt);
 
@@ -1283,8 +1398,8 @@
                 else if (article.category.includes("ケア") || article.category.includes("その他")) badgeColor = "bg-blue-600";
                 else if (article.category.includes("社会化") || article.category.includes("しつけ")) badgeColor = "bg-emerald-600";
 
-                const newBadgeImg = isNew ? `<span class="absolute top-2 right-2 bg-red-600 text-white text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-full shadow-md border border-white animate-pulse z-10">NEW</span>` : '';
-                const newBadgeInline = isNew ? `<span class="bg-red-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded shadow-sm animate-pulse shrink-0">NEW</span>` : '';
+                const newBadgeImg = isNew ? `<span class="absolute top-2 right-2 bg-red-600 text-white text-[9px] sm:text-[10px] font-black px-2 py-0.5 rounded-full shadow-md border border-white z-10">NEW</span>` : '';
+                const newBadgeInline = isNew ? `<span class="bg-red-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded shadow-sm shrink-0">NEW</span>` : '';
 
                 const safeTitle = escapeHTML(article.title);
                 const safeCategory = escapeHTML(article.category);
@@ -1294,7 +1409,7 @@
                 const safeFallback = escapeHTML(sanitizeImageUrl(article.fallbackImg, '12.jpg'));
                 const articleUrl = `article.html?id=${encodeURIComponent(article.id)}`;
 
-                const cardHtml = `
+                html += `
                     <a href="${articleUrl}" class="bg-white rounded-2xl overflow-hidden border ${isNew ? 'border-red-300 ring-1 ring-red-200' : 'border-choco-200'} shadow-sm hover:shadow-md transition flex flex-row md:flex-col group active:bg-amber-50/50">
                         <div class="relative w-28 sm:w-36 md:w-full h-auto md:h-44 bg-amber-100 shrink-0 overflow-hidden">
                             <span class="hidden md:inline-block absolute top-3 left-3 ${badgeColor} text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow z-10">${safeCategory}</span>
@@ -1316,14 +1431,13 @@
                                 </p>
                             </div>
                             <span class="inline-flex items-center gap-1 text-emerald-700 font-bold text-[11px] sm:text-xs mt-1.5 md:mt-3 group-hover:underline">
-                                記事を読む <i data-lucide="arrow-right" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+                                記事を読む →
                             </span>
                         </div>
                     </a>
                 `;
-                grid.insertAdjacentHTML('beforeend', cardHtml);
             });
-            lucide.createIcons();
+            grid.innerHTML = html;
         }
 
         function filterBlog(category) {
@@ -1356,7 +1470,15 @@
             btn.className = cb.checked ? 'block w-full bg-orange-500 hover:bg-orange-600 text-white font-extrabold py-3 rounded-xl text-center text-sm shadow-md' : 'block w-full bg-gray-300 text-white font-extrabold py-3 rounded-xl text-center pointer-events-none text-sm';
         }
 
-        document.getElementById('firstTimeModal')?.addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+        document.addEventListener('DOMContentLoaded', function() {
+            generateWeeklyAvailability();
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(() => loadMicroCMSArticles(), { timeout: 1500 });
+            } else {
+                setTimeout(loadMicroCMSArticles, 100);
+            }
+            document.getElementById('firstTimeModal')?.addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+        });
     </script>
 </body>
 </html>
