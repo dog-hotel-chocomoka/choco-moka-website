@@ -3,27 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#3D2010">
+    <meta name="format-detection" content="telephone=no">
     
     <!-- 記事ごとにJavaScriptで動的に上書きされる基本メタタグ -->
     <title id="meta-title">プロトレーナーの犬のしつけ・社会化コラム｜小型犬専門 チョコ＆モカ</title>
-    <meta id="meta-description" name="description" content="堺市・高石市・和泉市の小型犬専門の社会化教室＆ペットホテル「チョコ＆モカ」のプロトレーナーによるコラム記事。パピー社会化や無駄吠え・ケア方法を詳しく解説します。">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta id="meta-description" name="description" content="堺市・高石市・和泉市・大阪狭山市・岸和田市の小型犬専門の社会化教室＆ペットホテル「チョコ＆モカ」のプロトレーナーによるコラム記事。パピー社会化や無駄吠え・ケア方法を詳しく解説します。">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link id="meta-canonical" rel="canonical" href="https://chocomoka.com/article.html">
 
-    <!-- OGP -->
+    <!-- OGP & Twitter Cards -->
     <meta property="og:type" content="article">
     <meta id="og-title" property="og:title" content="プロトレーナーの犬のしつけ・社会化コラム｜小型犬専門 チョコ＆モカ">
-    <meta id="og-description" property="og:description" content="堺市・高石市・和泉市の小型犬専門の社会化教室＆ペットホテル「チョコ＆モカ」の公式コラム。">
+    <meta id="og-description" property="og:description" content="高石市から車約30分圏内（堺市・和泉市・大阪狭山市・岸和田市・大阪市南部）の小型犬専門の社会化教室＆ペットホテル「チョコ＆モカ」の公式コラム。">
     <meta id="og-url" property="og:url" content="https://chocomoka.com/article.html">
     <meta property="og:site_name" content="小型犬専門の社会化教室＆ペットホテル チョコ＆モカ">
-    <meta id="og-image" property="og:image" content="https://chocomoka.com/12.jpg">
+    <meta id="og-image" property="og:image" content="https://chocomoka.com/chocomoka_new_year.webp">
     <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta id="twitter-title" name="twitter:title" content="プロトレーナーの犬のしつけ・社会化コラム｜小型犬専門 チョコ＆モカ">
+    <meta id="twitter-description" name="twitter:description" content="小型犬専門の社会化教室＆ペットホテル「チョコ＆モカ」の公式コラム。">
+    <meta id="twitter-image" name="twitter:image" content="https://chocomoka.com/chocomoka_new_year.webp">
 
-    <!-- CDN & フォント -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- LCP最速読み込み＆外部接続事前確立 -->
+    <link rel="preload" as="image" href="chocomoka-pet-hotel-dog-training-takaishi-sakai-logo.webp" fetchpriority="high">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://chocomoka.microcms.io">
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://maps.googleapis.com">
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
+
+    <!-- 静的ビルド済み軽量CSS（外部Tailwind CDN・Iconフォント完全廃止でLCP/INP/CLS最適化） -->
+    <link rel="stylesheet" href="style.min.css">
+
+    <!-- 記事本文スタイル＆高速描画補完CSS -->
+    <style>
+        .cv-auto { content-visibility: auto; contain-intrinsic-size: auto 700px; }
+        .article-body h2 { font-size: 1.25rem; font-weight: 800; color: #3D2010; margin-top: 1.75rem; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 2px solid #FDE68A; }
+        .article-body h3 { font-size: 1.1rem; font-weight: 800; color: #522F1B; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+        .article-body p { margin-bottom: 1rem; line-height: 1.85; }
+        .article-body ul, .article-body ol { margin-bottom: 1rem; padding-left: 1.25rem; }
+        .article-body ul { list-style-type: disc; }
+        .article-body ol { list-style-type: decimal; }
+        .article-body img { border-radius: 1rem; margin: 1.25rem auto; max-width: 100%; height: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    </style>
+
+    <!-- 非同期Webフォント読み込み（レンダーブロッキング解消） -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet"></noscript>
 
     <!-- 基本JSON-LD（記事読み込み後にBlogPosting・BreadcrumbListを動的に挿入） -->
     <script id="dynamic-jsonld" type="application/ld+json">
@@ -41,71 +70,50 @@
         "name": "小型犬専門の社会化教室＆ペットホテル チョコ＆モカ",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://chocomoka.com/logo.webp"
+          "url": "https://chocomoka.com/chocomoka-pet-hotel-dog-training-takaishi-sakai-logo.webp"
         }
       }
     }
     </script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        choco: { 50: '#FDF8F5', 100: '#F7ECE1', 200: '#EBD8C5', 300: '#D9BAA0', 400: '#C29878', 500: '#A47551', 600: '#8A5A38', 700: '#6E4327', 800: '#522F1B', 900: '#3D2010', 950: '#261208' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'M PLUS Rounded 1c', 'Noto Sans JP', sans-serif; color: #3D2010; background-color: #FAF6F0; -webkit-tap-highlight-color: transparent; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .article-body h2 { font-size: 1.25rem; font-weight: 900; color: #3D2010; margin-top: 1.75rem; margin-bottom: 0.75rem; padding-bottom: 0.4rem; border-bottom: 2px solid #FDE68A; }
-        .article-body h3 { font-size: 1.1rem; font-weight: 800; color: #522F1B; margin-top: 1.25rem; margin-bottom: 0.5rem; }
-        .article-body p { margin-bottom: 1rem; line-height: 1.85; }
-        .article-body ul, .article-body ol { margin-bottom: 1rem; padding-left: 1.25rem; }
-        .article-body ul { list-style-type: disc; }
-        .article-body ol { list-style-type: decimal; }
-        .article-body img { border-radius: 1rem; margin: 1.25rem auto; max-width: 100%; height: auto; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    </style>
 </head>
 <body class="antialiased leading-relaxed pb-24">
 
-    <!-- 共通ヘッダー -->
+    <!-- 共通ヘッダー（NAP統一・インラインSVG化） -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex justify-between items-center gap-2">
             <a href="index.html" class="flex items-center space-x-2 shrink-0 group text-left py-1">
-                <img src="logo.webp" alt="小型犬専門の社会化教室＆ペットホテル チョコ＆モカ ロゴ" class="h-10 sm:h-12 w-auto object-contain" fetchpriority="high" decoding="async" onerror="this.onerror=null; this.src='logo.jpg';">
+                <img src="chocomoka-pet-hotel-dog-training-takaishi-sakai-logo.webp" alt="堺市・高石市・和泉市・大阪狭山市・岸和田市の小型犬専門の社会化教室＆ペットホテル チョコ＆モカ ロゴ" width="48" height="48" class="h-10 sm:h-12 w-auto object-contain" fetchpriority="high" decoding="sync" onerror="this.onerror=null; this.src='logo.jpg';">
                 <div class="min-w-0">
                     <p class="text-[9px] sm:text-xs font-bold text-amber-900 leading-none mb-0.5 truncate">小型犬専門の社会化教室＆ペットホテル</p>
-                    <span class="font-black text-base sm:text-xl text-amber-900 tracking-tight leading-none block">チョコ＆モカ</span>
+                    <span class="font-extrabold text-base sm:text-xl text-amber-900 tracking-tight leading-none block">チョコ＆モカ</span>
                 </div>
             </a>
             
-            <nav class="hidden md:flex flex-1 justify-center items-center space-x-2 text-xs font-bold">
+            <nav aria-label="メインナビゲーション" class="hidden md:flex flex-1 justify-center items-center space-x-2 text-xs font-bold">
                 <a href="index.html" class="bg-amber-800 hover:bg-amber-900 text-white px-4 py-2 rounded-full transition shadow-sm flex items-center gap-1.5">
-                    <i data-lucide="hotel" class="w-4 h-4"></i> ペットホテル（TOP）
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 22v-6.57"/><path d="M12 11h.01"/><path d="M12 7h.01"/><path d="M14 15.43V22"/><path d="M15 16a5 5 0 0 0-6 0"/><path d="M16 11h.01"/><path d="M16 7h.01"/><path d="M8 11h.01"/><path d="M8 7h.01"/><rect x="4" y="2" width="16" height="20" rx="2"/></svg>
+                    ペットホテル（TOP）
                 </a>
                 <a href="school.html" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-full transition shadow-sm flex items-center gap-1.5">
-                    <i data-lucide="graduation-cap" class="w-4 h-4"></i> しつけ教室・社会化
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                    しつけ教室・幼稚園
                 </a>
                 <a href="sitter.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition shadow-sm flex items-center gap-1.5">
-                    <i data-lucide="home" class="w-4 h-4"></i> ペットシッター・散歩代行
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                    ペットシッター・散歩代行
                 </a>
             </nav>
 
-            <button onclick="openModal()" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold text-xs px-3.5 py-2 rounded-full shadow shrink-0">
+            <button type="button" onclick="openModal()" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold text-xs px-3.5 py-2 rounded-full shadow shrink-0 active:scale-95 transition">
                 【初回】予約・相談
             </button>
         </div>
 
-        <div class="md:hidden bg-amber-50/90 border-t border-amber-200 px-2 py-1.5 flex justify-center gap-1.5 overflow-x-auto no-scrollbar text-[11px] font-black">
+        <nav aria-label="モバイルナビゲーション" class="md:hidden bg-amber-50/90 border-t border-amber-200 px-2 py-1.5 flex justify-center gap-1.5 overflow-x-auto no-scrollbar text-[11px] font-extrabold">
             <a href="index.html" class="bg-white text-amber-900 border border-amber-300 px-3 py-1 rounded-full shrink-0">🏨 ペットホテル</a>
-            <a href="school.html" class="bg-white text-emerald-800 border border-emerald-300 px-3 py-1 rounded-full shrink-0">🏫 しつけ教室</a>
+            <a href="school.html" class="bg-white text-emerald-800 border border-emerald-300 px-3 py-1 rounded-full shrink-0">🏫 しつけ教室・幼稚園</a>
             <a href="sitter.html" class="bg-white text-blue-800 border border-blue-300 px-3 py-1 rounded-full shrink-0">🐾 ペットシッター</a>
-        </div>
+        </nav>
     </header>
 
     <!-- パンくずリスト -->
@@ -121,7 +129,7 @@
 
     <!-- メイン記事コンテンツ -->
     <main class="max-w-3xl mx-auto px-4 py-8 sm:py-12">
-        <article id="article-container" class="bg-white rounded-3xl p-5 sm:p-10 shadow-md border border-amber-200">
+        <article id="article-container" class="bg-white rounded-3xl p-5 sm:p-10 shadow-md border border-amber-200 min-h-[420px]">
             <!-- ローディング表示 -->
             <div class="animate-pulse space-y-4">
                 <div class="h-6 bg-amber-100 rounded-full w-28"></div>
@@ -137,56 +145,57 @@
 
         <!-- カテゴリー連動型CTAボックス -->
         <div id="service-cta-box" class="mt-8 bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-6 sm:p-8 border-2 border-amber-300 shadow-sm text-center space-y-4">
-            <span class="inline-block bg-amber-900 text-white text-[11px] font-bold px-3 py-1 rounded-full">堺市・高石市・和泉市 送迎・出張対応</span>
-            <h2 id="cta-heading" class="text-base sm:text-xl font-black text-amber-950">愛犬の社会化・お預かりはお気軽にご相談ください</h2>
+            <span class="inline-block bg-amber-900 text-white text-[10px] sm:text-xs font-extrabold px-3.5 py-1 rounded-full">高石市から車30分圏内（堺市・和泉市・大阪狭山市・岸和田市・大阪市南部）送迎・出張対応</span>
+            <h2 id="cta-heading" class="text-base sm:text-xl font-extrabold text-amber-950">愛犬の社会化・お預かりはお気軽にご相談ください</h2>
             <p id="cta-desc" class="text-xs sm:text-sm text-gray-700 font-medium leading-relaxed">
-                大阪府高石市高師浜（高師浜駅徒歩3分）の「チョコ＆モカ」では、1日3組限定のペットホテル・犬のしつけ教室・ペットシッターを通じて愛犬と飼い主様の暮らしをサポートしています。
+                大阪府高石市高師浜（高師浜駅徒歩3分）の「チョコ＆モカ」では、1日3組限定のペットホテル・犬のしつけ教室・幼稚園・ペットシッターを通じて愛犬と飼い主様の暮らしをサポートしています。
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-3 pt-2">
-                <button onclick="openModal()" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold text-xs sm:text-sm px-6 py-3.5 rounded-full shadow-md">
-                    【初回】事前打合せ・カウンセリングを予約する
+                <button type="button" onclick="openModal()" class="inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold text-xs sm:text-sm px-6 py-3.5 rounded-full shadow-md active:scale-95 transition">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+                    <span>【初回】事前打合せ・カウンセリングを予約する</span>
                 </button>
-                <a id="cta-service-link" href="index.html" class="bg-white hover:bg-amber-50 text-amber-950 border border-amber-300 font-extrabold text-xs sm:text-sm px-6 py-3.5 rounded-full shadow-sm">
+                <a id="cta-service-link" href="index.html" class="bg-white hover:bg-amber-50 text-amber-950 border border-amber-300 font-extrabold text-xs sm:text-sm px-6 py-3.5 rounded-full shadow-sm transition">
                     サービス詳細・料金を見る →
                 </a>
             </div>
         </div>
 
         <!-- 関連記事セクション -->
-        <section id="related-section" class="mt-12">
-            <h2 class="text-base sm:text-xl font-black text-choco-950 mb-4 flex items-center gap-2">
-                <i data-lucide="book-open" class="w-5 h-5 text-emerald-700"></i>
+        <section id="related-section" class="cv-auto mt-12">
+            <h2 class="text-base sm:text-xl font-extrabold text-choco-950 mb-4 flex items-center gap-2">
+                <svg class="w-5 h-5 text-emerald-700 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
                 <span>あわせて読みたい関連記事</span>
             </h2>
             <div id="related-articles-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
         </section>
     </main>
 
-    <!-- 店舗情報・アクセス（NAP統一） -->
+    <!-- 店舗情報・アクセス（NAP統一・高速ロードマップ搭載・Googleマップ外部ボタン削除） -->
     <section id="access" class="py-10 sm:py-12 bg-white border-t border-b border-amber-100">
         <div class="max-w-5xl mx-auto px-4">
             <div class="text-center mb-6">
                 <span class="bg-blue-100 text-blue-900 text-xs font-bold px-3 py-1 rounded-full">Google Maps &amp; Access</span>
-                <h2 class="text-lg sm:text-2xl font-black text-amber-950 mt-2">店舗情報・アクセス（堺市・高石市・和泉市エリア）</h2>
+                <h2 class="text-lg sm:text-2xl font-extrabold text-amber-950 mt-2 leading-snug">
+                    店舗情報・アクセス<br class="sm:hidden">（高石市から車30分圏内対応）
+                </h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-amber-50/40 p-5 rounded-2xl border border-amber-200 flex flex-col justify-between space-y-4 shadow-sm">
+                <div class="bg-amber-50/40 p-5 rounded-2xl border border-amber-200 shadow-sm">
                     <dl class="space-y-2.5 text-xs sm:text-sm">
                         <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">店名</dt><dd class="font-bold">小型犬専門の社会化教室＆ペットホテル チョコ＆モカ</dd></div>
                         <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">住所</dt><dd class="font-bold">〒592-0004 大阪府高石市高師浜４丁目８−１６<br><span class="text-xs font-normal text-gray-600">（南海高師浜線「高師浜駅」徒歩3分 / 駐車場1台）</span></dd></div>
-                        <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">対応エリア</dt><dd class="font-bold text-amber-950">堺市・高石市・和泉市・泉大津市・大阪市（送迎・出張対応）</dd></div>
+                        <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">対応エリア</dt><dd class="font-bold text-amber-950 leading-relaxed">高石市・堺市全域・和泉市・大阪狭山市（狭山）・泉大津市・忠岡町・岸和田市・貝塚市・泉佐野市・松原市・富田林市西部・羽曳野市西部・大阪市（住之江区・住吉区・阿倍野区・浪速区・天王寺区・東住吉区・平野区）</dd></div>
                         <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">電話番号</dt><dd><a href="tel:07094408118" class="font-bold text-amber-900 underline">070-9440-8118</a></dd></div>
                         <div class="flex border-b border-amber-100 pb-2"><dt class="w-24 font-bold text-amber-900 shrink-0">営業時間</dt><dd>9:00〜19:00（不定休）</dd></div>
                         <div class="flex"><dt class="w-24 font-bold text-amber-900 shrink-0">動物取扱業</dt><dd>大阪府第5186ー2号（保管）/ 責任者：齋藤 健太郎</dd></div>
                     </dl>
-                    <div class="pt-2 border-t border-amber-200 flex flex-col sm:flex-row gap-2">
-                        <a href="https://www.google.com/maps/search/?api=1&query=小型犬専門の社会化教室＆ペットホテル+チョコ＆モカ+大阪府高石市高師浜４丁目８−１６" target="_blank" rel="noopener noreferrer" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-2.5 px-3 rounded-xl text-center shadow flex items-center justify-center gap-1.5 transition">
-                            <i class="fa-solid fa-location-dot"></i> Googleマップで経路・詳細を見る
-                        </a>
-                    </div>
                 </div>
-                <div class="h-72 md:h-auto rounded-2xl overflow-hidden border border-amber-200 shadow-sm">
-                    <iframe title="小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 地図" src="https://www.google.com/maps?q=大阪府高石市高師浜４丁目８−１６+小型犬専門の社会化教室＆ペットホテル+チョコ＆モカ&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div id="map-container" class="h-72 md:h-auto min-h-[280px] rounded-2xl overflow-hidden border border-amber-200 shadow-sm bg-amber-100/50 flex flex-col items-center justify-center p-4 text-center">
+                    <p class="text-xs font-bold text-amber-950 mb-2">📍 大阪府高石市高師浜４丁目８−１６（高師浜駅徒歩3分）</p>
+                    <button type="button" onclick="mountGoogleMap()" class="bg-white hover:bg-amber-50 text-amber-900 border border-amber-300 font-extrabold text-xs px-4 py-2 rounded-full shadow-sm transition">
+                        🗺️ インタラクティブ地図を表示する
+                    </button>
                 </div>
             </div>
         </div>
@@ -195,9 +204,10 @@
     <!-- フッター（NAP統一） -->
     <footer class="bg-amber-950 text-amber-200 py-6 text-center text-xs">
         <div class="max-w-4xl mx-auto px-4 space-y-2">
-            <div class="flex justify-center gap-4 font-bold text-amber-300">
+            <div class="flex flex-wrap justify-center gap-4 font-bold text-amber-300">
                 <a href="index.html" class="hover:underline">ペットホテルTOP</a>
-                <a href="school.html" class="hover:underline">しつけ教室・社会化</a>
+                <a href="save_blog.html" class="hover:underline">飼い主様の声一覧</a>
+                <a href="school.html" class="hover:underline">しつけ教室・幼稚園</a>
                 <a href="sitter.html" class="hover:underline">ペットシッター・散歩代行</a>
             </div>
             <p class="font-bold text-white">小型犬専門の社会化教室＆ペットホテル チョコ＆モカ</p>
@@ -206,20 +216,29 @@
         </div>
     </footer>
 
-    <!-- 追随ボトムバー -->
+    <!-- 追随ボトムバー（インラインSVG化） -->
     <div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-amber-200 p-2 shadow-2xl">
         <div class="max-w-4xl mx-auto flex justify-center items-center gap-2">
-            <a href="https://www.instagram.com/pet_hotel_osaka_sakai_izumi/" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[42px]"><i class="fa-brands fa-instagram"></i> Instagram</a>
-            <button onclick="openModal()" class="flex-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[42px]"><i data-lucide="sparkles" class="w-3.5 h-3.5"></i> 【初回】予約</button>
-            <a href="https://chocomoka.square.site" target="_blank" rel="noopener noreferrer" class="flex-1 bg-amber-900 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[42px]"><i data-lucide="repeat" class="w-3.5 h-3.5"></i> リピーター</a>
+            <a href="https://www.instagram.com/pet_hotel_osaka_sakai_izumi/" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px] active:scale-95 transition">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                Instagram
+            </a>
+            <button type="button" onclick="openModal()" class="flex-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px] active:scale-95 transition">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+                【初回】予約
+            </button>
+            <a href="https://chocomoka.square.site" target="_blank" rel="noopener noreferrer" class="flex-1 bg-amber-900 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px] active:scale-95 transition">
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+                リピーター
+            </a>
         </div>
     </div>
 
     <!-- 初回予約モーダル -->
-    <div id="firstTimeModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+    <div id="firstTimeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-3xl max-w-lg w-full p-6 relative shadow-2xl space-y-4">
-            <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-400 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="閉じる"><i data-lucide="x" class="w-5 h-5"></i></button>
-            <h3 class="text-lg font-black text-amber-950">初回ご利用者様へのお願い（事前打合せ）</h3>
+            <button type="button" onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center font-bold text-lg" aria-label="閉じる">✕</button>
+            <h3 id="modalTitle" class="text-lg font-extrabold text-amber-950">初回ご利用者様へのお願い（事前打合せ）</h3>
             <p class="text-xs text-gray-600 leading-relaxed">安全確保のため、初回ご利用前に事前打ち合わせ・カウンセリング（初回カルテ作成料 ￥2,200税込）を行っております。</p>
             <label class="flex items-center gap-2 bg-amber-50 p-3 rounded-xl border border-amber-200 text-xs font-bold cursor-pointer">
                 <input type="checkbox" id="agreeCheckbox" onchange="toggleSubmitButton()" class="w-4 h-4 shrink-0">
@@ -230,11 +249,6 @@
     </div>
 
     <script>
-        /**
-         * microCMS 公開用（GET専用）設定
-         * ※フロントエンドから直接呼び出すため、microCMS管理画面では必ず
-         *   「GET（コンテンツ取得）のみ許可」に設定したAPIキーを使用してください。
-         */
         const MICROCMS_CONFIG = {
             serviceDomain: 'chocomoka',
             apiKey: 'EDk7M5qdFvl2Dnj642LZD27KjDX9W6zZvoy5',
@@ -256,7 +270,7 @@
                 publishedAt: "2026-11-14T10:00:00Z",
                 title: "生後3ヶ月までに決まる！一生を左右する「パピー期社会化」の秘訣",
                 summary: "パピー期（社会化期）に様々な刺激や音、犬や人に慣れさせることがなぜ必要なのか？プロのトレーナーが分かりやすく解説します。",
-                img: "12.webp",
+                img: "dog-training-puppy-kindergarten-sakai-takaishi-izumi-chocomoka.webp",
                 fallbackImg: "12.jpg",
                 content: `
                     <p>子犬をお迎えしたばかりの飼い主様からよくいただくご相談が、「いつからお外に出していいの？」「他の犬と遊ばせるタイミングは？」という疑問です。</p>
@@ -265,7 +279,7 @@
                     </p>
                     <h2>なぜ生後3ヶ月までの社会化が重要なのか？</h2>
                     <p>この時期の子犬は好奇心が恐怖心を上回っており、新しい環境・音・他のワンちゃん・家族以外の人を柔軟に受け入れることができます。この時期に適切な経験を積むことで、成犬になってからの無駄吠えや噛み癖、分離不安を予防できます。</p>
-                    <p>チョコ＆モカでは、堺市・高石市・和泉市の飼い主様向けに、パピーが恐怖を感じないよう慎重に配慮しながら楽しくコミュニケーション能力を伸ばす社会化サポートを行っています。</p>
+                    <p>チョコ＆モカでは、高石市から車で約30分圏内（堺市・和泉市・大阪狭山市・岸和田市・泉大津市・貝塚市・泉佐野市・松原市・富田林市・羽曳野市・大阪市南部）の飼い主様向けに、パピーが恐怖を感じないよう慎重に配慮しながら楽しくコミュニケーション能力を伸ばす社会化サポートを行っています。</p>
                 `
             },
             {
@@ -275,7 +289,7 @@
                 publishedAt: "2026-11-01T10:00:00Z",
                 title: "嫌がる愛犬を「歯磨き好き」にするハズバンダリートレーニングとは？",
                 summary: "歯周病予防のための毎日の歯磨き。強引にやるのではなく、愛犬が自らお口を開けてくれる慣らし方のコツをお教えします。",
-                img: "heya.webp",
+                img: "heya.jpg",
                 fallbackImg: "heya.jpg",
                 content: `
                     <p>3歳以上の犬の約8割が歯周病予備軍と言われています。しかし、いきなり歯ブラシをお口に入れようとすると、多くのワンちゃんが嫌がってしまいます。</p>
@@ -291,7 +305,7 @@
                 publishedAt: "2026-10-18T10:00:00Z",
                 title: "【お得な特典】お知り合い紹介キャンペーンのご案内",
                 summary: "ご紹介いただいた飼い主様＆お知り合いに次回使える特別割引特典をプレゼント！詳しくはこちら。",
-                img: "11.webp",
+                img: "chocomoka_new_year.webp",
                 fallbackImg: "11.jpg",
                 content: `
                     <p>いつも「小型犬専門の社会化教室＆ペットホテル チョコ＆モカ」をご利用いただきありがとうございます。</p>
@@ -302,7 +316,6 @@
             }
         ];
 
-        // プレーンテキスト用HTMLエスケープ（XSS防止）
         function escapeHTML(str) {
             if (!str) return '';
             return String(str)
@@ -313,7 +326,14 @@
                 .replace(/'/g, '&#039;');
         }
 
-        // リッチエディタHTML用サニタイズ（危険なタグ・属性を除去）
+        function sanitizeImageUrl(url, fallback) {
+            if (!url || typeof url !== 'string') return fallback;
+            const trimmed = url.trim();
+            if (/^https:\/\/[a-zA-Z0-9.-]+/.test(trimmed)) return trimmed;
+            if (/^[a-zA-Z0-9._-]+\.(webp|jpg|jpeg|png|gif)$/i.test(trimmed)) return trimmed;
+            return fallback;
+        }
+
         function sanitizeHTML(dirtyHtml) {
             if (!dirtyHtml) return '';
             const parser = new DOMParser();
@@ -372,9 +392,12 @@
             document.getElementById('og-title').setAttribute('content', pageTitle);
             document.getElementById('og-description').setAttribute('content', article.summary);
             document.getElementById('og-url').setAttribute('content', articleUrl);
-            if (article.img && article.img.startsWith('http')) {
-                document.getElementById('og-image').setAttribute('content', article.img);
-            }
+            document.getElementById('twitter-title')?.setAttribute('content', pageTitle);
+            document.getElementById('twitter-description')?.setAttribute('content', article.summary);
+
+            const fullImgUrl = article.img.startsWith('http') ? article.img : `https://chocomoka.com/${article.img}`;
+            document.getElementById('og-image').setAttribute('content', fullImgUrl);
+            document.getElementById('twitter-image')?.setAttribute('content', fullImgUrl);
 
             const categoryUrl = (article.category.includes("社会化") || article.category.includes("しつけ"))
                 ? "https://chocomoka.com/school.html"
@@ -391,7 +414,7 @@
                         },
                         "headline": article.title,
                         "description": article.summary,
-                        "image": article.img.startsWith('http') ? article.img : `https://chocomoka.com/${article.img}`,
+                        "image": fullImgUrl,
                         "datePublished": article.publishedAt || new Date().toISOString(),
                         "dateModified": article.updatedAt || article.publishedAt || new Date().toISOString(),
                         "author": {
@@ -404,7 +427,7 @@
                             "name": "小型犬専門の社会化教室＆ペットホテル チョコ＆モカ",
                             "logo": {
                                 "@type": "ImageObject",
-                                "url": "https://chocomoka.com/logo.webp"
+                                "url": "https://chocomoka.com/chocomoka-pet-hotel-dog-training-takaishi-sakai-logo.webp"
                             }
                         }
                     },
@@ -445,19 +468,19 @@
             if (category.includes("社会化") || category.includes("しつけ")) {
                 catLinkEl.innerHTML = `<a href="school.html#column" class="hover:text-emerald-700 underline">社会化教室・しつけ教室コラム</a>`;
                 headingEl.textContent = "パピーの社会化・無駄吠え改善なら「犬のしつけ教室」へ";
-                descEl.textContent = "堺市・高石市・和泉市のご自宅まで送迎OK！1日お預かり社会化教室（犬の幼稚園）や初回カウンセリングで個別カルテを作成します。";
+                descEl.textContent = "高石市から車で約30分圏内（堺市・和泉市・大阪狭山市・岸和田市・泉大津市・貝塚市・泉佐野市・松原市・富田林市・羽曳野市・大阪市南部）のご自宅まで送迎OK！1日お預かり社会化教室（犬の幼稚園）や初回カウンセリングで個別カルテを作成します。";
                 btnLinkEl.href = "school.html";
-                btnLinkEl.textContent = "しつけ教室・社会化の詳細を見る →";
+                btnLinkEl.textContent = "しつけ教室・幼稚園の詳細を見る →";
             } else if (category.includes("シッター")) {
                 catLinkEl.innerHTML = `<a href="sitter.html#column" class="hover:text-blue-700 underline">ペットシッターコラム</a>`;
                 headingEl.textContent = "ご自宅でのお世話・お散歩代行なら「ペットシッター」へ";
-                descEl.textContent = "堺市・高石市・和泉市のご自宅へ有資格シッターが訪問！お留守番ケアやお散歩代行、シニア犬・猫ちゃんのお世話も承ります。";
+                descEl.textContent = "高石市から車で約30分圏内のご自宅へ有資格シッターが訪問！お留守番ケアやお散歩代行、シニア犬・多頭飼い・猫ちゃんのお世話も承ります。";
                 btnLinkEl.href = "sitter.html";
                 btnLinkEl.textContent = "ペットシッター・散歩代行を見る →";
             } else {
                 catLinkEl.innerHTML = `<a href="index.html#column" class="hover:text-amber-800 underline">ペットホテル・ケアコラム</a>`;
                 headingEl.textContent = "1日3組限定・24時間常駐の小型犬専門ペットホテル";
-                descEl.textContent = "堺市・高石市・和泉市のご自宅まで送迎対応！ケージに入れっぱなしにしないフリースペース型ホテルで大切にお預かりします。";
+                descEl.textContent = "高石市から車で約30分圏内のご自宅まで送迎対応！ケージに入れっぱなしにしないフリースペース型ホテルや1日1組限定24時間お泊りシッターで大切にお預かりします。";
                 btnLinkEl.href = "index.html";
                 btnLinkEl.textContent = "ペットホテルの詳細・料金を見る →";
             }
@@ -472,7 +495,7 @@
             const safeTitle = escapeHTML(article.title);
             const safeCategory = escapeHTML(article.category);
             const safeDate = escapeHTML(article.date);
-            const safeImg = escapeHTML(article.img);
+            const safeImg = escapeHTML(sanitizeImageUrl(article.img, '12.jpg'));
 
             container.innerHTML = `
                 <header class="mb-6 pb-6 border-b border-amber-100">
@@ -480,14 +503,14 @@
                         <span class="${badgeColor} text-white text-xs font-bold px-3 py-1 rounded-full">${safeCategory}</span>
                         <time datetime="${escapeHTML(article.publishedAt || '')}" class="text-xs font-bold text-gray-400">${safeDate}</time>
                     </div>
-                    <h1 class="text-xl sm:text-3xl font-black text-choco-950 leading-snug mb-4">${safeTitle}</h1>
+                    <h1 class="text-xl sm:text-3xl font-extrabold text-choco-950 leading-snug mb-4">${safeTitle}</h1>
                     <div class="flex items-center gap-2.5 text-xs text-gray-600 font-bold">
-                        <img src="kentaro.webp" alt="齋藤 健太郎" class="w-8 h-8 rounded-full object-cover border border-amber-300" onerror="this.onerror=null; this.src='kentaro.jpg';">
+                        <img src="kentaro.jpg" alt="齋藤 健太郎" width="32" height="32" class="w-8 h-8 rounded-full object-cover border border-amber-300" decoding="async">
                         <span>執筆：齋藤 健太郎（チョコ＆モカ オーナー／ドッグトレーナー）</span>
                     </div>
                 </header>
                 <div class="rounded-2xl overflow-hidden mb-6 border border-amber-100 bg-amber-50">
-                    <img src="${safeImg}" alt="${safeTitle}" class="w-full max-h-[420px] object-cover" onerror="this.onerror=null; this.src='${fallback}';">
+                    <img src="${safeImg}" alt="${safeTitle}" width="800" height="450" class="w-full max-h-[420px] object-cover" decoding="async" onerror="this.onerror=null; this.src='${fallback}';">
                 </div>
                 <div class="article-body text-sm sm:text-base text-gray-800 font-medium">
                     ${sanitizeHTML(article.content)}
@@ -500,17 +523,15 @@
             document.getElementById('breadcrumb-title').textContent = "記事が見つかりません";
             document.getElementById('article-container').innerHTML = `
                 <div class="text-center py-8 space-y-4">
-                    <p class="text-lg sm:text-xl font-black text-choco-950">お探しの記事が見つかりませんでした</p>
+                    <p class="text-lg sm:text-xl font-extrabold text-choco-950">お探しの記事が見つかりませんでした</p>
                     <p class="text-xs sm:text-sm text-gray-600">記事が削除されたか、URLが変更された可能性があります。</p>
                     <div class="pt-2">
                         <a href="index.html#column" class="inline-flex items-center gap-1.5 bg-amber-900 text-white font-extrabold text-xs sm:text-sm px-6 py-3 rounded-full shadow">
-                            <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                            <span>コラム一覧へ戻る</span>
+                            <span>← コラム一覧へ戻る</span>
                         </a>
                     </div>
                 </div>
             `;
-            lucide.createIcons();
         }
 
         function renderRelatedArticles(allArticles, currentId) {
@@ -526,7 +547,7 @@
 
             grid.innerHTML = others.map(item => `
                 <a href="article.html?id=${encodeURIComponent(item.id)}" class="bg-white rounded-2xl p-4 border border-amber-200 shadow-sm hover:shadow-md transition flex gap-3 items-center group">
-                    <img src="${escapeHTML(item.img)}" alt="${escapeHTML(item.title)}" class="w-20 h-20 rounded-xl object-cover shrink-0 bg-amber-100" loading="lazy" onerror="this.onerror=null; this.src='${escapeHTML(item.fallbackImg || '12.jpg')}';">
+                    <img src="${escapeHTML(sanitizeImageUrl(item.img, '12.jpg'))}" alt="${escapeHTML(item.title)}" width="80" height="80" class="w-20 h-20 rounded-xl object-cover shrink-0 bg-amber-100" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='${escapeHTML(item.fallbackImg || '12.jpg')}';">
                     <div class="min-w-0">
                         <span class="text-[10px] font-bold text-emerald-700 block mb-0.5">${escapeHTML(item.category)}</span>
                         <h3 class="text-xs sm:text-sm font-extrabold text-choco-950 line-clamp-2 group-hover:text-emerald-700 transition">${escapeHTML(item.title)}</h3>
@@ -535,12 +556,18 @@
             `).join('');
         }
 
+        function mountGoogleMap() {
+            const container = document.getElementById('map-container');
+            if (!container || container.dataset.loaded) return;
+            container.dataset.loaded = '1';
+            container.classList.remove('p-4', 'flex', 'flex-col', 'items-center', 'justify-center', 'text-center');
+            container.innerHTML = '<iframe title="小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 地図" src="https://maps.google.com/maps?q=大阪府高石市高師浜４丁目８−１６+小型犬専門の社会化教室＆ペットホテル+チョコ＆モカ&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;min-height:280px;" allowfullscreen="" decoding="async" referrerpolicy="no-referrer-when-downgrade" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>';
+        }
+
         async function initArticlePage() {
-            lucide.createIcons();
             const params = new URLSearchParams(window.location.search);
             const rawId = params.get('id') || "1";
 
-            // 不正なID文字列のブロック（英数字・ハイフン・アンダースコアのみ許可）
             if (!/^[a-zA-Z0-9_-]+$/.test(rawId)) {
                 renderNotFound();
                 renderRelatedArticles(LOCAL_FALLBACK_ARTICLES, "");
@@ -574,13 +601,12 @@
                             updatedAt: item.updatedAt,
                             title: item.title,
                             summary: item.summary || item.description || (item.content ? item.content.replace(/<[^>]*>?/gm, '').substring(0, 110) + '...' : ''),
-                            img: (item.eyecatch && item.eyecatch.url) ? item.eyecatch.url : "12.webp",
+                            img: (item.eyecatch && item.eyecatch.url) ? item.eyecatch.url : "12.jpg",
                             fallbackImg: "12.jpg",
                             content: item.content
                         };
                     });
 
-                    // microCMS内に該当IDがあれば表示、なければローカルフォールバックを確認
                     const target = mapped.find(a => a.id === rawId) || LOCAL_FALLBACK_ARTICLES.find(a => a.id === rawId);
                     if (target) {
                         renderArticle(target);
@@ -606,16 +632,48 @@
             }
         }
 
-        document.addEventListener('DOMContentLoaded', initArticlePage);
+        document.addEventListener('DOMContentLoaded', function() {
+            initArticlePage();
 
-        function openModal() { document.getElementById('firstTimeModal').classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
-        function closeModal() { document.getElementById('firstTimeModal').classList.add('hidden'); document.body.style.overflow = ''; }
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(mountGoogleMap, { timeout: 1000 });
+            } else {
+                setTimeout(mountGoogleMap, 150);
+            }
+
+            const mapTarget = document.getElementById('map-container');
+            if (mapTarget && 'IntersectionObserver' in window) {
+                const mapObserver = new IntersectionObserver((entries, obs) => {
+                    if (entries[0].isIntersecting) {
+                        mountGoogleMap();
+                        obs.disconnect();
+                    }
+                }, { rootMargin: '1200px' });
+                mapObserver.observe(mapTarget);
+            }
+
+            document.getElementById('firstTimeModal')?.addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeModal();
+            });
+        });
+
+        function openModal() {
+            document.getElementById('firstTimeModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('agreeCheckbox')?.focus();
+        }
+        function closeModal() {
+            document.getElementById('firstTimeModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
         function toggleSubmitButton() {
             const cb = document.getElementById('agreeCheckbox');
             const btn = document.getElementById('modalSubmitBtn');
             btn.className = cb.checked ? 'block w-full bg-orange-500 hover:bg-orange-600 text-white font-extrabold py-3 rounded-xl text-center text-sm shadow-md' : 'block w-full bg-gray-300 text-white font-extrabold py-3 rounded-xl text-center pointer-events-none text-sm';
         }
-        document.getElementById('firstTimeModal')?.addEventListener('click', function(e) { if (e.target === this) closeModal(); });
     </script>
 </body>
 </html>
