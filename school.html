@@ -253,7 +253,7 @@
           "@id": "https://chocomoka.com/school.html#webpage",
           "url": "https://chocomoka.com/school.html",
           "name": "堺市・高石市・和泉市・大阪狭山市・岸和田市の犬のしつけ教室・パピー社会化・幼稚園｜小型犬専門 チョコ＆モカ",
-          "dateModified": "2026-11-21",
+          "dateModified": "2026-11-22",
           "isPartOf": {"@id": "https://chocomoka.com/#organization"},
           "mainEntity": {"@id": "https://chocomoka.com/school.html#service"},
           "primaryImageOfPage": {
@@ -352,7 +352,7 @@
     </header>
 
     <main>
-        <!-- ① ヒーローセクション（LCP最速表示エリア・囲いなし文字色強調） -->
+        <!-- ① ヒーローセクション（LCP最速表示エリア・離脱防止の初回＆リピーター2段ボタン） -->
         <section class="bg-gradient-to-b from-emerald-50 to-teal-50/60 py-8 sm:py-14 border-b border-emerald-100">
             <div class="max-w-5xl mx-auto px-4 text-center">
                 <div class="inline-block bg-emerald-800 text-white text-[10px] sm:text-xs font-extrabold px-3.5 py-1.5 rounded-full mb-3 shadow-sm leading-snug">
@@ -394,10 +394,6 @@
                         <a href="https://chocomoka.square.site" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-amber-900 hover:bg-amber-950 text-white text-xs sm:text-base font-extrabold px-6 sm:px-8 py-3.5 rounded-full shadow-md min-h-[48px] active:scale-95 transition">
                             <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
                             <span>リピーター様のご予約はこちら（Square）</span>
-                        </a>
-
-                        <a href="#school-schedule-voice" class="w-full inline-flex items-center justify-center gap-1.5 bg-emerald-100/80 hover:bg-emerald-100 text-emerald-950 text-xs sm:text-sm font-extrabold px-5 py-3 rounded-full transition">
-                            <span>1日の過ごし方・体験談を見る ↓</span>
                         </a>
                     </div>
                 </div>
@@ -674,7 +670,7 @@
             </div>
         </section>
 
-        <!-- ④ しつけ教室メニュー・料金表 ＋ ご利用可能なお支払い方法 -->
+        <!-- ④ しつけ教室メニュー・料金表 ＋ ご利用可能なお支払い方法（ペットホテルページと同仕様） -->
         <section id="school-price" class="cv-auto py-10 sm:py-16 bg-white border-b border-emerald-100">
             <div class="max-w-4xl mx-auto px-4 space-y-6">
                 <div class="text-center">
@@ -741,45 +737,21 @@
                     <p class="text-gray-700 font-medium leading-relaxed">※高石市から車で約30分圏内（堺市全域・和泉市・大阪狭山市・泉大津市・忠岡町・岸和田市・貝塚市・泉佐野市・松原市・富田林市西部・羽曳野市西部・大阪市南部〜中心部）へ登園送迎に対応しております。駐車スペースがない場合のコインパーキング代および遠方での高速道路利用時は往復実費を頂戴いたします。</p>
                 </div>
 
-                <!-- ご利用可能なお支払い方法 -->
-                <div id="payment-methods" class="bg-amber-50/70 border-2 border-amber-300 rounded-2xl p-4 sm:p-6 space-y-3 shadow-sm">
-                    <div class="text-center space-y-1">
-                        <span class="inline-block bg-amber-800 text-white text-[10px] font-extrabold px-3 py-0.5 rounded-full">Payment Methods</span>
-                        <h3 class="text-sm sm:text-lg font-extrabold text-amber-950">💳 ご利用可能なお支払い方法</h3>
-                    </div>
-
-                    <figure class="rounded-xl overflow-hidden border border-amber-300 shadow-sm bg-white">
-                        <img src="chocomoka-dog-training-pet-hotel-payment-methods-takaishi-sakai.webp" alt="チョコ＆モカ ご利用可能なお支払い方法：クレジットカード（VISA・Mastercard・JCB・AMERICAN EXPRESS）、電子マネー（iD・QUICPay）、QRコード決済（PayPay・d払い・楽天ペイ・au PAY・メルペイ）、現金" width="1200" height="360" class="w-full h-auto object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_payment-methods_banner.webp';">
-                        <figcaption class="sr-only">
-                            ご利用可能なお支払い方法：クレジットカード（VISA・Mastercard・JCB・AMERICAN EXPRESS）、電子マネー（iD・QUICPay）、QRコード決済（PayPay・d払い・楽天ペイ・au PAY・メルペイ）、現金
+                <!-- ご利用可能なお支払い方法（ペットホテルページと同じ仕様に統一） -->
+                <div id="payment-methods" class="pt-2 max-w-3xl mx-auto">
+                    <figure class="rounded-2xl overflow-hidden border-2 border-amber-300 shadow-md bg-white">
+                        <img src="chocomoka-dog-training-pet-hotel-payment-methods-takaishi-sakai.webp" alt="ご利用可能なお支払い方法：クレジットカード（VISA・Mastercard・JCB・AMERICAN EXPRESS）、電子マネー（iD・QUICPay）、QRコード決済（PayPay・d払い・楽天ペイ・au PAY・メルペイ）、現金" width="1200" height="360" class="w-full h-auto object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_payment-methods_banner.webp';">
+                        <figcaption class="bg-amber-100/80 text-amber-950 text-[11px] sm:text-xs font-bold text-center py-2 px-3 border-t border-amber-200">
+                            💳 現金・クレジットカード（VISA/Mastercard/JCB/AMEX）・電子マネー（iD/QUICPay）・QR決済（PayPay/d払い/楽天ペイ/au PAY/メルペイ）対応
                         </figcaption>
                     </figure>
-
-                    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-choco-950 pt-1">
-                        <div class="bg-white px-3 py-2 rounded-xl border border-amber-200">
-                            <dt class="font-extrabold text-amber-900">・クレジットカード</dt>
-                            <dd class="font-medium text-gray-700">VISA / Mastercard / JCB / AMERICAN EXPRESS</dd>
-                        </div>
-                        <div class="bg-white px-3 py-2 rounded-xl border border-amber-200">
-                            <dt class="font-extrabold text-amber-900">・QRコード決済</dt>
-                            <dd class="font-medium text-gray-700">PayPay / d払い / 楽天ペイ / au PAY / メルペイ</dd>
-                        </div>
-                        <div class="bg-white px-3 py-2 rounded-xl border border-amber-200">
-                            <dt class="font-extrabold text-amber-900">・電子マネー</dt>
-                            <dd class="font-medium text-gray-700">iD / QUICPay</dd>
-                        </div>
-                        <div class="bg-white px-3 py-2 rounded-xl border border-amber-200">
-                            <dt class="font-extrabold text-amber-900">・現金</dt>
-                            <dd class="font-medium text-gray-700">店舗・送迎時の現金お支払い対応</dd>
-                        </div>
-                    </dl>
                 </div>
 
                 <!-- 予約CTA（初回相談＋下部にリピーター予約配置） -->
                 <div class="pt-2 flex flex-col items-center gap-3 max-w-md mx-auto">
                     <button type="button" onclick="openModal()" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs sm:text-base font-extrabold px-7 py-3.5 rounded-full shadow-lg min-h-[48px] active:scale-95 transition">
                         <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
-                            <span>【初回】しつけカウンセリングを予約する</span>
+                        <span>【初回】しつけカウンセリングを予約する</span>
                     </button>
 
                     <a href="https://chocomoka.square.site" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-amber-900 hover:bg-amber-950 text-white text-xs sm:text-base font-extrabold px-7 py-3.5 rounded-full shadow-md min-h-[48px] active:scale-95 transition">
@@ -790,7 +762,7 @@
             </div>
         </section>
 
-        <!-- ⑤ Area & FAQ（高石市から車30分圏内・全都市網羅） -->
+        <!-- ⑤ Area & FAQ（高石市から車30分圏内・2行見出し構成） -->
         <section id="area-faq" class="cv-auto py-10 sm:py-16 bg-emerald-50/30 border-b border-emerald-100">
             <div class="max-w-5xl mx-auto px-4 space-y-10">
                 <div>
@@ -860,7 +832,8 @@
                     <div class="text-center mb-5">
                         <span class="bg-emerald-100 text-emerald-900 text-xs font-bold px-3.5 py-1 rounded-full border border-emerald-300">School Area（車約30分圏内）</span>
                         <h2 class="text-lg sm:text-2xl md:text-3xl font-extrabold text-emerald-950 mt-2 leading-snug">
-                            高石市から車で約30分圏内で通える<br class="sm:hidden">小型犬専門の犬のしつけ教室・社会化教室
+                            <span class="block">高石市から車で約30分圏内で通える</span>
+                            <span class="block">小型犬専門の犬のしつけ教室・社会化教室<br class="sm:hidden"> チョコ＆モカ</span>
                         </h2>
                     </div>
 
