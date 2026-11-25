@@ -133,31 +133,37 @@
         color: #ffffff;
       }
 
-      /* PC・スマホ両対応：初回モーダル＆利用規約PDF全文モーダル確実スクロールCSS */
+      /* PC・スマホ両対応：初回モーダル＆利用規約PDF全文モーダル確実表示・スクロールCSS */
       #firstTimeModal {
-        position: fixed;
-        inset: 0;
-        z-index: 9990;
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 9990 !important;
         background-color: rgba(0, 0, 0, 0.65);
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 16px;
       }
       #firstTimeModal.hidden {
-        display: none;
+        display: none !important;
       }
+      #firstTimeModal:not(.hidden) {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+      }
+
       #termsPdfModal {
-        position: fixed;
-        inset: 0;
-        z-index: 10000;
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 10000 !important;
         background-color: rgba(0, 0, 0, 0.8);
-        overflow-y: auto;
+        overflow-y: auto !important;
         -webkit-overflow-scrolling: touch;
         padding: 12px;
       }
       #termsPdfModal.hidden {
-        display: none;
+        display: none !important;
+      }
+      #termsPdfModal:not(.hidden) {
+        display: block !important;
       }
       .terms-modal-wrap {
         min-height: 100%;
@@ -181,7 +187,7 @@
       .terms-modal-body {
         flex: 1 1 auto;
         min-height: 120px;
-        overflow-y: scroll;
+        overflow-y: scroll !important;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
         padding: 16px 20px;
@@ -293,7 +299,7 @@
             "postalCode": "592-0004",
             "addressCountry": "JP"
           },
-          "hasMap": "https://www.google.com/maps/search/?api=1&query=%E3%80%92592-0004+%E5%A4%A7%E9%98%AA%E5%BA%9C%E9%AB%98%E7%9F%B3%E5%B8%82%E9%AB%98%E5%B8%AB%E6%B5%9C%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%98%E2%88%92%EF%BC%91%EF%BC%96",
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E5%9E%8B%E7%8A%AC%E5%B0%82%E9%96%80%E3%81%AE%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%95%99%E5%AE%A4%EF%BC%86%E3%83%9A%E3%83%83%E3%83%88%E3%83%9B%E3%83%86%E3%83%AB+%E3%83%81%E3%83%A7%E3%82%B3%EF%BC%86%E3%83%A2%E3%82%AB+%E3%80%92592-0004+%E5%A4%A7%E9%98%AA%E5%BA%9C%E9%AB%98%E7%9F%B3%E5%B8%82%E9%AB%98%E5%B8%AB%E6%B5%9C%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%98%E2%88%92%EF%BC%91%EF%BC%96",
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
@@ -406,7 +412,7 @@
           },
           "sameAs": [
             "https://www.instagram.com/pet_hotel_osaka_sakai_izumi/",
-            "https://www.google.com/maps/search/?api=1&query=%E3%80%92592-0004+%E5%A4%A7%E9%98%AA%E5%BA%9C%E9%AB%98%E7%9F%B3%E5%B8%82%E9%AB%98%E5%B8%AB%E6%B5%9C%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%98%E2%88%92%EF%BC%91%EF%BC%96"
+            "https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E5%9E%8B%E7%8A%AC%E5%B0%82%E9%96%80%E3%81%AE%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%95%99%E5%AE%A4%EF%BC%86%E3%83%9A%E3%83%83%E3%83%88%E3%83%9B%E3%83%86%E3%83%AB+%E3%83%81%E3%83%A7%E3%82%B3%EF%BC%86%E3%83%A2%E3%82%AB+%E3%80%92592-0004+%E5%A4%A7%E9%98%AA%E5%BA%9C%E9%AB%98%E7%9F%B3%E5%B8%82%E9%AB%98%E5%B8%AB%E6%B5%9C%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%98%E2%88%92%EF%BC%91%EF%BC%96"
           ],
           "description": "〒592-0004 大阪府高石市高師浜４丁目８−１６（南海高師浜線「高師浜駅」徒歩3分）を拠点に、車で約30分圏内（高石市・堺市全域・大阪市南部〜中心部・泉大津市・和泉市・忠岡町・岸和田市・貝塚市・泉佐野市・大阪狭山市・松原市・富田林市西部・羽曳野市西部）の飼い主様向けに1日3組限定のプレミアムペットホテル・しつけ教室・犬の幼稚園・24時間お泊りシッターを提供しています。"
         },
@@ -1353,7 +1359,7 @@
             </div>
         </section>
 
-        <!-- ⑨ 店舗情報・アクセス（〒592-0004 大阪府高石市高師浜４丁目８−１６ 正確表示Googleマップ） -->
+        <!-- ⑨ 店舗情報・アクセス（小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 日本、〒592-0004 大阪府高石市高師浜４丁目８−１６ 正確表示Googleマップ） -->
         <section id="access" class="py-10 sm:py-12 bg-amber-50/30 border-b border-amber-100">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="text-center mb-6">
@@ -1377,7 +1383,7 @@
                         </dl>
                     </div>
 
-                    <!-- 超高速表示マップコンテナ（〒592-0004 大阪府高石市高師浜４丁目８−１６ 正確表示） -->
+                    <!-- 超高速表示マップコンテナ（小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 日本、〒592-0004 大阪府高石市高師浜４丁目８−１６ 正確表示） -->
                     <div id="map-container" class="relative h-72 md:h-auto min-h-[280px] rounded-2xl overflow-hidden border border-amber-200 shadow-sm bg-amber-50/80 flex flex-col items-center justify-center p-4 text-center">
                         <svg class="absolute inset-0 w-full h-full object-cover opacity-55 pointer-events-none" viewBox="0 0 400 280" fill="none" aria-hidden="true">
                             <rect width="400" height="280" fill="#FFFBEB"/>
@@ -1390,12 +1396,12 @@
                             <circle cx="215" cy="140" r="5" fill="#FFFFFF"/>
                         </svg>
                         <div class="relative z-10 bg-white/95 backdrop-blur-sm px-4 py-3.5 rounded-2xl border border-amber-300 shadow-sm space-y-2.5 max-w-xs">
-                            <p class="text-xs font-extrabold text-amber-950">📍 〒592-0004 大阪府高石市高師浜４丁目８−１６（高師浜駅徒歩3分）</p>
+                            <p class="text-xs font-extrabold text-amber-950">📍 小型犬専門の社会化教室＆ペットホテル チョコ＆モカ<br><span class="text-[11px] font-bold text-gray-700">日本、〒592-0004 大阪府高石市高師浜４丁目８−１６</span></p>
                             <div class="flex flex-col gap-2">
                                 <button type="button" onclick="mountGoogleMap()" class="w-full bg-amber-800 hover:bg-amber-900 text-white font-extrabold text-xs px-4 py-2.5 rounded-full shadow-sm min-h-[42px] active:scale-95 transition">
                                     🗺️ 地図をここに表示する
                                 </button>
-                                <a href="https://www.google.com/maps/search/?api=1&query=%E3%80%92592-0004+%E5%A4%A7%E9%98%AA%E5%BA%9C%E9%AB%98%E7%9F%B3%E5%B8%82%E9%AB%98%E5%B8%AB%E6%B5%9C%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%98%E2%88%92%EF%BC%91%EF%BC%96" target="_blank" rel="noopener noreferrer" class="w-full bg-amber-50 hover:bg-amber-100 text-amber-950 border border-amber-300 font-extrabold text-[11px] px-4 py-2 rounded-full transition">
+                                <a href="https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E5%9E%8B%E7%8A%AC%E5%B0%82%E9%96%80%E3%81%AE%E7%A4%BE%E4%BC%9A%E5%8C%96%E6%95%99%E5%AE%A4%EF%BC%86%E3%83%9A%E3%83%83%E3%83%88%E3%83%9B%E3%83%86%E3%83%AB+%E3%83%81%E3%83%A7%E3%82%B3%EF%BC%86%E3%83%A2%E3%82%AB+%E6%97%A5%E6%9C%AC%E3%80%81%E3%80%92592-0004+%E5%A4%A7%E9%98%AA%E5%BA%9C%E9%AB%98%E7%9F%B3%E5%B8%82%E9%AB%98%E5%B8%AB%E6%B5%9C%EF%BC%94%E4%B8%81%E7%9B%AE%EF%BC%98%E2%88%92%EF%BC%91%EF%BC%96" target="_blank" rel="noopener noreferrer" class="w-full bg-amber-50 hover:bg-amber-100 text-amber-950 border border-amber-300 font-extrabold text-[11px] px-4 py-2 rounded-full transition">
                                     🧭 Googleマップアプリで経路を見る ↗
                                 </a>
                             </div>
@@ -1878,14 +1884,14 @@
             btn.textContent = isClosed ? '▲ 閉じる' : '▼ 続きを読む';
         }
 
-        /* 〒592-0004 大阪府高石市高師浜４丁目８−１６ のGoogleマップを正確に表示 */
+        /* sitter_2.html と同一仕様：小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 日本、〒592-0004 大阪府高石市高師浜４丁目８−１６ を正確表示 */
         function mountGoogleMap() {
             const container = document.getElementById('map-container');
             if (!container || container.dataset.loaded) return;
             container.dataset.loaded = '1';
             container.classList.remove('p-4', 'flex', 'flex-col', 'items-center', 'justify-center', 'text-center', 'bg-amber-50/80');
-            const query = encodeURIComponent('〒592-0004 大阪府高石市高師浜４丁目８−１６');
-            container.innerHTML = `<iframe title="〒592-0004 大阪府高石市高師浜４丁目８−１６ 小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 地図" src="https://maps.google.com/maps?q=${query}&hl=ja&z=17&output=embed" width="100%" height="100%" style="border:0;min-height:280px;" allowfullscreen="" decoding="async" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+            const query = encodeURIComponent('小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 日本、〒592-0004 大阪府高石市高師浜４丁目８−１６');
+            container.innerHTML = `<iframe title="小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 日本、〒592-0004 大阪府高石市高師浜４丁目８−１６ 地図" src="https://maps.google.com/maps?q=${query}&hl=ja&z=17&output=embed" width="100%" height="100%" style="border:0;min-height:280px;" allowfullscreen="" decoding="async" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
         }
 
         /* 利用規約PDF表示＆ ☐✓ チェック状態管理 */
@@ -1959,13 +1965,14 @@
 
         function openModal() {
             const modal = document.getElementById('firstTimeModal');
+            if (!modal) return;
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
             document.getElementById('agreeTriggerBtn')?.focus();
         }
         function closeModal() {
             closeTermsPdfModal();
-            document.getElementById('firstTimeModal').classList.add('hidden');
+            document.getElementById('firstTimeModal')?.classList.add('hidden');
             document.body.style.overflow = '';
         }
 
