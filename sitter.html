@@ -45,13 +45,23 @@
 
     <link rel="stylesheet" href="style.min.css">
 
-    <!-- Core Web Vitals（LCP / INP / CLS）徹底最適化 ＆ PC・スマホ両対応モーダルスクロール保証CSS -->
+    <!-- Core Web Vitals（LCP / INP / CLS）徹底最適化 ＆ スマホ体験談アコーディオン・モーダルCSS -->
     <style>
       .cv-auto { content-visibility: auto; contain-intrinsic-size: auto 700px; }
       .aspect-4-3 { aspect-ratio: 4 / 3; }
       button, a, label, input, summary { touch-action: manipulation; }
       img { height: auto; }
       body { text-rendering: optimizeSpeed; -webkit-font-smoothing: antialiased; }
+
+      /* スマホ限定：4件目以降の体験談アコーディオン制御（PCでは全件表示、SEOテキストはDOM保持） */
+      @media (max-width: 767px) {
+        .mobile-voice-extra {
+          display: none;
+        }
+        #sitter-voice-grid.is-expanded .mobile-voice-extra {
+          display: flex;
+        }
+      }
 
       .terms-check-box {
         display: inline-flex;
@@ -192,7 +202,7 @@
           "email": "admin@chocomoka.com",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "高師浜４丁目８−１６",
+            "streetAddress": "高師浜４丁目８−１６（南海高師浜線 高師浜駅 徒歩3分）",
             "addressLocality": "高石市",
             "addressRegion": "大阪府",
             "postalCode": "592-0004",
@@ -205,6 +215,15 @@
             "opens": "09:00",
             "closes": "19:00"
           },
+          "amenityFeature": [
+            {"@type": "LocationFeatureSpecification", "name": "有資格ペットシッター自宅訪問", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "小型犬・シニア犬・多頭飼い・猫・小動物対応", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "ドッグウォーカー（お散歩代行）対応", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "合鍵預かり証発行・金庫厳重管理", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "写真・動画リアルタイムLINE報告", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "キャッシュレス決済対応", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "賠償責任保険加入済み", "value": true}
+          ],
           "areaServed": [
             {"@type": "City", "name": "高石市"}, {"@type": "City", "name": "堺市"},
             {"@type": "AdministrativeArea", "name": "堺市西区"}, {"@type": "AdministrativeArea", "name": "堺市堺区"},
@@ -280,7 +299,7 @@
               "name": "お散歩代行（ドッグウォーカー）だけの依頼や、高齢犬・シニア犬のお世話も可能ですか？",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "はい、30分（¥1,650〜）からのお散歩代行のみのご利用も可能です（片道10kmを超える遠方エリアは60分以上のシッティング・お散歩代行または24時間お泊りシッターより承ります）。"
+                "text": "はい、30分（¥1,650〜）からのお散歩代行のみのご利用も可能です（片道10kmを超える遠方エリアは60分以上のシッティング・お散歩代行または24時間お泊りシッターより承ります）。お仕事でお忙しい日や体調不良時、シニア犬や投薬補助が必要なワンちゃんも住み慣れたご自宅で安全にお世話いたします。"
               }
             },
             {
@@ -288,7 +307,15 @@
               "name": "不在時に合鍵を預けるのが不安ですが、セキュリティ対策はどうなっていますか？",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "合鍵のお預かり時は「合鍵預かり証」を発行し、店舗の金庫にて厳重に施錠管理いたします。また、お世話の入室から退室までの様子は写真・動画付きのリアルタイム報告書（LINEまたはメール）でお送りし、賠償責任保険にも加入しております。"
+                "text": "合鍵のお預かり時は「合鍵預かり証」を発行し、店舗の金庫にて厳重に施錠管理いたします。また、お世話の入室から退室までの様子は写真・動画付きのリアルタイム報告書（LINEまたはメール）でお送りし、賠償責任保険にも加入しておりますので安心してお任せいただけます。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "高石市・堺市・和泉市・大阪狭山市・岸和田市・大阪市南部などへの出張訪問料金はいくらかかりますか？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "店舗（〒592-0004 大阪府高石市高師浜４丁目８−１６）から片道5km以内（高石市全域、堺市西区・南区の一部、泉大津市・忠岡町など）は¥550、以降5kmごとに+¥550にて出張訪問いたします。"
               }
             },
             {
@@ -307,11 +334,11 @@
 </head>
 <body class="antialiased leading-relaxed pb-24">
 
-    <!-- 共通ヘッダー（ワンクリック英語切替ボタン搭載・NAP統一） -->
+    <!-- 共通ヘッダー -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-blue-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex justify-between items-center gap-1.5 sm:gap-2">
             <a href="index.html" class="flex items-center space-x-2 shrink-0 group text-left py-1">
-                <img src="chocomoka-pet-hotel-dog-training-takaishi-sakai-logo.webp" alt="堺市・高石市・和泉市・大阪狭山市・岸和田市の小型犬専門の社会化教室＆ペットホテル チョコ＆モカ ロゴ" width="48" height="48" class="h-10 sm:h-12 w-auto object-contain" fetchpriority="high" decoding="sync" onerror="this.onerror=null; this.src='logo.jpg';">
+                <img src="chocomoka-pet-hotel-dog-training-takaishi-sakai-logo.webp" alt="チョコ＆モカ ロゴ" width="48" height="48" class="h-10 sm:h-12 w-auto object-contain" fetchpriority="high" decoding="sync" onerror="this.onerror=null; this.src='logo.jpg';">
                 <div class="min-w-0">
                     <p class="text-[9px] sm:text-xs font-bold text-amber-900 leading-none mb-0.5 truncate" data-i18n="header_sub">小型犬専門の社会化教室＆ペットホテル</p>
                     <span class="font-extrabold text-base sm:text-xl text-amber-900 tracking-tight leading-none block" data-i18n="header_brand">チョコ＆モカ</span>
@@ -448,13 +475,11 @@
             </div>
         </section>
 
-        <!-- ③ 🐕 小型犬オーナー様の体験談（全体験談6＋多頭ワイド1カードを完全復元） -->
+        <!-- ③ 🐕 小型犬オーナー様の体験談（スマホ表示のみ最初の3件＋残り4件アコーディオン展開） -->
         <section id="voice" class="cv-auto py-10 sm:py-16 bg-gradient-to-b from-blue-50/50 to-white border-b border-blue-100">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="text-center max-w-3xl mx-auto mb-7 sm:mb-10">
-                    <span class="bg-blue-100 text-blue-900 text-[10px] sm:text-xs font-extrabold px-3.5 py-1 rounded-full border border-blue-300">
-                        Owner's Voice &amp; Case Studies
-                    </span>
+                    <span class="bg-blue-100 text-blue-900 text-[10px] sm:text-xs font-extrabold px-3.5 py-1 rounded-full border border-blue-300">Owner's Voice &amp; Case Studies</span>
                     <h2 class="text-lg sm:text-2xl md:text-3xl font-extrabold text-blue-950 mt-2 leading-snug" data-i18n-html="voice_h2">
                         🐕 堺市・高石市・和泉市の<br class="sm:hidden">小型犬オーナー様の体験談
                     </h2>
@@ -463,186 +488,137 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-start">
-                    <!-- 体験談 1：堺市西区・トイプードル「ぷりんちゃん」 -->
-                    <article class="bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm hover:shadow-md transition flex flex-col">
+                <div id="sitter-voice-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 items-start">
+                    <!-- 1 -->
+                    <article class="bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm flex flex-col">
                         <div class="relative aspect-4-3 bg-blue-100 overflow-hidden">
                             <span class="absolute top-3 left-3 bg-blue-800 text-white text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full shadow z-10">堺市西区・出張ペットシッター</span>
-                            <img src="pet-sitter-sakai-toypoodle-purin.webp" alt="堺市西区のご自宅でシッターとおもちゃで遊ぶトイプードルのぷりんちゃん（3歳）" width="600" height="450" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
+                            <img src="pet-sitter-sakai-toypoodle-purin.webp" alt="堺市西区 トイプードル ぷりんちゃん" width="600" height="450" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
                         </div>
-                        <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2.5">
-                            <div class="space-y-2">
-                                <div class="flex flex-wrap items-center justify-between gap-2">
-                                    <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">トイプードル「ぷりんちゃん」（3歳）</span>
-                                    <span class="text-blue-800 text-xs font-extrabold">🐾 Purinちゃん</span>
-                                </div>
-                                <h3 class="text-sm sm:text-base font-extrabold text-blue-950 leading-snug">
-                                    「人見知りでホテルが苦手な愛犬も、自宅なら安心しておもちゃで遊べました」
-                                </h3>
-                                <p id="sitter-review-1" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">
-                                    ホテルに預けると緊張してごはんを食べなくなる性格なので、初めて出張シッターをお願いしました。事前打ち合わせから優しく接してくださり、当日はリアルタイムの写真や動画で楽しそうにおもちゃで遊ぶ姿が見られて外出先でも心から安心できました。
-                                </p>
+                        <div class="p-5 sm:p-6 space-y-2">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">トイプードル「ぷりんちゃん」（3歳）</span>
+                                <span class="text-blue-800 text-xs font-extrabold">🐾 Purinちゃん</span>
                             </div>
-                            <button type="button" onclick="toggleReview('sitter-review-1', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 hover:text-indigo-600 text-left inline-flex items-center gap-1 pt-0.5">
-                                ▼ 続きを読む
-                            </button>
+                            <h3 class="text-sm sm:text-base font-extrabold text-blue-950">「人見知りでホテルが苦手な愛犬も、自宅なら安心しておもちゃで遊べました」</h3>
+                            <p id="sitter-review-1" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">ホテルに預けると緊張してごはんを食べなくなる性格なので、初めて出張シッターをお願いしました。事前打ち合わせから優しく接してくださり、当日はリアルタイムの写真や動画で楽しそうにおもちゃで遊ぶ姿が見られて外出先でも心から安心できました。</p>
+                            <button type="button" onclick="toggleReview('sitter-review-1', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 min-h-[36px] inline-flex items-center">▼ 続きを読む</button>
                         </div>
                     </article>
 
-                    <!-- 体験談 2：高石市・チワワ「ひめちゃん」 -->
-                    <article class="bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm hover:shadow-md transition flex flex-col">
+                    <!-- 2 -->
+                    <article class="bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm flex flex-col">
                         <div class="relative aspect-4-3 bg-blue-100 overflow-hidden">
                             <span class="absolute top-3 left-3 bg-amber-800 text-white text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full shadow z-10">高石市・お散歩代行（30分）</span>
-                            <img src="dog-walker-takaishi-chihuahua-hime.webp" alt="高石市の公園をお散歩代行シッターとアイコンタクトしながら歩くチワワのひめちゃん（5歳）" width="600" height="450" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
+                            <img src="dog-walker-takaishi-chihuahua-hime.webp" alt="高石市 チワワ ひめちゃん" width="600" height="450" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
                         </div>
-                        <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2.5">
-                            <div class="space-y-2">
-                                <div class="flex flex-wrap items-center justify-between gap-2">
-                                    <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">チワワ「ひめちゃん」（5歳）</span>
-                                    <span class="text-blue-800 text-xs font-extrabold">🐾 Himeちゃん</span>
-                                </div>
-                                <h3 class="text-sm sm:text-base font-extrabold text-blue-950 leading-snug">
-                                    「急な残業や体調不良の日に30分のお散歩代行がとても助かっています」
-                                </h3>
-                                <p id="sitter-review-2" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">
-                                    仕事で帰りが遅くなる日やギックリ腰でお散歩に行けなかった時にドッグウォーカーを利用しました。怖がりなチワワのペースに合わせて声をかけながら安全に歩いてくださり、帰宅後のレポートも丁寧で頼りになります。
-                                </p>
+                        <div class="p-5 sm:p-6 space-y-2">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">チワワ「ひめちゃん」（5歳）</span>
+                                <span class="text-blue-800 text-xs font-extrabold">🐾 Himeちゃん</span>
                             </div>
-                            <button type="button" onclick="toggleReview('sitter-review-2', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 hover:text-indigo-600 text-left inline-flex items-center gap-1 pt-0.5">
-                                ▼ 続きを読む
-                            </button>
+                            <h3 class="text-sm sm:text-base font-extrabold text-blue-950">「急な残業や体調不良の日に30分のお散歩代行がとても助かっています」</h3>
+                            <p id="sitter-review-2" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">仕事で帰りが遅くなる日やギックリ腰でお散歩に行けなかった時にドッグウォーカーを利用しました。怖がりなチワワのペースに合わせて声をかけながら安全に歩いてくださり、帰宅後のレポートも丁寧で頼りになります。</p>
+                            <button type="button" onclick="toggleReview('sitter-review-2', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 min-h-[36px] inline-flex items-center">▼ 続きを読む</button>
                         </div>
                     </article>
 
-                    <!-- 体験談 3：和泉市・豆柴「こてつくん」 -->
-                    <article class="bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm hover:shadow-md transition flex flex-col">
+                    <!-- 3 -->
+                    <article class="bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm flex flex-col">
                         <div class="relative aspect-4-3 bg-blue-100 overflow-hidden">
                             <span class="absolute top-3 left-3 bg-amber-800 text-white text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full shadow z-10">和泉市・お散歩代行（ドッグウォーカー）</span>
-                            <img src="dog-walker-izumi-mameshiba-kotetsu.webp" alt="和泉市の並木道でオーナー兼トレーナーとアイコンタクトしながらお散歩する豆柴のこてつくん（2歳）" width="600" height="450" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
+                            <img src="dog-walker-izumi-mameshiba-kotetsu.webp" alt="和泉市 豆柴 こてつくん" width="600" height="450" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
                         </div>
-                        <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2.5">
-                            <div class="space-y-2">
-                                <div class="flex flex-wrap items-center justify-between gap-2">
-                                    <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">豆柴「こてつくん」（2歳）</span>
-                                    <span class="text-blue-800 text-xs font-extrabold">🐾 Kotetsuくん</span>
-                                </div>
-                                <h3 class="text-sm sm:text-base font-extrabold text-blue-950 leading-snug">
-                                    「ドッグトレーナー兼シッターさんなので、引っ張り癖のある子のお散歩も安心」
-                                </h3>
-                                <p id="sitter-review-3" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">
-                                    元気いっぱいで他の犬を見ると興奮しやすい子ですが、社会化教室も運営されているプロのトレーナーさんがお散歩代行をしてくださるので安心感が違います。アイコンタクトを取りながら楽しそうに歩く写真を見てお願いして良かったと思いました。
-                                </p>
+                        <div class="p-5 sm:p-6 space-y-2">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">豆柴「こてつくん」（2歳）</span>
+                                <span class="text-blue-800 text-xs font-extrabold">🐾 Kotetsuくん</span>
                             </div>
-                            <button type="button" onclick="toggleReview('sitter-review-3', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 hover:text-indigo-600 text-left inline-flex items-center gap-1 pt-0.5">
-                                ▼ 続きを読む
-                            </button>
+                            <h3 class="text-sm sm:text-base font-extrabold text-blue-950">「ドッグトレーナー兼シッターさんなので、引っ張り癖のある子のお散歩も安心」</h3>
+                            <p id="sitter-review-3" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">元気いっぱいで他の犬を見ると興奮しやすい子ですが、社会化教室も運営されているプロのトレーナーさんがお散歩代行をしてくださるので安心感が違います。アイコンタクトを取りながら楽しそうに歩く写真を見てお願いして良かったと思いました。</p>
+                            <button type="button" onclick="toggleReview('sitter-review-3', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 min-h-[36px] inline-flex items-center">▼ 続きを読む</button>
                         </div>
                     </article>
 
-                    <!-- 体験談 4：和泉市・ポメラニアン「まるくん」 -->
-                    <article class="bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm hover:shadow-md transition flex flex-col">
+                    <!-- 4（スマホ時は初期格納・アコーディオン展開） -->
+                    <article class="mobile-voice-extra bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm flex flex-col">
                         <div class="relative aspect-4-3 bg-blue-100 overflow-hidden">
                             <span class="absolute top-3 left-3 bg-indigo-700 text-white text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full shadow z-10">和泉市・シニア犬自宅シッティング</span>
-                            <img src="pet-sitter-senior-dog-izumi-pomeranian-maru.webp" alt="和泉市のご自宅和室でシッターに優しくなでられ体調チェックを受けるシニア犬ポメラニアンのまるくん（13歳）" width="600" height="450" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
+                            <img src="pet-sitter-senior-dog-izumi-pomeranian-maru.webp" alt="和泉市 ポメラニアン まるくん" width="600" height="450" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
                         </div>
-                        <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2.5">
-                            <div class="space-y-2">
-                                <div class="flex flex-wrap items-center justify-between gap-2">
-                                    <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">ポメラニアン「まるくん」（13歳・シニア犬）</span>
-                                    <span class="text-blue-800 text-xs font-extrabold">🐾 Maruくん</span>
-                                </div>
-                                <h3 class="text-sm sm:text-base font-extrabold text-blue-950 leading-snug">
-                                    「環境の変化が負担になる13歳のシニア犬も、住み慣れた和室で穏やかに過ごせました」
-                                </h3>
-                                <p id="sitter-review-4" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">
-                                    高齢になり環境が変わると体調を崩しやすいため、冠婚葬祭の外出時に自宅シッティングをお願いしました。お水飲みやトイレの様子、体調の変化まで細かく記録・報告してくださり、帰宅後もいつも通りリラックスしていて本当に感謝しています。
-                                </p>
+                        <div class="p-5 sm:p-6 space-y-2">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">ポメラニアン「まるくん」（13歳・シニア犬）</span>
+                                <span class="text-blue-800 text-xs font-extrabold">🐾 Maruくん</span>
                             </div>
-                            <button type="button" onclick="toggleReview('sitter-review-4', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 hover:text-indigo-600 text-left inline-flex items-center gap-1 pt-0.5">
-                                ▼ 続きを読む
-                            </button>
+                            <h3 class="text-sm sm:text-base font-extrabold text-blue-950">「環境の変化が負担になる13歳のシニア犬も、住み慣れた和室で穏やかに過ごせました」</h3>
+                            <p id="sitter-review-4" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">高齢になり環境が変わると体調を崩しやすいため、冠婚葬祭の外出時に自宅シッティングをお願いしました。お水飲みやトイレの様子、体調の変化まで細かく記録・報告してくださり、帰宅後もいつも通りリラックスしていて本当に感謝しています。</p>
+                            <button type="button" onclick="toggleReview('sitter-review-4', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 min-h-[36px] inline-flex items-center">▼ 続きを読む</button>
                         </div>
                     </article>
 
-                    <!-- 体験談 5：堺市中区・ミニチュアシュナウザー「そらちゃん」 -->
-                    <article class="bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm hover:shadow-md transition flex flex-col">
+                    <!-- 5（スマホ時は初期格納・アコーディオン展開） -->
+                    <article class="mobile-voice-extra bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm flex flex-col">
                         <div class="relative aspect-4-3 bg-blue-100 overflow-hidden">
                             <span class="absolute top-3 left-3 bg-blue-800 text-white text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full shadow z-10">堺市中区・出張ペットシッター</span>
-                            <img src="pet-sitter-sakai-miniature-schnauzer-sora.webp" alt="堺市中区のマンションリビングでトイレトレーの上でトイレに成功しシッターに褒められるミニチュアシュナウザーのそらちゃん（1歳）" width="600" height="450" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="eager" decoding="async" onerror="if(!this.dataset.step){this.dataset.step='1';this.src='https://chocomoka.com/pet-sitter-sakai-miniature-schnauzer-sora.webp';}else if(this.dataset.step==='1'){this.dataset.step='2';this.src='pet-sitter-sakai-schnauzer-sora.webp';}else if(this.dataset.step==='2'){this.dataset.step='3';this.src='pet-sitter-sakai-miniature-schnauzer-sora.jpg';}else{this.onerror=null;this.src='heya.jpg';}">
+                            <img src="pet-sitter-sakai-miniature-schnauzer-sora.webp" alt="堺市中区 ミニチュアシュナウザー そらちゃん" width="600" height="450" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
                         </div>
-                        <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2.5">
-                            <div class="space-y-2">
-                                <div class="flex flex-wrap items-center justify-between gap-2">
-                                    <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">ミニチュアシュナウザー「そらちゃん」（1歳）</span>
-                                    <span class="text-blue-800 text-xs font-extrabold">🐾 Soraちゃん</span>
-                                </div>
-                                <h3 class="text-sm sm:text-base font-extrabold text-blue-950 leading-snug">
-                                    「お留守番中のトイレ成功も一緒に褒めてくれて、いい子でお留守番できました」
-                                </h3>
-                                <p id="sitter-review-5" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">
-                                    まだ1歳で長時間のお留守番が心配でしたが、シッターさんが訪問してたくさん褒めながら遊んでくれたおかげでトイレもバッチリ成功！合鍵の管理も預かり証発行でしっかりしており、安心してリピートしています。
-                                </p>
+                        <div class="p-5 sm:p-6 space-y-2">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">ミニチュアシュナウザー「そらちゃん」（1歳）</span>
+                                <span class="text-blue-800 text-xs font-extrabold">🐾 Soraちゃん</span>
                             </div>
-                            <button type="button" onclick="toggleReview('sitter-review-5', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 hover:text-indigo-600 text-left inline-flex items-center gap-1 pt-0.5">
-                                ▼ 続きを読む
-                            </button>
+                            <h3 class="text-sm sm:text-base font-extrabold text-blue-950">「お留守番中のトイレ成功も一緒に褒めてくれて、いい子でお留守番できました」</h3>
+                            <p id="sitter-review-5" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">まだ1歳で長時間のお留守番が心配でしたが、シッターさんが訪問してたくさん褒めながら遊んでくれたおかげでトイレもバッチリ成功！合鍵の管理も預かり証発行でしっかりしており、安心してリピートしています。</p>
+                            <button type="button" onclick="toggleReview('sitter-review-5', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 min-h-[36px] inline-flex items-center">▼ 続きを読む</button>
                         </div>
                     </article>
 
-                    <!-- 体験談 6：高石市・パピヨン「みるくくん」 -->
-                    <article class="bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm hover:shadow-md transition flex flex-col">
+                    <!-- 6（スマホ時は初期格納・アコーディオン展開） -->
+                    <article class="mobile-voice-extra bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm flex flex-col">
                         <div class="relative aspect-4-3 bg-blue-100 overflow-hidden">
                             <span class="absolute top-3 left-3 bg-blue-800 text-white text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full shadow z-10">高石市・出張ペットシッター</span>
-                            <img src="pet-sitter-takaishi-papillon-miruku.webp" alt="高石市のご自宅リビングでシッターに優しくブラッシングされるパピヨンのみるくくん（6歳）" width="600" height="450" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
+                            <img src="pet-sitter-takaishi-papillon-miruku.webp" alt="高石市 パピヨン みるくくん" width="600" height="450" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
                         </div>
-                        <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-2.5">
-                            <div class="space-y-2">
-                                <div class="flex flex-wrap items-center justify-between gap-2">
-                                    <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">パピヨン「みるくくん」（6歳）</span>
-                                    <span class="text-blue-800 text-xs font-extrabold">🐾 Mirukuくん</span>
-                                </div>
-                                <h3 class="text-sm sm:text-base font-extrabold text-blue-950 leading-snug">
-                                    「ごはんやトイレ掃除だけでなく、ブラッシングやスキンシップまで丁寧です」
-                                </h3>
-                                <p id="sitter-review-6" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">
-                                    日帰り旅行の際に朝夕2回のシッティングをお願いしました。ごはんやトイレのお世話はもちろん、大好きなブラッシングまで丁寧にしていただき、みるくもすっかりシッターさんに懐いています。
-                                </p>
+                        <div class="p-5 sm:p-6 space-y-2">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <span class="bg-blue-50 text-blue-900 border border-blue-200 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">パピヨン「みるくくん」（6歳）</span>
+                                <span class="text-blue-800 text-xs font-extrabold">🐾 Mirukuくん</span>
                             </div>
-                            <button type="button" onclick="toggleReview('sitter-review-6', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 hover:text-indigo-600 text-left inline-flex items-center gap-1 pt-0.5">
-                                ▼ 続きを読む
-                            </button>
+                            <h3 class="text-sm sm:text-base font-extrabold text-blue-950">「ごはんやトイレ掃除だけでなく、ブラッシングやスキンシップまで丁寧です」</h3>
+                            <p id="sitter-review-6" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">日帰り旅行の際に朝夕2回のシッティングをお願いしました。ごはんやトイレのお世話はもちろん、大好きなブラッシングまで丁寧にしていただき、みるくもすっかりシッターさんに懐いています。</p>
+                            <button type="button" onclick="toggleReview('sitter-review-6', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 min-h-[36px] inline-flex items-center">▼ 続きを読む</button>
                         </div>
                     </article>
 
-                    <!-- 体験談 7：堺市北区・ヨークシャーテリア「あんずちゃん」（多頭ケア・ワイド表示） -->
-                    <article class="md:col-span-2 bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm hover:shadow-md transition grid grid-cols-1 md:grid-cols-2">
+                    <!-- 7（ワイド表示・スマホ時は初期格納・アコーディオン展開） -->
+                    <article class="mobile-voice-extra md:col-span-2 bg-white rounded-3xl overflow-hidden border border-blue-200 shadow-sm grid grid-cols-1 md:grid-cols-2">
                         <div class="relative aspect-4-3 md:aspect-auto bg-blue-100 overflow-hidden">
                             <span class="absolute top-3 left-3 bg-blue-800 text-white text-[10px] sm:text-xs font-extrabold px-3 py-1 rounded-full shadow z-10">堺市北区・多頭飼い自宅シッティング</span>
-                            <img src="pet-sitter-sakai-yorkshire-terrier-anzu.webp" alt="堺市北区のご自宅リビングでヨークシャーテリアのあんずちゃん（7歳）と同居のトイプードル2頭をケアするシッター" width="600" height="450" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
+                            <img src="pet-sitter-sakai-yorkshire-terrier-anzu.webp" alt="堺市北区 ヨークシャーテリア あんずちゃん" width="600" height="450" class="w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='heya.jpg';">
                         </div>
                         <div class="p-5 sm:p-8 flex flex-col justify-center space-y-3">
                             <div class="flex flex-wrap items-center justify-between gap-2">
                                 <span class="bg-blue-50 text-blue-900 border border-blue-200 text-xs font-extrabold px-3 py-0.5 rounded-full">ヨークシャーテリア「あんずちゃん」（7歳）＆トイプードル（多頭飼い）</span>
                                 <span class="text-blue-800 text-xs sm:text-sm font-extrabold">🐾 Anzuちゃん</span>
                             </div>
-                            <h3 class="text-base sm:text-lg font-extrabold text-blue-950 leading-snug">
-                                「小型犬2頭の多頭飼いでも、それぞれの性格に合わせてきめ細やかにケアしてくれます」
-                            </h3>
-                            <p id="sitter-review-7" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">
-                                甘えん坊のヨーキーとマイペースなトイプードルの2頭をお願いしています。多頭飼いだとホテル代も高くなりますが、自宅シッティングなら2頭とも普段通りの生活リズムを崩さず、それぞれに寄り添って遊んでくれるので大満足です。
-                            </p>
-                            <button type="button" onclick="toggleReview('sitter-review-7', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 hover:text-indigo-600 text-left inline-flex items-center gap-1 pt-0.5">
-                                ▼ 続きを読む
-                            </button>
+                            <h3 class="text-base sm:text-lg font-extrabold text-blue-950">「小型犬2頭の多頭飼いでも、それぞれの性格に合わせてきめ細やかにケアしてくれます」</h3>
+                            <p id="sitter-review-7" class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium line-clamp-3">甘えん坊のヨーキーとマイペースなトイプードルの2頭をお願いしています。多頭飼いだとホテル代も高くなりますが、自宅シッティングなら2頭とも普段通りの生活リズムを崩さず、それぞれに寄り添って遊んでくれるので大満足です。</p>
+                            <button type="button" onclick="toggleReview('sitter-review-7', this)" class="text-[11px] sm:text-xs font-extrabold text-blue-700 min-h-[36px] inline-flex items-center">▼ 続きを読む</button>
                         </div>
                     </article>
                 </div>
 
-                <!-- 「これまでの飼い主様の声をもっと見る」導線 -->
-                <div class="pt-6 flex justify-center">
-                    <a href="save_blog.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-blue-950 border-2 border-blue-400 font-extrabold text-xs sm:text-sm px-6 sm:px-8 py-3.5 rounded-full shadow-sm transition">
+                <!-- スマホ専用：残り4件の体験談アコーディオン開閉ボタン（md以上では非表示） -->
+                <div class="md:hidden text-center pt-4">
+                    <button type="button" id="mobileVoiceAccordionBtn" onclick="toggleMobileVoices()" aria-expanded="false" aria-controls="sitter-voice-grid" class="w-full inline-flex items-center justify-center gap-1.5 bg-blue-100/90 hover:bg-blue-200/80 text-blue-950 border-2 border-blue-400 font-extrabold text-xs px-5 py-3.5 rounded-full shadow-sm min-h-[48px] active:scale-95 transition">
+                        <span id="mobileVoiceAccordionLabel" data-i18n="voice_accordion_open">▼ 残り4件の体験談をここですぐ見る（まるくん・そらちゃん・みるくくん・あんずちゃん）</span>
+                    </button>
+                </div>
+
+                <div class="pt-4 flex justify-center">
+                    <a href="save_blog.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-blue-950 border-2 border-blue-400 font-extrabold text-xs sm:text-sm px-6 sm:px-8 py-3.5 rounded-full shadow-sm min-h-[48px] transition">
                         <span data-i18n="voice_more">📜 これまでの飼い主様の声をもっと見る</span>
-                        <svg class="w-4 h-4 text-blue-800 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                     </a>
                 </div>
             </div>
@@ -787,7 +763,7 @@
             </div>
         </section>
 
-        <!-- ⑥ 店舗情報・アクセス（index.htmlと同じGoogleビジネスカード仕様の地図） -->
+        <!-- ⑥ 店舗情報・アクセス -->
         <section id="access" class="py-10 sm:py-12 bg-white border-b border-blue-100">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="text-center mb-6">
@@ -811,7 +787,6 @@
                         </dl>
                     </div>
 
-                    <!-- 超高速表示マップコンテナ（Googleビジネスカード：小型犬専門の社会化教室＆ペットホテル チョコ＆モカ / 日本、〒592-0004 大阪府高石市高師浜４丁目８−１６ / 5.0(3) / マップで開く） -->
                     <div id="map-container" class="relative h-72 md:h-auto min-h-[280px] rounded-2xl overflow-hidden border border-amber-200 shadow-sm bg-blue-50/70 flex flex-col items-center justify-center p-4 text-center">
                         <svg class="absolute inset-0 w-full h-full object-cover opacity-55 pointer-events-none" viewBox="0 0 400 280" fill="none" aria-hidden="true">
                             <rect width="400" height="280" fill="#EFF6FF"/>
@@ -858,22 +833,13 @@
     <!-- 追随ボトムバー -->
     <div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-blue-200 p-2 shadow-2xl">
         <div class="max-w-4xl mx-auto flex justify-center items-center gap-2">
-            <a href="https://www.instagram.com/pet_hotel_osaka_sakai_izumi/" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px] active:scale-95 transition">
-                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                Instagram
-            </a>
-            <button type="button" onclick="openModal()" class="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px] active:scale-95 transition">
-                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
-                <span data-i18n="bar_first">【初回】予約</span>
-            </button>
-            <a href="https://chocomoka.square.site" target="_blank" rel="noopener noreferrer" class="flex-1 bg-amber-900 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px] active:scale-95 transition">
-                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
-                <span data-i18n="bar_repeat">リピーター</span>
-            </a>
+            <a href="https://www.instagram.com/pet_hotel_osaka_sakai_izumi/" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px] active:scale-95 transition">Instagram</a>
+            <button type="button" onclick="openModal()" class="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px] active:scale-95 transition"><span data-i18n="bar_first">✨ 【初回】予約</span></button>
+            <a href="https://chocomoka.square.site" target="_blank" rel="noopener noreferrer" class="flex-1 bg-amber-900 text-white font-extrabold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1 min-h-[44px] active:scale-95 transition"><span data-i18n="bar_repeat">リピーター</span></a>
         </div>
     </div>
 
-    <!-- 初回予約モーダル -->
+    <!-- 初回予約モーダル（タップした瞬間に ☐✓ 自動チェック） -->
     <div id="firstTimeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="hidden">
         <div class="bg-white rounded-3xl max-w-lg w-full p-6 relative shadow-2xl space-y-4">
             <button type="button" onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center font-bold text-lg" aria-label="閉じる">✕</button>
@@ -911,97 +877,16 @@
                 </div>
 
                 <div id="termsPdfScrollBody" tabindex="0" class="terms-modal-body space-y-4 text-xs text-gray-800 leading-relaxed">
-                    <p class="font-bold text-blue-950">
-                        申込者（以下「利用者」という）は、チョコ＆モカ（以下「当店」という）の提供するサービスを利用するにあたり、以下の規約および注意事項に同意し、これを遵守することを誓約します。
-                    </p>
-
-                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1.5">
-                        <h4 class="font-extrabold text-blue-950 text-sm">■ 第1条（預かり対象ペットの情報）</h4>
-                        <p>初回カルテ作成時に、ペットのお名前、犬種・猫種・その他、性別／去勢・避妊の有無、年齢・生年月日・体重、かかりつけ動物病院（病院名・電話番号）、狂犬病予防注射（犬のみ・最終接種日・接種済証提出）、混合ワクチン接種（最終接種日・種類：犬5種以上／猫1頭3種以上・多頭/外出5種以上）、ノミ・マダニ・フィラリア最終予防（投与）日・予防薬名称、既往症・持病・アレルギー・食べてはいけないもの、フード名・給餌方法、公式サイト・SNSへの投稿（公開）許可の有無をご申告いただきます。</p>
-                    </div>
-
-                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1.5">
-                        <h4 class="font-extrabold text-blue-950 text-sm">■ 第2条（利用条件および提出書類）</h4>
-                        <p>当店を安心してご利用いただくため、以下の条件をすべて満たしている場合に限りお受けいたします。</p>
-                        <ol class="list-decimal list-inside space-y-1.5 pl-1 font-medium">
-                            <li><strong>本人確認：</strong>利用者の本人確認書類（運転免許証、パスポート、マイナンバーカード等）をご提示いただき、その写しを提出すること。</li>
-                            <li><strong>初回登録料・事前決済：</strong>新規利用者は、初回カルテ登録料（1頭につき税込2,200円）および初回サービス料金の事前決済（クレジットカード決済）が必要です。</li>
-                            <li><strong>狂犬病・混合ワクチン・ノミ・マダニ、およびフィラリア予防：</strong>
-                                <ul class="list-disc list-inside pl-4 mt-1 space-y-0.5 text-gray-700">
-                                    <li>犬：1年以内の「狂犬病予防注射済証」および「混合ワクチン接種証明書（5種以上）」を提出。</li>
-                                    <li>猫：1年以内の「混合ワクチン接種証明書」（完全室内飼い1頭：3種以上／多頭飼い・屋外外出あり：5種以上）を提出。</li>
-                                    <li>ノミ・マダニ・フィラリア：予約日の2週間前までに、動物病院処方の予防・駆除の確認書類（明細書、薬のパッケージ、予防履歴等）の写しを提出すること。</li>
-                                </ul>
-                            </li>
-                            <li><strong>健康状態：</strong>伝染病疾患および重篤な疾患がないこと（持病や服薬がある場合は事前申告必須）。</li>
-                            <li><strong>その他条件：</strong>妊娠中および発情期（ヒート中）でないこと。高度な医療ケアを常時必要としないこと。著しい噛み癖や攻撃性がないこと。</li>
-                            <li><strong>トイレマナー：</strong>所定の場所で排泄ができること。困難な場合はマナーウェアの着用に同意すること。</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1">
-                        <h4 class="font-extrabold text-blue-950 text-sm">■ 第3条（サービス料金）</h4>
-                        <p>利用者は、当店が公式ページまたは予約サイト等に定める料金表および支払期日に同意の上、サービス料金を支払うものとします。</p>
-                    </div>
-
-                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1.5">
-                        <h4 class="font-extrabold text-blue-950 text-sm">■ 第4条（緊急時の対応と医療措置）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li>預かり期間中、ペットに体調不良・ケガ・異変が認められた場合、当店は速やかに利用者に連絡をとるものとします。</li>
-                            <li>利用者と連絡が取れない場合、または緊急を要すると当店が判断した場合は、当店の判断により指定動物病院（または近隣の動物病院）へ搬送し、診察・治療を受けさせることができるものとします。</li>
-                            <li>前項に基づき発生した医療費、通院費、救急対応費（60分毎に税込2,200円）および実費は、理由の如何を問わず全額利用者の負担とし、お迎え時（または請求時）に一括して支払うものとします。</li>
-                            <li>獣医師による最善の処置・治療を行ったにもかかわらず、症状の悪化、後遺症、死亡等の結果が生じた場合、当店に故意または重大な過失がある場合を除き、当店は一切の責任を負いません。</li>
-                        </ol>
-                        <p class="text-[11px] text-blue-950 font-bold pt-1">【ペットホテル・預かり型社会化教室の場合】：受託中は当店が動物の占有管理者として善管注意義務をもって安全管理に努めます。万一の犬同士の接触事故時は、当店加入の事業賠償責任保険および次条の定めに従い対処します。</p>
-                    </div>
-
-                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1.5">
-                        <h4 class="font-extrabold text-blue-950 text-sm">■ 第5条（免責事項および損害賠償の範囲）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li>当店は有資格者（ペットシッター士等）の管理のもと善管注意義務をもってお世話いたしますが、環境変化によるストレスや持病・既往症・特異体質（てんかん・心疾患等）の急激な悪化、天災地変（地震・台風等）や外部の突発要因によるパニック・脱走、十分な安全配慮を行っていたにもかかわらず生じた突発的なペット同士のトラブルについては、当店に故意または重過失がない限り一切の責任を負いません。</li>
-                            <li>当店の重大な過失・安全配慮義務違反によりペットが負傷・死亡した場合、当店加入の事業賠償責任保険の補償限度額および直接の獣医師治療費相当額を上限として賠償します。精神的慰謝料等の請求には応じかねます。</li>
-                            <li>ペットが当店の設備・スタッフ・他ペット等に損害を与えた場合、利用者は実費損害を補償するものとします（当店重過失時を除く）。</li>
-                            <li>持病・噛み癖・予防接種歴等の未申告・虚偽申告に起因する事故は、利用者が一切の賠償責任を負うものとします。</li>
-                            <li>シッター利用時におけるご自宅内の貴重品・現金等の盗難・紛失を防ぐため、貴重品は利用者の責任において厳重に施錠・管理してください。当店はご自宅内での貴重品の紛失等について責任を負いかねます。</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1">
-                        <h4 class="font-extrabold text-blue-950 text-sm">■ 第6条（お迎えの遅延および長期不通時の措置）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li>予定のお迎え日時を変更・遅延する場合は、速やかに当店へショートメッセージ（SMS）にて連絡しなければなりません。</li>
-                            <li>事前の連絡なく、お迎え予定日を含め3日以上連絡が取れない場合、当店は動物愛護および関係法令に基づき、当該ペットの所有権が放棄されたものとみなし、しかるべき機関（保健所・保護団体等）へ引き渡す等の措置をとることができるものとします。この際発生した費用は全額利用者に請求します。</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1">
-                        <h4 class="font-extrabold text-blue-950 text-sm">■ 第7条（キャンセル・遅刻規約）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li><strong>キャンセル手続き：</strong>変更・キャンセルは「予約サイト」または「店舗電話番号（070-9440-8118）宛のSMS」にて受け付けます。トラブル防止のため、お電話でのキャンセル受付は行いません。</li>
-                            <li><strong>キャンセル料：</strong>予約日前日13:00まで：無料 ／ 予約日前日13:00以降〜19:00まで：予約サービス料金の50% ／ 予約日前日19:00以降、当日キャンセル、連絡なしの無断キャンセル（ノーショー）：予約サービス料金の100%</li>
-                            <li><strong>遅刻に関する規定：</strong>10分以上遅れる場合は必ずSMSにてご連絡ください。連絡なく15分以上経過した場合は無断キャンセル扱いとし、100%のキャンセル料が発生します。ご予約時間を過ぎてご来店・ご訪問された場合、サービス時間を短縮させていただく場合があります（返金不可）。</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1">
-                        <h4 class="font-extrabold text-blue-950 text-sm">■ 第8条（鍵の取扱い）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li>ペットシッター利用における鍵のお預かりは、初回事前打ち合わせ時、または前日までに店舗営業時間内にお持ち込みいただくか、当店の「鍵受け取りサービス（税込1,650円）」をご利用ください。</li>
-                            <li>鍵の返却は対面での手渡しを基本とします。対面が困難な場合は「鍵受け渡しサービス（税込1,650円）」または「郵送（送料実費）」にて対応します。</li>
-                            <li>鍵の郵送返却において、配送途中の事故・紛失・破損が生じた場合、当店は責任を負いかねます。利用者が配送会社へ直接お問合せください。</li>
-                            <li>鍵の受け取り・受け渡しサービスは指定時間にお伺いするよう努めますが、交通事情等により時間が前後する場合があります。</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1">
-                        <h4 class="font-extrabold text-blue-950 text-sm">■ 第9条（個人情報・本人確認書類の取扱い）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li>取得した個人情報および本人確認書類の写しは、当店サービスの適切な運営、本人確認、緊急連絡、料金管理の目的にのみ利用します。</li>
-                            <li>原則として第三者へ開示・提供いたしませんが、利用終了後72時間経過しても連絡が取れず代金未払いまたはペット放置が発生した場合、人命・身体・財産・動物の生命保護のため緊急の必要がある場合、法令に基づく開示要請があった場合に限り行政機関・警察・弁護士等へ開示・提供することがあります。</li>
-                            <li>利用者（本人）の同意（許可）があった場合、ペットの写真・動画を公式サイト、SNS（InstagramやXなど）へ公開させていただきます。</li>
-                            <li>個人情報および本人確認書類の写しは施錠管理のもと厳重に保管し、最終ご利用日から3年経過後、シュレッダー等により速やかに安全破棄いたします。</li>
-                        </ol>
-                    </div>
+                    <p class="font-bold text-blue-950">申込者（以下「利用者」という）は、チョコ＆モカ（以下「当店」という）の提供するサービスを利用するにあたり、以下の規約および注意事項に同意し、これを遵守することを誓約します。</p>
+                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1.5"><h4 class="font-extrabold text-blue-950 text-sm">■ 第1条（預かり対象ペットの情報）</h4><p>初回カルテ作成時に、ペットのお名前、犬種・猫種・その他、性別／去勢・避妊の有無、年齢・生年月日・体重、かかりつけ動物病院、狂犬病予防注射（犬のみ・1年以内）、混合ワクチン接種（犬5種以上／猫3種・5種以上）、ノミ・マダニ・フィラリア予防、既往症・持病・アレルギー、フード名・給餌方法、SNS公開許可の有無をご申告いただきます。</p></div>
+                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1.5"><h4 class="font-extrabold text-blue-950 text-sm">■ 第2条（利用条件および提出書類）</h4><ol class="list-decimal list-inside space-y-1.5 pl-1 font-medium"><li><strong>本人確認：</strong>利用者の本人確認書類（運転免許証、パスポート、マイナンバーカード等）をご提示いただき、その写しを提出すること。</li><li><strong>初回登録料・事前決済：</strong>新規利用者は、初回カルテ登録料（1頭につき税込2,200円）および初回サービス料金の事前決済（クレジットカード決済）が必要です。</li><li><strong>予防接種・駆除：</strong>1年以内の「狂犬病予防注射済証」「混合ワクチン接種証明書」および予約日の2週間前までのノミ・マダニ・フィラリア予防確認書類の写しを提出すること。</li><li><strong>健康・行動条件：</strong>伝染病・重篤な疾患・発情期（ヒート中）・著しい噛み癖や攻撃性がないこと。</li></ol></div>
+                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1"><h4 class="font-extrabold text-blue-950 text-sm">■ 第3条（サービス料金）</h4><p>公式ページまたは予約サイト等に定める料金表および支払期日に同意の上、お支払いいただきます。</p></div>
+                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1"><h4 class="font-extrabold text-blue-950 text-sm">■ 第4条（緊急時の対応と医療措置）</h4><p>体調不良・ケガ等緊急時は指定または近隣動物病院へ搬送し、発生した医療費・通院費・救急対応費（60分毎に税込2,200円）は利用者負担となります。</p></div>
+                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1"><h4 class="font-extrabold text-blue-950 text-sm">■ 第5条（免責事項および損害賠償の範囲）</h4><p>天災地変・特異体質や持病の急変等、当店に故意または重過失がない事由を除き、重大な過失時は加入の事業賠償責任保険補償限度額および直接の獣医師治療費相当額を上限として賠償します。ご自宅内の貴重品は厳重に施錠・管理してください。</p></div>
+                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1"><h4 class="font-extrabold text-blue-950 text-sm">■ 第6条（お迎えの遅延および長期不通時の措置）</h4><p>予定変更時は速やかにSMSにてご連絡ください。</p></div>
+                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1"><h4 class="font-extrabold text-blue-950 text-sm">■ 第7条（キャンセル・遅刻規約）</h4><p>変更・キャンセルは予約サイトまたはSMS（070-9440-8118）にて受付。前日13:00まで無料／13:00〜19:00は50%／19:00以降・当日は100%。10分以上の遅刻は必ずSMSでご連絡ください。</p></div>
+                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1"><h4 class="font-extrabold text-blue-950 text-sm">■ 第8条（鍵の取扱い）</h4><p>ペットシッター利用時の鍵のお預かり・返却は対面手渡しを基本とし、必要に応じて鍵受け取り・受け渡しサービス（各税込1,650円）をご利用いただけます。</p></div>
+                    <div class="bg-blue-50/60 p-3.5 rounded-xl border border-blue-200 space-y-1"><h4 class="font-extrabold text-blue-950 text-sm">■ 第9条（個人情報・本人確認書類の取扱い）</h4><p>取得した個人情報および本人確認書類の写しは厳重に施錠保管し、サービス運営・緊急連絡目的にのみ利用いたします。</p></div>
                 </div>
 
                 <div class="p-3.5 sm:p-4 bg-blue-50 border-t border-blue-200 flex flex-col sm:flex-row gap-2 shrink-0">
@@ -1023,7 +908,7 @@
             endpoint: 'blogs'
         };
 
-        /* ワンクリック英語/日本語切替辞書（高速・外部依存ゼロ） */
+        /* ワンクリック英語/日本語切替辞書 */
         const I18N_EN = {
             header_sub: 'Small Dog Socialization School & Pet Hotel',
             header_brand: 'CHOCO & MOCA',
@@ -1057,6 +942,8 @@
             shuttle_d: '*For areas beyond 10km one-way, visits start from <strong>60-min sitting or 60-min dog walking</strong>. Actual coin parking or highway tolls apply if required.',
             voice_h2: '🐕 Owner Reviews in Sakai, Takaishi & Izumi',
             voice_sub: 'Real stories from pet owners within ~30 min drive of Takaishi using our home sitting, dog walking & senior care services 🐾',
+            voice_accordion_open: '▼ View Remaining 4 Owner Reviews Right Here',
+            voice_accordion_close: '▲ Close Additional 4 Owner Reviews',
             voice_more: '📜 Read More Owner Reviews',
             col_h2: '📚 Certified Sitter\'s Home Care & Pet Sitting Column',
             col_sub: 'Real case studies and expert advice on home sitting, dog walking, senior dogs & cat care',
@@ -1096,7 +983,7 @@
             modal_desc: 'For safe care and key handover procedures, we conduct an in-home initial consultation (individual chart fee ¥2,200 tax incl.) before your first sitting.',
             modal_agree: 'I agree to the Terms of Service (ID check, vaccination certificate & initial meeting).',
             modal_agree_hint: '▶ Tap to read full Terms of Service (PDF)',
-            modal_agree_checked: '✓ Terms of Service reviewed & agreed (tap to review again or uncheck)',
+            modal_agree_checked: '✓ Terms of Service reviewed & agreed (tap to uncheck)',
             modal_submit: 'Proceed to Square Booking',
             pdf_brand: 'Small Dog Socialization School & Pet Hotel CHOCO & MOCA',
             pdf_title: '📄 Terms of Service & Consent Agreement (Articles 1–9)',
@@ -1108,6 +995,28 @@
 
         const JP_CACHE = {};
         let currentLang = 'ja';
+        let isMobileVoiceOpen = false;
+
+        function updateMobileVoiceLabel() {
+            const label = document.getElementById('mobileVoiceAccordionLabel');
+            if (!label) return;
+            const isEn = currentLang === 'en';
+            if (isMobileVoiceOpen) {
+                label.textContent = isEn ? I18N_EN.voice_accordion_close : '▲ 残り4件の体験談を閉じる';
+            } else {
+                label.textContent = isEn ? I18N_EN.voice_accordion_open : '▼ 残り4件の体験談をここですぐ見る（まるくん・そらちゃん・みるくくん・あんずちゃん）';
+            }
+        }
+
+        function toggleMobileVoices() {
+            const grid = document.getElementById('sitter-voice-grid');
+            const btn = document.getElementById('mobileVoiceAccordionBtn');
+            if (!grid || !btn) return;
+            isMobileVoiceOpen = !grid.classList.contains('is-expanded');
+            grid.classList.toggle('is-expanded', isMobileVoiceOpen);
+            btn.setAttribute('aria-expanded', isMobileVoiceOpen ? 'true' : 'false');
+            updateMobileVoiceLabel();
+        }
 
         function applyLanguage(lang) {
             const isEn = lang === 'en';
@@ -1129,6 +1038,7 @@
             if (btnLabel) btnLabel.textContent = isEn ? '日本語' : 'EN';
 
             currentLang = lang;
+            updateMobileVoiceLabel();
             const cb = document.getElementById('agreeCheckbox');
             if (cb) setAgreementState(cb.checked);
             try { localStorage.setItem('chocomoka_lang', lang); } catch (e) {}
@@ -1170,7 +1080,6 @@
             btn.textContent = isClosed ? '▲ 閉じる' : '▼ 続きを読む';
         }
 
-        /* index.htmlと同じGoogleビジネスカード表示仕様（小型犬専門の社会化教室＆ペットホテル チョコ＆モカ / 日本、〒592-0004 大阪府高石市高師浜４丁目８−１６ / 5.0(3) / マップで開く） */
         function mountGoogleMap() {
             const container = document.getElementById('map-container');
             if (!container || container.dataset.loaded) return;
@@ -1180,7 +1089,6 @@
             container.innerHTML = `<iframe title="小型犬専門の社会化教室＆ペットホテル チョコ＆モカ 地図" src="https://maps.google.com/maps?q=${query}&hl=ja&z=16&output=embed" width="100%" height="100%" style="border:0;min-height:280px;" allowfullscreen="" decoding="async" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
         }
 
-        /* 利用規約PDF表示＆ ☐✓ チェック状態管理 */
         function setAgreementState(checked) {
             const cb = document.getElementById('agreeCheckbox');
             const visualBox = document.getElementById('agreeCheckVisual');
@@ -1203,7 +1111,7 @@
             }
             if (subHint) {
                 if (checked) {
-                    subHint.textContent = isEn ? I18N_EN.modal_agree_checked : '✓ 利用規約を確認・同意済み（タップで再確認・解除できます）';
+                    subHint.textContent = isEn ? I18N_EN.modal_agree_checked : '✓ 利用規約を確認・同意済み（タップで解除できます）';
                 } else {
                     subHint.textContent = isEn ? I18N_EN.modal_agree_hint : '▶ タップして利用規約（PDF全文）を確認する';
                 }
@@ -1217,41 +1125,35 @@
             }
         }
 
+        /* ▶ タップして利用規約（PDF全文）を確認する をクリックした瞬間に ☐✓ を自動で入れる */
         function handleTermsTriggerClick() {
             const cb = document.getElementById('agreeCheckbox');
             if (cb && cb.checked) {
                 setAgreementState(false);
             } else {
+                setAgreementState(true);
                 openTermsPdfModal();
             }
         }
-
         function openTermsPdfModal() {
+            setAgreementState(true);
             const pdfModal = document.getElementById('termsPdfModal');
             if (!pdfModal) return;
             document.body.style.overflow = '';
             pdfModal.classList.remove('hidden');
             const scrollBody = document.getElementById('termsPdfScrollBody');
-            if (scrollBody) {
-                scrollBody.scrollTop = 0;
-                scrollBody.focus({ preventScroll: true });
-            }
+            if (scrollBody) { scrollBody.scrollTop = 0; scrollBody.focus({ preventScroll: true }); }
         }
-
         function closeTermsPdfModal() {
             document.getElementById('termsPdfModal')?.classList.add('hidden');
             const firstModal = document.getElementById('firstTimeModal');
-            if (firstModal && !firstModal.classList.contains('hidden')) {
-                document.body.style.overflow = 'hidden';
-            }
+            if (firstModal && !firstModal.classList.contains('hidden')) document.body.style.overflow = 'hidden';
         }
-
         function confirmTermsAndCheck() {
             setAgreementState(true);
             closeTermsPdfModal();
             document.getElementById('modalSubmitBtn')?.focus();
         }
-
         function openModal() {
             const modal = document.getElementById('firstTimeModal');
             if (!modal) return;
@@ -1269,9 +1171,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             let savedLang = 'ja';
             try { savedLang = localStorage.getItem('chocomoka_lang') || 'ja'; } catch (e) {}
-            if (urlParams.get('lang') === 'en' || savedLang === 'en') {
-                applyLanguage('en');
-            }
+            if (urlParams.get('lang') === 'en' || savedLang === 'en') applyLanguage('en');
 
             if ('requestIdleCallback' in window) {
                 requestIdleCallback(() => {
@@ -1286,10 +1186,7 @@
             const mapTarget = document.getElementById('map-container');
             if (mapTarget && 'IntersectionObserver' in window) {
                 const mapObserver = new IntersectionObserver((entries, obs) => {
-                    if (entries[0].isIntersecting) {
-                        mountGoogleMap();
-                        obs.disconnect();
-                    }
+                    if (entries[0].isIntersecting) { mountGoogleMap(); obs.disconnect(); }
                 }, { rootMargin: '1500px' });
                 mapObserver.observe(mapTarget);
             }
@@ -1307,11 +1204,8 @@
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     const pdfModal = document.getElementById('termsPdfModal');
-                    if (pdfModal && !pdfModal.classList.contains('hidden')) {
-                        closeTermsPdfModal();
-                    } else {
-                        closeModal();
-                    }
+                    if (pdfModal && !pdfModal.classList.contains('hidden')) closeTermsPdfModal();
+                    else closeModal();
                 }
             }, { passive: true });
         });
