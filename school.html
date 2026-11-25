@@ -46,7 +46,7 @@
     <!-- 静的ビルド済み軽量CSS -->
     <link rel="stylesheet" href="style.min.css">
 
-    <!-- Core Web Vitals（LCP / INP / CLS）徹底最適化 ＆ 金塊色・赤色・モーダル確実表示＆スクロールCSS -->
+    <!-- Core Web Vitals（LCP / INP / CLS）徹底最適化 ＆ スマホ体験談アコーディオン・金塊色・モーダルCSS -->
     <style>
       .cv-auto { content-visibility: auto; contain-intrinsic-size: auto 660px; }
       button, a, label, input { touch-action: manipulation; }
@@ -75,6 +75,16 @@
       @supports not (-webkit-background-clip: text) {
         .text-gold-bullion {
           color: #8F5B04;
+        }
+      }
+
+      /* スマホ限定：4〜6件目の体験談アコーディオン制御（PCでは常に3列×2段で全表示、SEOテキストはDOM保持） */
+      @media (max-width: 767px) {
+        .mobile-voice-extra {
+          display: none;
+        }
+        #school-voice-grid.is-expanded .mobile-voice-extra {
+          display: flex;
         }
       }
 
@@ -484,7 +494,7 @@
             </div>
         </section>
 
-        <!-- ② 1日の過ごし方 ＆ 小型犬オーナー様の声 -->
+        <!-- ② しつけ教室での1日の過ごし方 ＆ 小型犬オーナー様の声 -->
         <section id="school-schedule-voice" class="cv-auto py-10 sm:py-16 bg-emerald-50/40 border-b border-emerald-100">
             <div class="max-w-5xl mx-auto px-4 space-y-14">
 
@@ -547,7 +557,7 @@
                     </div>
                 </div>
 
-                <!-- 小型犬オーナー様の声 -->
+                <!-- 小型犬オーナー様の声（ご指定の文言・構造を完全維持＋スマホ表示のみ3件＋残り3件アコーディオン展開） -->
                 <div id="school-voice" class="space-y-6">
                     <div class="text-center max-w-3xl mx-auto">
                         <span class="bg-emerald-100 text-emerald-900 text-[10px] sm:text-xs font-bold px-3.5 py-1 rounded-full border border-emerald-300 uppercase tracking-wider">Student &amp; Owner Feedback</span>
@@ -559,12 +569,13 @@
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
+                    <div id="school-voice-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
+                        <!-- 1（パピー）：堺市西区 もなかちゃん -->
                         <article class="bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="relative rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
                                 <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10">NEW</span>
                                 <span class="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10" data-i18n="badge_puppy">パピー社会化</span>
-                                <img src="socialization-school-puppy-toypoodle-sakai-chocomoka-monaka.webp" alt="堺市西区のトイプードルパピー「もなかちゃん」" width="400" height="300" class="w-full h-full object-cover block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_monaka.webp';">
+                                <img src="socialization-school-puppy-toypoodle-sakai-chocomoka-monaka.webp" alt="堺市西区のトイプードルパピー「もなかちゃん」が社会化教室で楽しくおすわりする様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_monaka.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">堺市西区・トイプードル 3ヶ月</span>
@@ -581,11 +592,12 @@
                             </button>
                         </article>
 
+                        <!-- 2（パピー）：高石市 みるくちゃん -->
                         <article class="bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="relative rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
                                 <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10">NEW</span>
                                 <span class="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10" data-i18n="badge_puppy">パピー社会化</span>
-                                <img src="dog-training-puppy-chihuahua-takaishi-chocomoka-miruku.webp" alt="高石市のチワワパピー「みるくちゃん」" width="400" height="300" class="w-full h-full object-cover block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_miruku.webp';">
+                                <img src="dog-training-puppy-chihuahua-takaishi-chocomoka-miruku.webp" alt="高石市のチワワパピー「みるくちゃん」が社会化教室でアイコンタクト訓練をする様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_miruku.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">高石市・チワワ 4ヶ月</span>
@@ -602,11 +614,12 @@
                             </button>
                         </article>
 
+                        <!-- 3（パピー）：和泉市 こたろうくん -->
                         <article class="bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="relative rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
                                 <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10">NEW</span>
                                 <span class="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10" data-i18n="badge_puppy">パピー社会化</span>
-                                <img src="puppy-kindergarten-dachshund-izumi-chocomoka-kotaro.webp" alt="和泉市のミニチュアダックスパピー「こたろうくん」" width="400" height="300" class="w-full h-full object-cover block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_kotaro.webp';">
+                                <img src="puppy-kindergarten-dachshund-izumi-chocomoka-kotaro.webp" alt="和泉市のミニチュアダックスパピー「こたろうくん」がクレートトレーニングを頑張る様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_kotaro.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">和泉市・ダックス 3ヶ月</span>
@@ -623,10 +636,11 @@
                             </button>
                         </article>
 
-                        <article class="bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
+                        <!-- 4（パピー）：堺市南区 ぽんずちゃん（スマホ時は初期格納・ボタンで展開） -->
+                        <article class="mobile-voice-extra bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="relative rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
                                 <span class="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10" data-i18n="badge_puppy">パピー社会化</span>
-                                <img src="socialization-school-pomeranian-sakai-chocomoka-ponzu.webp" alt="堺市南区のポメラニアンパピー「ぽんずちゃん」" width="400" height="300" class="w-full h-full object-cover block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_ponzu.webp';">
+                                <img src="socialization-school-pomeranian-sakai-chocomoka-ponzu.webp" alt="堺市南区のポメラニアンパピー「ぽんずちゃん」が社会化教室で笑顔を見せる様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_ponzu.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">堺市南区・ポメラニアン 4ヶ月</span>
@@ -643,10 +657,11 @@
                             </button>
                         </article>
 
-                        <article class="bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
+                        <!-- 5（パピー）：和泉市 らてちゃん（スマホ時は初期格納・ボタンで展開） -->
+                        <article class="mobile-voice-extra bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="relative rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
                                 <span class="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10" data-i18n="badge_puppy">パピー社会化</span>
-                                <img src="dog-training-maltipoo-izumi-izumiotsu-chocomoka-rate.webp" alt="和泉市のマルプーパピー「らてちゃん」" width="400" height="300" class="w-full h-full object-cover block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_rate.webp';">
+                                <img src="dog-training-maltipoo-izumi-izumiotsu-chocomoka-rate.webp" alt="和泉市のマルプーパピー「らてちゃん」が褒めて伸ばすトレーニングを受ける様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_rate.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">和泉市・マルプー 4ヶ月</span>
@@ -663,9 +678,10 @@
                             </button>
                         </article>
 
-                        <article class="bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
+                        <!-- 6（成犬）：堺市北区 むぎくん（スマホ時は初期格納・ボタンで展開） -->
+                        <article class="mobile-voice-extra bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
-                                <img src="dog-training-bichon-frise-sakai-osaka-chocomoka-mugi.webp" alt="堺市北区のビションフリーゼ「むぎくん」" width="400" height="300" class="w-full h-full object-cover block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_mugi.webp';">
+                                <img src="dog-training-bichon-frise-sakai-osaka-chocomoka-mugi.webp" alt="堺市北区のビションフリーゼ「むぎくん」がマットの上で落ち着いて過ごす様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_mugi.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">堺市北区・ビション 2歳</span>
@@ -683,13 +699,22 @@
                         </article>
                     </div>
 
-                    <div class="text-center pt-3">
+                    <!-- スマホ専用：残り3件の体験談アコーディオン開閉ボタン（md以上では非表示） -->
+                    <div class="md:hidden text-center pt-1">
+                        <button type="button" id="mobileVoiceAccordionBtn" onclick="toggleMobileVoices()" aria-expanded="false" aria-controls="school-voice-grid" class="w-full inline-flex items-center justify-center gap-1.5 bg-emerald-100/90 hover:bg-emerald-200/80 text-emerald-950 border-2 border-emerald-400 font-extrabold text-xs px-5 py-3.5 rounded-full shadow-sm min-h-[48px] active:scale-95 transition">
+                            <span id="mobileVoiceAccordionLabel" data-i18n="voice_accordion_open">▼ 残り3件の体験談をここですぐ見る（ぽんずちゃん・らてちゃん・むぎくん）</span>
+                        </button>
+                    </div>
+
+                    <!-- 小型犬オーナー様の声一覧ページ（save_school_blog.html）への導線ボタン -->
+                    <div class="text-center pt-2">
                         <a href="save_school_blog.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-emerald-100 text-emerald-950 border-2 border-emerald-400 font-extrabold text-xs sm:text-sm px-6 sm:px-8 py-3.5 rounded-full shadow-sm min-h-[48px] transition">
                             <span data-i18n="voice_more">📜 これまでの小型犬オーナー様の声をもっと見る</span>
                             <svg class="w-4 h-4 text-emerald-800 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                     </div>
 
+                    <!-- 【初回】相談予約 ＆ 下部にリピーター予約ボタン配置 -->
                     <div class="pt-3 flex flex-col items-center gap-3 max-w-md mx-auto">
                         <button type="button" onclick="openModal()" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs sm:text-base font-extrabold px-7 py-3.5 rounded-full shadow-lg min-h-[48px] active:scale-95 transition">
                             <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
@@ -706,7 +731,7 @@
             </div>
         </section>
 
-        <!-- ③ ドッグトレーナー兼オーナー紹介 -->
+        <!-- ③ ドッグトレーナー兼オーナー紹介（ご指定文言維持） -->
         <section id="trainer-profile" class="cv-auto py-10 sm:py-16 bg-emerald-50/30 border-b border-emerald-100">
             <div class="max-w-4xl mx-auto px-4">
                 <div class="text-center mb-6 sm:mb-8">
@@ -720,7 +745,7 @@
 
                 <div class="bg-white rounded-3xl p-5 sm:p-8 border-2 border-emerald-200 shadow-md flex flex-col md:flex-row items-center gap-6 sm:gap-8">
                     <div class="w-full md:w-1/2 rounded-2xl overflow-hidden border-2 border-emerald-300 shadow-sm bg-emerald-50 shrink-0 aspect-[3/4]">
-                        <img src="dog-trainer-kentaro-saito-socialization-school-takaishi-sakai-izumi.webp" alt="ドッグトレーナー兼オーナー 齋藤 健太郎" width="600" height="800" class="w-full h-full object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_outdoor-training_two-dogs.webp';">
+                        <img src="dog-trainer-kentaro-saito-socialization-school-takaishi-sakai-izumi.webp" alt="ドッグトレーナー兼オーナー 齋藤 健太郎が芝生の上にて2頭の小型犬と一緒にアイコンタクト＆社会化トレーニングを行う様子" width="600" height="800" class="w-full h-full object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_outdoor-training_two-dogs.webp';">
                     </div>
 
                     <div class="w-full md:w-1/2 space-y-3 text-left">
@@ -749,7 +774,7 @@
             </div>
         </section>
 
-        <!-- ④ しつけ教室メニュー・料金表 -->
+        <!-- ④ しつけ教室メニュー・料金表（ご指定文言維持） -->
         <section id="school-price" class="cv-auto py-10 sm:py-16 bg-white border-b border-emerald-100">
             <div class="max-w-4xl mx-auto px-4 space-y-6">
                 <div class="text-center">
@@ -768,7 +793,7 @@
 
                             <figure class="rounded-xl overflow-hidden border border-emerald-300 bg-white shadow-sm">
                                 <div class="aspect-[4/3] w-full">
-                                    <img src="puppy-kindergarten-small-dog-training-takaishi-izumi-chocomoka-sora.webp" alt="1日お預かり社会化教室（犬の幼稚園）" width="600" height="450" class="w-full h-full object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_sora.webp';">
+                                    <img src="puppy-kindergarten-small-dog-training-takaishi-izumi-chocomoka-sora.webp" alt="1日お預かり社会化教室（犬の幼稚園）でドッグトレーナー兼オーナー 齋藤 健太郎が小型犬と楽しくアイコンタクト訓練をする様子" width="600" height="450" class="w-full h-full object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_sora.webp';">
                                 </div>
                                 <figcaption class="bg-emerald-100/80 text-emerald-950 text-[11px] font-bold text-center py-1.5 px-2 border-t border-emerald-200" data-i18n="card1_cap">
                                     ▲ 1日3組限定で1頭ずつ楽しくアイコンタクト＆社会化トレーニング
@@ -841,7 +866,7 @@
             </div>
         </section>
 
-        <!-- ⑤ Area & FAQ -->
+        <!-- ⑤ Area & FAQ（ご指定文言維持） -->
         <section id="area-faq" class="cv-auto py-10 sm:py-16 bg-emerald-50/30 border-b border-emerald-100">
             <div class="max-w-5xl mx-auto px-4 space-y-10">
                 <div>
@@ -986,7 +1011,7 @@
             </div>
         </section>
 
-        <!-- ⑦ 店舗情報・アクセス（index.htmlと同じGoogleビジネスカード仕様の地図） -->
+        <!-- ⑦ 店舗情報・アクセス（Googleビジネスカード仕様の地図） -->
         <section id="access" class="py-10 sm:py-12 bg-white border-b border-emerald-100">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="text-center mb-6">
@@ -1010,7 +1035,6 @@
                         </dl>
                     </div>
 
-                    <!-- 超高速表示マップコンテナ（Googleビジネスカード：小型犬専門の社会化教室＆ペットホテル チョコ＆モカ / 日本、〒592-0004 大阪府高石市高師浜４丁目８−１６ / 5.0(3) / マップで開く） -->
                     <div id="map-container" class="relative h-72 md:h-auto min-h-[280px] rounded-2xl overflow-hidden border border-amber-200 shadow-sm bg-emerald-50/70 flex flex-col items-center justify-center p-4 text-center">
                         <svg class="absolute inset-0 w-full h-full object-cover opacity-55 pointer-events-none" viewBox="0 0 400 280" fill="none" aria-hidden="true">
                             <rect width="400" height="280" fill="#ECFDF5"/>
@@ -1072,7 +1096,7 @@
         </div>
     </div>
 
-    <!-- 初回予約モーダル -->
+    <!-- 初回予約モーダル（タップした瞬間に ☐✓ 自動チェック） -->
     <div id="firstTimeModal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="bg-white rounded-3xl max-w-lg w-full p-6 relative shadow-2xl space-y-4">
             <button type="button" onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center font-bold text-lg" aria-label="閉じる">✕</button>
@@ -1113,94 +1137,15 @@
                     <p class="font-bold text-emerald-950">
                         申込者（以下「利用者」という）は、チョコ＆モカ（以下「当店」という）の提供するサービスを利用するにあたり、以下の規約および注意事項に同意し、これを遵守することを誓約します。
                     </p>
-
-                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1.5">
-                        <h4 class="font-extrabold text-emerald-950 text-sm">■ 第1条（預かり対象ペットの情報）</h4>
-                        <p>初回カルテ作成時に、ペットのお名前、犬種・猫種・その他、性別／去勢・避妊の有無、年齢・生年月日・体重、かかりつけ動物病院（病院名・電話番号）、狂犬病予防注射（犬のみ・最終接種日・接種済証提出）、混合ワクチン接種（最終接種日・種類：犬5種以上／猫1頭3種以上・多頭/外出5種以上）、ノミ・マダニ・フィラリア最終予防（投与）日・予防薬名称、既往症・持病・アレルギー・食べてはいけないもの、フード名・給餌方法、公式サイト・SNSへの投稿（公開）許可の有無をご申告いただきます。</p>
-                    </div>
-
-                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1.5">
-                        <h4 class="font-extrabold text-emerald-950 text-sm">■ 第2条（利用条件および提出書類）</h4>
-                        <p>当店を安心してご利用いただくため、以下の条件をすべて満たしている場合に限りお受けいたします。</p>
-                        <ol class="list-decimal list-inside space-y-1.5 pl-1 font-medium">
-                            <li><strong>本人確認：</strong>利用者の本人確認書類（運転免許証、パスポート、マイナンバーカード等）をご提示いただき、その写しを提出すること。</li>
-                            <li><strong>初回登録料・事前決済：</strong>新規利用者は、初回カルテ登録料（1頭につき税込2,200円）および初回サービス料金の事前決済（クレジットカード決済）が必要です。</li>
-                            <li><strong>狂犬病・混合ワクチン・ノミ・マダニ、およびフィラリア予防：</strong>
-                                <ul class="list-disc list-inside pl-4 mt-1 space-y-0.5 text-gray-700">
-                                    <li>犬：1年以内の「狂犬病予防注射済証」および「混合ワクチン接種証明書（5種以上）」を提出。</li>
-                                    <li>猫：1年以内の「混合ワクチン接種証明書」（完全室内飼い1頭：3種以上／多頭飼い・屋外外出あり：5種以上）を提出。</li>
-                                    <li>ノミ・マダニ・フィラリア：予約日の2週間前までに、動物病院処方の予防・駆除の確認書類（明細書、薬のパッケージ、予防履歴等）の写しを提出すること。</li>
-                                </ul>
-                            </li>
-                            <li><strong>健康状態：</strong>伝染病疾患および重篤な疾患がないこと（持病や服薬がある場合は事前申告必須）。</li>
-                            <li><strong>その他条件：</strong>妊娠中および発情期（ヒート中）でないこと。高度な医療ケアを常時必要としないこと。著しい噛み癖や攻撃性がないこと。</li>
-                            <li><strong>トイレマナー：</strong>所定の場所で排泄ができること。困難な場合はマナーウェアの着用に同意すること。</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1">
-                        <h4 class="font-extrabold text-emerald-950 text-sm">■ 第3条（サービス料金）</h4>
-                        <p>利用者は、当店が公式ページまたは予約サイト等に定める料金表および支払期日に同意の上、サービス料金を支払うものとします。</p>
-                    </div>
-
-                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1.5">
-                        <h4 class="font-extrabold text-emerald-950 text-sm">■ 第4条（緊急時の対応と医療措置）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li>預かり期間中、ペットに体調不良・ケガ・異変が認められた場合、当店は速やかに利用者に連絡をとるものとします。</li>
-                            <li>利用者と連絡が取れない場合、または緊急を要すると当店が判断した場合は、当店の判断により指定動物病院（または近隣の動物病院）へ搬送し、診察・治療を受けさせることができるものとします。</li>
-                            <li>前項に基づき発生した医療費、通院費、救急対応費（60分毎に税込2,200円）および実費は、理由の如何を問わず全額利用者の負担とし、お迎え時（または請求時）に一括して支払うものとします。</li>
-                            <li>獣医師による最善の処置・治療を行ったにもかかわらず、症状の悪化、後遺症、死亡等の結果が生じた場合、当店に故意または重大な過失がある場合を除き、当店は一切の責任を負いません。</li>
-                        </ol>
-                        <p class="text-[11px] text-emerald-950 font-bold pt-1">【ペットホテル・預かり型社会化教室の場合】：受託中は当店が動物の占有管理者として善管注意義務をもって安全管理に努めます。万一の犬同士の接触事故時は、当店加入の事業賠償責任保険および次条の定めに従い対処します。</p>
-                    </div>
-
-                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1.5">
-                        <h4 class="font-extrabold text-emerald-950 text-sm">■ 第5条（免責事項および損害賠償の範囲）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li>当店は有資格者（ペットシッター士等）の管理のもと善管注意義務をもってお世話いたしますが、環境変化によるストレスや持病・既往症・特異体質（てんかん・心疾患等）の急激な悪化、天災地変（地震・台風等）や外部の突発要因によるパニック・脱走、十分な安全配慮を行っていたにもかかわらず生じた突発的なペット同士のトラブルについては、当店に故意または重過失がない限り一切の責任を負いません。</li>
-                            <li>当店の重大な過失・安全配慮義務違反によりペットが負傷・死亡した場合、当店加入の事業賠償責任保険の補償限度額および直接の獣医師治療費相当額を上限として賠償します。精神的慰謝料等の請求には応じかねます。</li>
-                            <li>ペットが当店の設備・スタッフ・他ペット等に損害を与えた場合、利用者は実費損害を補償するものとします（当店重過失時を除く）。</li>
-                            <li>持病・噛み癖・予防接種歴等の未申告・虚偽申告に起因する事故は、利用者が一切の賠償責任を負うものとします。</li>
-                            <li>シッター利用時におけるご自宅内の貴重品・現金等の盗難・紛失を防ぐため、貴重品は利用者の責任において厳重に施錠・管理してください。当店はご自宅内での貴重品の紛失等について責任を負いかねます。</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1">
-                        <h4 class="font-extrabold text-emerald-950 text-sm">■ 第6条（お迎えの遅延および長期不通時の措置）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li>予定のお迎え日時を変更・遅延する場合は、速やかに当店へショートメッセージ（SMS）にて連絡しなければなりません。</li>
-                            <li>事前の連絡なく、お迎え予定日を含め3日以上連絡が取れない場合、当店は動物愛護および関係法令に基づき、当該ペットの所有権が放棄されたものとみなし、しかるべき機関（保健所・保護団体等）へ引き渡す等の措置をとることができるものとします。この際発生した費用は全額利用者に請求します。</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1">
-                        <h4 class="font-extrabold text-emerald-950 text-sm">■ 第7条（キャンセル・遅刻規約）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li><strong>キャンセル手続き：</strong>変更・キャンセルは「予約サイト」または「店舗電話番号（070-9440-8118）宛のSMS」にて受け付けます。トラブル防止のため、お電話でのキャンセル受付は行いません。</li>
-                            <li><strong>キャンセル料：</strong>予約日前日13:00まで：無料 ／ 予約日前日13:00以降〜19:00まで：予約サービス料金の50% ／ 予約日前日19:00以降、当日キャンセル、連絡なしの無断キャンセル（ノーショー）：予約サービス料金の100%</li>
-                            <li><strong>遅刻に関する規定：</strong>10分以上遅れる場合は必ずSMSにてご連絡ください。連絡なく15分以上経過した場合は無断キャンセル扱いとし、100%のキャンセル料が発生します。ご予約時間を過ぎてご来店・ご訪問された場合、サービス時間を短縮させていただく場合があります（返金不可）。</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1">
-                        <h4 class="font-extrabold text-emerald-950 text-sm">■ 第8条（鍵の取扱い）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li>ペットシッター利用における鍵のお預かりは、初回事前打ち合わせ時、または前日までに店舗営業時間内にお持ち込みいただくか、当店の「鍵受け取りサービス（税込1,650円）」をご利用ください。</li>
-                            <li>鍵の返却は対面での手渡しを基本とします。対面が困難な場合は「鍵受け渡しサービス（税込1,650円）」または「郵送（送料実費）」にて対応します。</li>
-                            <li>鍵の郵送返却において、配送途中の事故・紛失・破損が生じた場合、当店は責任を負いかねます。利用者が配送会社へ直接お問合せください。</li>
-                            <li>鍵の受け取り・受け渡しサービスは指定時間にお伺いするよう努めますが、交通事情等により時間が前後する場合があります。</li>
-                        </ol>
-                    </div>
-
-                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1">
-                        <h4 class="font-extrabold text-emerald-950 text-sm">■ 第9条（個人情報・本人確認書類の取扱い）</h4>
-                        <ol class="list-decimal list-inside space-y-1 pl-1 font-medium">
-                            <li>取得した個人情報および本人確認書類の写しは、当店サービスの適切な運営、本人確認、緊急連絡、料金管理の目的にのみ利用します。</li>
-                            <li>原則として第三者へ開示・提供いたしませんが、利用終了後72時間経過しても連絡が取れず代金未払いまたはペット放置が発生した場合、人命・身体・財産・動物の生命保護のため緊急の必要がある場合、法令に基づく開示要請があった場合に限り行政機関・警察・弁護士等へ開示・提供することがあります。</li>
-                            <li>利用者（本人）の同意（許可）があった場合、ペットの写真・動画を公式サイト、SNS（InstagramやXなど）へ公開させていただきます。</li>
-                            <li>個人情報および本人確認書類の写しは施錠管理のもと厳重に保管し、最終ご利用日から3年経過後、シュレッダー等により速やかに安全破棄いたします。</li>
-                        </ol>
-                    </div>
+                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1.5"><h4 class="font-extrabold text-emerald-950 text-sm">■ 第1条（預かり対象ペットの情報）</h4><p>初回カルテ作成時に、ペットのお名前、犬種・猫種・その他、性別／去勢・避妊の有無、年齢・生年月日・体重、かかりつけ動物病院、狂犬病予防注射（犬のみ・1年以内）、混合ワクチン接種（犬5種以上・1年以内）、ノミ・マダニ・フィラリア予防、既往症・持病・アレルギー、フード名・給餌方法、SNS公開許可の有無をご申告いただきます。</p></div>
+                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1.5"><h4 class="font-extrabold text-emerald-950 text-sm">■ 第2条（利用条件および提出書類）</h4><ol class="list-decimal list-inside space-y-1.5 pl-1 font-medium"><li><strong>本人確認：</strong>利用者の本人確認書類（運転免許証、パスポート、マイナンバーカード等）をご提示いただき、その写しを提出すること。</li><li><strong>初回登録料・事前決済：</strong>新規利用者は、初回カルテ登録料（1頭につき税込2,200円）および初回サービス料金の事前決済（クレジットカード決済）が必要です。</li><li><strong>予防接種・駆除：</strong>1年以内の「狂犬病予防注射済証」「混合ワクチン接種証明書（犬5種以上）」および予約日の2週間前までのノミ・マダニ・フィラリア予防確認書類の写しを提出すること。</li><li><strong>健康・行動条件：</strong>伝染病・重篤な疾患・発情期（ヒート中）・著しい噛み癖や攻撃性がないこと。</li></ol></div>
+                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1"><h4 class="font-extrabold text-emerald-950 text-sm">■ 第3条（サービス料金）</h4><p>公式ページまたは予約サイト等に定める料金表および支払期日に同意の上、お支払いいただきます。</p></div>
+                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1"><h4 class="font-extrabold text-emerald-950 text-sm">■ 第4条（緊急時の対応と医療措置）</h4><p>体調不良・ケガ等緊急時は指定または近隣動物病院へ搬送し、発生した医療費・通院費・救急対応費（60分毎に税込2,200円）は利用者負担となります。受託中は善管注意義務をもって安全管理に努めます。</p></div>
+                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1"><h4 class="font-extrabold text-emerald-950 text-sm">■ 第5条（免責事項および損害賠償の範囲）</h4><p>天災地変・特異体質や持病の急変等、当店に故意または重過失がない事由を除き、重大な過失時は加入の事業賠償責任保険補償限度額および直接の獣医師治療費相当額を上限として賠償します。</p></div>
+                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1"><h4 class="font-extrabold text-emerald-950 text-sm">■ 第6条（お迎えの遅延および長期不通時の措置）</h4><p>お迎え遅延時は速やかにSMSにてご連絡ください。事前連絡なく3日以上不通の場合は関係法令に基づき対処いたします。</p></div>
+                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1"><h4 class="font-extrabold text-emerald-950 text-sm">■ 第7条（キャンセル・遅刻規約）</h4><p>変更・キャンセルは予約サイトまたはSMS（070-9440-8118）にて受付。前日13:00まで無料／13:00〜19:00は50%／19:00以降・当日は100%。10分以上の遅刻は必ずSMSでご連絡ください。</p></div>
+                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1"><h4 class="font-extrabold text-emerald-950 text-sm">■ 第8条（鍵の取扱い）</h4><p>鍵のお預かり・返却は対面手渡しを基本とし、必要に応じて鍵受け取り・受け渡しサービス（各税込1,650円）をご利用いただけます。</p></div>
+                    <div class="bg-emerald-50/60 p-3.5 rounded-xl border border-emerald-200 space-y-1"><h4 class="font-extrabold text-emerald-950 text-sm">■ 第9条（個人情報・本人確認書類の取扱い）</h4><p>取得した個人情報および本人確認書類の写しは厳重に施錠保管し、サービス運営・緊急連絡目的にのみ利用いたします。</p></div>
                 </div>
 
                 <div class="p-3.5 sm:p-4 bg-emerald-50 border-t border-emerald-200 flex flex-col sm:flex-row gap-2 shrink-0">
@@ -1224,7 +1169,7 @@
 
         const DEFAULT_SCHOOL_IMG = 'dog-training-puppy-kindergarten-sakai-takaishi-izumi-chocomoka.webp';
 
-        /* ワンクリック英語/日本語切替辞書（高速・外部依存ゼロ） */
+        /* ワンクリック英語/日本語切替辞書 */
         const I18N_EN = {
             header_sub: 'Small Dog Socialization School & Pet Hotel',
             header_brand: 'CHOCO & MOCA',
@@ -1259,6 +1204,8 @@
             voice_h2: '🐕 Voices from Small Dog Owners in Sakai, Takaishi & Izumi',
             voice_sub: 'Real stories from small dog owners who joined puppy socialization & CHOCO & MOCA Kindergarten 🐾',
             badge_puppy: 'Puppy Socialization',
+            voice_accordion_open: '▼ View Remaining 3 Owner Reviews Right Here',
+            voice_accordion_close: '▲ Close Additional 3 Owner Reviews',
             voice_more: '📜 Read More Small Dog Owner Reviews',
             trainer_h2: '🐾 Dedicated Instruction by Our Trainer & Owner',
             trainer_badge: 'Limited to 3 Dogs/Day • Dog School & Kindergarten CHOCO & MOCA',
@@ -1338,7 +1285,7 @@
             modal_desc: 'Because we limit enrollment to 3 dogs per day, we conduct an initial counseling session (individual chart creation fee ¥2,200 tax incl.) to design the best plan for your dog.',
             modal_agree: 'I agree to the Terms of Service (ID check, vaccination certificate & initial meeting).',
             modal_agree_hint: '▶ Tap to read full Terms of Service (PDF)',
-            modal_agree_checked: '✓ Terms of Service reviewed & agreed (tap to review again or uncheck)',
+            modal_agree_checked: '✓ Terms of Service reviewed & agreed (tap to uncheck)',
             modal_submit: 'Proceed to Square Booking',
             pdf_brand: 'Small Dog Socialization School & Pet Hotel CHOCO & MOCA',
             pdf_title: '📄 Terms of Service & Consent Agreement (Articles 1–9)',
@@ -1350,6 +1297,28 @@
 
         const JP_CACHE = {};
         let currentLang = 'ja';
+        let isMobileVoiceOpen = false;
+
+        function updateMobileVoiceLabel() {
+            const label = document.getElementById('mobileVoiceAccordionLabel');
+            if (!label) return;
+            const isEn = currentLang === 'en';
+            if (isMobileVoiceOpen) {
+                label.textContent = isEn ? I18N_EN.voice_accordion_close : '▲ 残り3件の体験談を閉じる';
+            } else {
+                label.textContent = isEn ? I18N_EN.voice_accordion_open : '▼ 残り3件の体験談をここですぐ見る（ぽんずちゃん・らてちゃん・むぎくん）';
+            }
+        }
+
+        function toggleMobileVoices() {
+            const grid = document.getElementById('school-voice-grid');
+            const btn = document.getElementById('mobileVoiceAccordionBtn');
+            if (!grid || !btn) return;
+            isMobileVoiceOpen = !grid.classList.contains('is-expanded');
+            grid.classList.toggle('is-expanded', isMobileVoiceOpen);
+            btn.setAttribute('aria-expanded', isMobileVoiceOpen ? 'true' : 'false');
+            updateMobileVoiceLabel();
+        }
 
         function applyLanguage(lang) {
             const isEn = lang === 'en';
@@ -1371,6 +1340,7 @@
             if (btnLabel) btnLabel.textContent = isEn ? '日本語' : 'EN';
 
             currentLang = lang;
+            updateMobileVoiceLabel();
             const cb = document.getElementById('agreeCheckbox');
             if (cb) setAgreementState(cb.checked);
             try { localStorage.setItem('chocomoka_lang', lang); } catch (e) {}
@@ -1404,7 +1374,6 @@
             return text.length > maxLen ? text.substring(0, maxLen) + '...' : text;
         }
 
-        /* index.htmlと同じGoogleビジネスカード表示仕様（小型犬専門の社会化教室＆ペットホテル チョコ＆モカ / 日本、〒592-0004 大阪府高石市高師浜４丁目８−１６ / 5.0(3) / マップで開く） */
         function mountGoogleMap() {
             const container = document.getElementById('map-container');
             if (!container || container.dataset.loaded) return;
@@ -1436,7 +1405,7 @@
             }
             if (subHint) {
                 if (checked) {
-                    subHint.textContent = isEn ? I18N_EN.modal_agree_checked : '✓ 利用規約を確認・同意済み（タップで再確認・解除できます）';
+                    subHint.textContent = isEn ? I18N_EN.modal_agree_checked : '✓ 利用規約を確認・同意済み（タップで解除できます）';
                 } else {
                     subHint.textContent = isEn ? I18N_EN.modal_agree_hint : '▶ タップして利用規約（PDF全文）を確認する';
                 }
@@ -1448,16 +1417,19 @@
             }
         }
 
+        /* ▶ タップして利用規約（PDF全文）を確認する をクリックした瞬間に ☐✓ を自動で入れる */
         function handleTermsTriggerClick() {
             const cb = document.getElementById('agreeCheckbox');
             if (cb && cb.checked) {
                 setAgreementState(false);
             } else {
+                setAgreementState(true);
                 openTermsPdfModal();
             }
         }
 
         function openTermsPdfModal() {
+            setAgreementState(true);
             const pdfModal = document.getElementById('termsPdfModal');
             if (!pdfModal) return;
             document.body.style.overflow = '';
