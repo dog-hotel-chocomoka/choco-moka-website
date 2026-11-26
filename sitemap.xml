@@ -2,38 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chocomoka.com/</loc>
-    <lastmod>2026-11-16</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-26</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://chocomoka.com/school.html</loc>
-    <lastmod>2026-11-16</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://chocomoka.com/sitter.html</loc>
-    <lastmod>2026-11-16</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://chocomoka.com/article.html?id=1</loc>
-    <lastmod>2026-11-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://chocomoka.com/article.html?id=03idb-svdz</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chocomoka.com/article.html?id=2</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://chocomoka.com/article.html?id=8cz1y6_gikek</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://chocomoka.com/article.html?id=3</loc>
-    <lastmod>2026-10-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://chocomoka.com/article.html?id=76kvj1vli8</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chocomoka.com/article.html?id=qy72brojxfk4</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chocomoka.com/article.html?id=s6ey7odixf</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chocomoka.com/article.html?id=fjp8o2tcj36</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chocomoka.com/article.html?id=co6m6m3dx_lh</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>
