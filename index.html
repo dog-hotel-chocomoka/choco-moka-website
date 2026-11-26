@@ -46,7 +46,7 @@
     <!-- 静的ビルド済み軽量CSS -->
     <link rel="stylesheet" href="style.min.css">
 
-    <!-- Core Web Vitals（LCP / INP / CLS）最適化＆金塊カラー＆カレンダー＆モーダル確実スクロールCSS -->
+    <!-- Core Web Vitals（LCP / INP / CLS）最適化＆金塊カラー＆FAQ折りたたみ＆モーダル確実スクロールCSS -->
     <style>
       .cv-auto { content-visibility: auto; contain-intrinsic-size: auto 700px; }
       button, a, label, input, summary { touch-action: manipulation; }
@@ -72,6 +72,21 @@
         .text-gold-bullion {
           color: #8F5B04;
         }
+      }
+
+      /* FAQ折りたたみ（details/summary）スタイル */
+      details.faq-item > summary {
+        list-style: none;
+        cursor: pointer;
+      }
+      details.faq-item > summary::-webkit-details-marker {
+        display: none;
+      }
+      details.faq-item .faq-chevron {
+        transition: transform 0.2s ease;
+      }
+      details.faq-item[open] .faq-chevron {
+        transform: rotate(180deg);
       }
 
       .hero-gallery {
@@ -444,7 +459,6 @@
                         </p>
                     </div>
 
-                    <!-- ご指定の4段落・金塊色強調テキスト -->
                     <div class="space-y-3 text-xs sm:text-base text-gray-800 leading-relaxed text-left sm:text-center font-medium">
                         <p data-i18n-html="hero_desc1">
                             <strong>大阪府高石市高師浜</strong>にある「チョコ＆モカ」は、小型犬専門の社会化教室・しつけ教室のオーナー兼トレーナーが運営する<span class="text-gold-bullion">「1日3組限定・完全会員制」のプレミアムペットホテル・しつけ教室・犬の幼稚園</span>です。
@@ -460,7 +474,6 @@
                         </p>
                     </div>
 
-                    <!-- 飼い主様が迷わず行動できる離脱防止CTA導線 -->
                     <div class="pt-1 flex flex-col items-center gap-3 max-w-md mx-auto">
                         <button type="button" onclick="openModal()" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs sm:text-base font-extrabold px-6 sm:px-8 py-3.5 rounded-full shadow-md min-h-[48px] active:scale-95 transition">
                             <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
@@ -509,7 +522,7 @@
                     </div>
 
                     <figure class="w-full max-w-xl mx-auto rounded-3xl overflow-hidden shadow-xl border-2 border-amber-300 bg-white">
-                        <img src="chocomoca-pethotel-takaishi-sakai-osaka-izumiotsu-izumi-kishiwada-kaizuka-izumisano-sayama-matsubara-tondabayashi-habikino.webp" alt="一般的なペットホテルと比べ、チョコ＆モカが圧倒的に選ばれる理由" width="768" height="1024" class="w-full h-auto object-contain block" loading="lazy" decoding="async">
+                        <img src="chocomoka-pethotel-takaishi-sakai-osaka-izumiotsu-izumi-kishiwada-kaizuka-izumisano-sayama-matsubara-tondabayashi-habikino.webp" alt="一般的なペットホテルと比べ、チョコ＆モカが圧倒的に選ばれる理由" width="768" height="1024" class="w-full h-auto object-contain block" loading="lazy" decoding="async">
                         <figcaption class="bg-amber-100/90 text-amber-950 text-xs sm:text-sm font-bold text-center py-3 px-4 border-t border-amber-200 leading-relaxed" data-i18n="why_cap">
                             ▲ 単なるお留守番ではなく、愛犬が成長できる「社会化」を育む特別なプレミアムステイをご提供！
                         </figcaption>
@@ -762,12 +775,15 @@
             </div>
         </section>
 
-        <!-- ⑥ プレミアムペットホテル料金表 -->
+        <!-- ⑥ プレミアムペットホテル料金表（スマホ表示のみ2行改行） -->
         <section id="hotel-price" class="cv-auto py-10 sm:py-16 bg-amber-50/50 border-b border-amber-100">
             <div class="max-w-4xl mx-auto px-4 space-y-6">
                 <div class="text-center">
                     <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">Hotel &amp; VIP Stay Price</span>
-                    <h2 class="text-lg sm:text-3xl font-extrabold text-amber-950 mt-2" data-i18n="price_h2">🏨 プレミアムペットホテル・一時預かり料金表</h2>
+                    <h2 class="text-lg sm:text-3xl font-extrabold text-amber-950 mt-2 leading-snug" data-i18n-html="price_h2">
+                        <span class="block sm:inline">🏨 プレミアムペットホテル・一時預かり</span>
+                        <span class="block sm:inline">料金表</span>
+                    </h2>
                     <p class="text-xs text-gray-600 mt-1" data-i18n="price_sub">すべて税込価格・24時間スタッフ見守り込み（高石市から車30分圏内 送迎・出張対応）</p>
                 </div>
 
@@ -788,7 +804,7 @@
                     </div>
                 </div>
 
-                <!-- VIP出張お泊りプラン（ご指定文言反映済み） -->
+                <!-- VIP出張お泊りプラン -->
                 <article id="vip-stay-plan" class="relative rounded-3xl p-1.5 bg-gradient-to-br from-[#BF953F] via-[#F5E08E] to-[#AA771C] shadow-xl">
                     <div class="bg-gradient-to-b from-[#FFFDF7] via-amber-50/90 to-orange-50/70 text-choco-950 rounded-[20px] p-5 sm:p-8 space-y-5">
                         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-300/70 pb-4">
@@ -848,74 +864,86 @@
             </div>
         </section>
 
-        <!-- ⑦ よくある質問（FAQ 5問・重複エリア説明ブロック削除でスッキリ離脱防止） -->
+        <!-- ⑦ よくある質問（FAQ 5問・折りたたみアコーディオン仕様） -->
         <section id="area-faq" class="cv-auto py-10 sm:py-16 bg-white border-b border-amber-100">
             <div class="max-w-5xl mx-auto px-4">
                 <div class="text-center mb-6">
                     <span class="bg-amber-100 text-amber-900 text-xs font-bold px-3.5 py-1 rounded-full border border-amber-300">FAQ</span>
-                    <h2 class="text-lg sm:text-2xl font-extrabold text-amber-950 mt-2" data-i18n="faq_h2">
+                    <h2 class="text-lg sm:text-2xl font-extrabold text-amber-950 mt-2 leading-snug" data-i18n="faq_h2">
                         ペットホテルに関するよくあるご質問（宿泊・送迎・持ち物）
                     </h2>
                 </div>
 
-                <div class="space-y-4">
-                    <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
-                        <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-extrabold text-amber-950 leading-snug">
-                            <span class="bg-amber-900 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                            <span data-i18n="fq1">ペットホテル利用時、堺市・和泉市・大阪狭山市・岸和田市・大阪市などの自宅まで送迎してもらえますか？</span>
-                        </h3>
-                        <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                <div class="space-y-3">
+                    <details class="faq-item bg-amber-50/40 rounded-2xl border border-amber-200 shadow-sm overflow-hidden">
+                        <summary class="p-4 sm:p-5 flex items-center justify-between gap-2.5 text-sm sm:text-base font-extrabold text-amber-950 leading-snug select-none">
+                            <span class="flex items-start gap-2.5">
+                                <span class="bg-amber-900 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                <span data-i18n="fq1">ペットホテル利用時、堺市・和泉市・大阪狭山市・岸和田市・大阪市などの自宅まで送迎してもらえますか？</span>
+                            </span>
+                            <span class="faq-chevron text-amber-800 text-xs font-extrabold shrink-0">▼</span>
+                        </summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-3 border-t border-amber-100 flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
                             <span class="bg-orange-500 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
                             <p data-i18n="fa1">はい、店舗（〒592-0004 大阪府高石市高師浜４丁目８−１６）から車で約30分圏内のエリアのご自宅まで専用車で送迎いたします（5km以内¥550、以降5kmごとに+¥550）。なお、片道10kmを超える遠方エリアは連泊ホテル送迎または24時間お泊りシッターにて承っております。</p>
                         </div>
-                    </article>
+                    </details>
 
-                    <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
-                        <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-extrabold text-amber-950 leading-snug">
-                            <span class="bg-amber-900 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                            <span data-i18n="fq2">夜間もスタッフは常駐していますか？ケージに入れっぱなしになりませんか？</span>
-                        </h3>
-                        <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                    <details class="faq-item bg-amber-50/40 rounded-2xl border border-amber-200 shadow-sm overflow-hidden">
+                        <summary class="p-4 sm:p-5 flex items-center justify-between gap-2.5 text-sm sm:text-base font-extrabold text-amber-950 leading-snug select-none">
+                            <span class="flex items-start gap-2.5">
+                                <span class="bg-amber-900 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                <span data-i18n="fq2">夜間もスタッフは常駐していますか？ケージに入れっぱなしになりませんか？</span>
+                            </span>
+                            <span class="faq-chevron text-amber-800 text-xs font-extrabold shrink-0">▼</span>
+                        </summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-3 border-t border-amber-100 flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
                             <span class="bg-orange-500 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
                             <p data-i18n="fa2">はい、24時間スタッフが常駐しており、夜間も目が届く環境でお預かりいたします。日中は広々としたフリースペースで他の穏やかな小型犬と遊びながら過ごし、就寝時のみ安心できる個室スペースで休むスタイルのため、ケージに入れっぱなしになることはありません。</p>
                         </div>
-                    </article>
+                    </details>
 
-                    <!-- 追加FAQ 3 -->
-                    <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
-                        <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-extrabold text-amber-950 leading-snug">
-                            <span class="bg-amber-900 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                            <span data-i18n="fq3">ペットホテルのお泊りや一時預かりに必要な持ち物は何ですか？普段のごはんやお薬の投薬もお願いできますか？</span>
-                        </h3>
-                        <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                    <details class="faq-item bg-amber-50/40 rounded-2xl border border-amber-200 shadow-sm overflow-hidden">
+                        <summary class="p-4 sm:p-5 flex items-center justify-between gap-2.5 text-sm sm:text-base font-extrabold text-amber-950 leading-snug select-none">
+                            <span class="flex items-start gap-2.5">
+                                <span class="bg-amber-900 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                <span data-i18n="fq3">ペットホテルのお泊りや一時預かりに必要な持ち物は何ですか？普段のごはんやお薬の投薬もお願いできますか？</span>
+                            </span>
+                            <span class="faq-chevron text-amber-800 text-xs font-extrabold shrink-0">▼</span>
+                        </summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-3 border-t border-amber-100 flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
                             <span class="bg-orange-500 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
                             <p data-i18n="fa3">1回分ずつ小分けにした普段食べ慣れているごはん（おやつ）、首輪・ハーネス・リード、お気に入りのおもちゃや飼い主様の匂いがついたタオルをお持ちください。また、初回時は1年以内の狂犬病予防注射済証・混合ワクチン接種証明書（5種以上）・本人確認書類をご提示いただきます。朝晩のお薬の投薬やフードのふやかしも個別カルテに沿って丁寧に対応いたします。</p>
                         </div>
-                    </article>
+                    </details>
 
-                    <!-- 追加FAQ 4 -->
-                    <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
-                        <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-extrabold text-amber-950 leading-snug">
-                            <span class="bg-amber-900 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                            <span data-i18n="fq4">関西空港（関空）からの旅行や出張で利用したいのですが、何時から何時まで預けられますか？ショートステイ（一時預かり）もできますか？</span>
-                        </h3>
-                        <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                    <details class="faq-item bg-amber-50/40 rounded-2xl border border-amber-200 shadow-sm overflow-hidden">
+                        <summary class="p-4 sm:p-5 flex items-center justify-between gap-2.5 text-sm sm:text-base font-extrabold text-amber-950 leading-snug select-none">
+                            <span class="flex items-start gap-2.5">
+                                <span class="bg-amber-900 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                <span data-i18n="fq4">関西空港（関空）からの旅行や出張で利用したいのですが、何時から何時まで預けられますか？ショートステイ（一時預かり）もできますか？</span>
+                            </span>
+                            <span class="faq-chevron text-amber-800 text-xs font-extrabold shrink-0">▼</span>
+                        </summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-3 border-t border-amber-100 flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
                             <span class="bg-orange-500 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
                             <p data-i18n="fa4">お預かり・お渡し時間は09:00〜19:00（時間外超過は60分ごとに¥550加算）で対応しております。南海高師浜線「高師浜駅」徒歩3分・羽衣駅圏内のため関西空港や大阪市内へのアクセスも良好です。また、お買い物や冠婚葬祭に便利なショートステイ（一時預かり 180分 ¥1,650）も1日3組限定でご利用いただけます。</p>
                         </div>
-                    </article>
+                    </details>
 
-                    <!-- 追加FAQ 5 -->
-                    <article class="bg-amber-50/40 p-5 sm:p-6 rounded-2xl border border-amber-200 shadow-sm space-y-3">
-                        <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-extrabold text-amber-950 leading-snug">
-                            <span class="bg-amber-900 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                            <span data-i18n="fq5">他の犬が苦手な怖がりな小型犬や、10歳以上のシニア犬（高齢犬）でも宿泊できますか？「完全会員制」とはどのような仕組みですか？</span>
-                        </h3>
-                        <div class="flex items-start gap-2.5 pt-3 border-t border-amber-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                    <details class="faq-item bg-amber-50/40 rounded-2xl border border-amber-200 shadow-sm overflow-hidden">
+                        <summary class="p-4 sm:p-5 flex items-center justify-between gap-2.5 text-sm sm:text-base font-extrabold text-amber-950 leading-snug select-none">
+                            <span class="flex items-start gap-2.5">
+                                <span class="bg-amber-900 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                <span data-i18n="fq5">他の犬が苦手な怖がりな小型犬や、10歳以上のシニア犬（高齢犬）でも宿泊できますか？「完全会員制」とはどのような仕組みですか？</span>
+                            </span>
+                            <span class="faq-chevron text-amber-800 text-xs font-extrabold shrink-0">▼</span>
+                        </summary>
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-3 border-t border-amber-100 flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
                             <span class="bg-orange-500 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
                             <p data-i18n="fa5">はい、小型犬専門・1日3組限定のため、他の犬が苦手な子やシニア犬も性格や体調に合わせて個別に見守りいたします。すべてのワンちゃんに安心・安全な環境をお約束するため、初回ご利用前に必ずご自宅での事前打ち合わせ（初回カルテ作成料¥2,200税込）とワクチン・健康状態の確認を行う「完全会員制」を採用しております。</p>
                         </div>
-                    </article>
+                    </details>
                 </div>
             </div>
         </section>
@@ -1213,7 +1241,7 @@
             stf1_r: 'Owner / Trainer', stf1_n: 'Kentaro Saito',
             stf2_r: 'Pet Sitter', stf2_n: 'Yoshi', stf3_n: 'Fumi',
             stf4_r: 'Groomer', stf4_n: 'Kana',
-            price_h2: '🏨 Premium Pet Hotel & Short Stay Rates',
+            price_h2: '<span class="block sm:inline">🏨 Premium Pet Hotel &amp; Short Stay</span><span class="block sm:inline"> Rates</span>',
             price_sub: 'All prices include tax & 24/7 staff supervision',
             rm1_t: 'Standard Room (24 Hours)',
             rm2_t: 'Deluxe Room (24 Hours)',
