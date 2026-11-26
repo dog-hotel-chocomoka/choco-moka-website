@@ -520,6 +520,9 @@
         }
 
         function renderNotFound() {
+            let robotsMeta = document.querySelector('meta[name="robots"]');
+            if (robotsMeta) robotsMeta.setAttribute('content', 'noindex, nofollow');
+
             document.getElementById('breadcrumb-title').textContent = "記事が見つかりません";
             document.getElementById('article-container').innerHTML = `
                 <div class="text-center py-8 space-y-4">
@@ -532,6 +535,23 @@
                     </div>
                 </div>
             `;
+        }
+
+        function mapMicroCmsItem(item) {
+            const rawDate = item.publishedAt || item.createdAt;
+            const catName = normalizeCategory(item.category);
+            return {
+                id: item.id,
+                category: catName,
+                date: formatDateStr(rawDate),
+                publishedAt: rawDate,
+                updatedAt: item.updatedAt,
+                title: item.title,
+                summary: item.summary || item.description || (item.content ? item.content.replace(/<[^>]*>?/gm, '').substring(0, 110) + '...' : ''),
+                img: (item.eyecatch && item.eyecatch.url) ? item.eyecatch.url : "12.jpg",
+                fallbackImg: "12.jpg",
+                content: item.content
+            };
         }
 
         function renderRelatedArticles(allArticles, currentId) {
@@ -577,48 +597,45 @@
             const canonicalUrl = `https://chocomoka.com/article.html?id=${encodeURIComponent(rawId)}`;
 
             try {
-                const query = new URLSearchParams({
-                    orders: '-publishedAt',
-                    limit: '20',
-                    fields: 'id,title,publishedAt,createdAt,updatedAt,category,eyecatch,summary,description,content'
-                });
-                const listUrl = `https://${MICROCMS_CONFIG.serviceDomain}.microcms.io/api/v1/${MICROCMS_CONFIG.endpoint}?${query.toString()}`;
-                const res = await fetch(listUrl, {
+                let target = null;
+                const itemRes = await fetch(`https://${MICROCMS_CONFIG.serviceDomain}.microcms.io/api/v1/${MICROCMS_CONFIG.endpoint}/${encodeURIComponent(rawId)}`, {
                     headers: { 'X-MICROCMS-API-KEY': MICROCMS_CONFIG.apiKey }
                 });
-                if (!res.ok) throw new Error('microCMS fetch failed');
-                const data = await res.json();
-
-                if (data.contents && data.contents.length > 0) {
-                    const mapped = data.contents.map(item => {
-                        const rawDate = item.publishedAt || item.createdAt;
-                        const catName = normalizeCategory(item.category);
-                        return {
-                            id: item.id,
-                            category: catName,
-                            date: formatDateStr(rawDate),
-                            publishedAt: rawDate,
-                            updatedAt: item.updatedAt,
-                            title: item.title,
-                            summary: item.summary || item.description || (item.content ? item.content.replace(/<[^>]*>?/gm, '').substring(0, 110) + '...' : ''),
-                            img: (item.eyecatch && item.eyecatch.url) ? item.eyecatch.url : "12.jpg",
-                            fallbackImg: "12.jpg",
-                            content: item.content
-                        };
-                    });
-
-                    const target = mapped.find(a => a.id === rawId) || LOCAL_FALLBACK_ARTICLES.find(a => a.id === rawId);
-                    if (target) {
-                        renderArticle(target);
-                        updateSEOMetadata(target, canonicalUrl);
-                        renderRelatedArticles(mapped, target.id);
-                    } else {
-                        renderNotFound();
-                        renderRelatedArticles(mapped, "");
+                if (itemRes.ok) {
+                    const itemData = await itemRes.json();
+                    if (itemData && itemData.id) {
+                        target = mapMicroCmsItem(itemData);
                     }
-                    return;
                 }
-                throw new Error('No contents');
+
+                if (!target) {
+                    target = LOCAL_FALLBACK_ARTICLES.find(a => a.id === rawId) || null;
+                }
+
+                let relatedPool = LOCAL_FALLBACK_ARTICLES;
+                const listQuery = new URLSearchParams({
+                    orders: '-publishedAt',
+                    limit: '6',
+                    fields: 'id,title,publishedAt,createdAt,updatedAt,category,eyecatch,summary,description,content'
+                });
+                const listRes = await fetch(`https://${MICROCMS_CONFIG.serviceDomain}.microcms.io/api/v1/${MICROCMS_CONFIG.endpoint}?${listQuery.toString()}`, {
+                    headers: { 'X-MICROCMS-API-KEY': MICROCMS_CONFIG.apiKey }
+                });
+                if (listRes.ok) {
+                    const listData = await listRes.json();
+                    if (listData.contents && listData.contents.length > 0) {
+                        relatedPool = listData.contents.map(mapMicroCmsItem);
+                    }
+                }
+
+                if (target) {
+                    renderArticle(target);
+                    updateSEOMetadata(target, canonicalUrl);
+                    renderRelatedArticles(relatedPool, target.id);
+                } else {
+                    renderNotFound();
+                    renderRelatedArticles(relatedPool, "");
+                }
             } catch (e) {
                 const target = LOCAL_FALLBACK_ARTICLES.find(a => a.id === rawId);
                 if (target) {
