@@ -46,11 +46,20 @@
     <!-- 静的ビルド済み軽量CSS -->
     <link rel="stylesheet" href="style.min.css">
 
-    <!-- Core Web Vitals（LCP / INP / CLS）徹底最適化 ＆ スマホ体験談アコーディオン・金塊色・モーダルCSS -->
+    <!-- Core Web Vitals（LCP / INP / CLS）徹底最適化 ＆ 右側空白解消・アコーディオン・金塊色・モーダルCSS -->
     <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
       .cv-auto { content-visibility: auto; contain-intrinsic-size: auto 660px; }
-      button, a, label, input { touch-action: manipulation; }
-      img { height: auto; }
+      button, a, label, input, summary { touch-action: manipulation; }
+      img, svg, iframe { max-width: 100%; height: auto; }
       body { text-rendering: optimizeSpeed; -webkit-font-smoothing: antialiased; }
 
       .text-red-highlight {
@@ -76,6 +85,21 @@
         .text-gold-bullion {
           color: #8F5B04;
         }
+      }
+
+      /* FAQ折りたたみ（details/summary）スタイル */
+      details.faq-item > summary {
+        list-style: none;
+        cursor: pointer;
+      }
+      details.faq-item > summary::-webkit-details-marker {
+        display: none;
+      }
+      details.faq-item .faq-chevron {
+        transition: transform 0.2s ease;
+      }
+      details.faq-item[open] .faq-chevron {
+        transform: rotate(180deg);
       }
 
       /* スマホ限定：4〜6件目の体験談アコーディオン制御（PCでは常に3列×2段で全表示、SEOテキストはDOM保持） */
@@ -322,7 +346,7 @@
           "url": "https://chocomoka.com/school.html",
           "name": "【高石市・堺市・和泉市】小型犬専門のしつけ教室＆犬の幼稚園 チョコ＆モカ｜1日3組限定",
           "inLanguage": ["ja", "en"],
-          "dateModified": "2026-11-26",
+          "dateModified": "2026-11-27",
           "isPartOf": {"@id": "https://chocomoka.com/#organization"},
           "mainEntity": {"@id": "https://chocomoka.com/school.html#service"},
           "speakable": {
@@ -379,7 +403,7 @@
 <body class="antialiased leading-relaxed pb-24">
 
     <!-- 共通ヘッダー（ワンクリック英語切替ボタン搭載・NAP統一） -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-emerald-100 shadow-sm">
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-emerald-100 shadow-sm w-full">
         <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2 flex justify-between items-center gap-1.5 sm:gap-2">
             <a href="index.html" class="flex items-center space-x-2 shrink-0 group text-left py-1">
                 <img src="chocomoka-pet-hotel-dog-training-takaishi-sakai-logo.webp" alt="堺市・高石市・和泉市・大阪狭山市・岸和田市の小型犬専門の社会化教室・しつけ教室・犬の幼稚園＆ペットホテル チョコ＆モカ ロゴ" width="48" height="48" class="h-10 sm:h-12 w-auto object-contain" fetchpriority="high" decoding="sync" onerror="this.onerror=null; this.src='logo.jpg';">
@@ -423,7 +447,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="w-full">
         <!-- ① ヒーローセクション -->
         <section class="bg-gradient-to-b from-emerald-50 to-teal-50/60 py-8 sm:py-14 border-b border-emerald-100">
             <div class="max-w-5xl mx-auto px-4 text-center">
@@ -442,15 +466,17 @@
                 </div>
 
                 <div id="hero-philosophy" class="bg-white/95 p-5 sm:p-8 rounded-3xl shadow-xl border border-emerald-200 max-w-3xl mx-auto space-y-5">
+                    <!-- スマホ表示のみ指定の改行・PCでは自然な表示 -->
                     <div class="space-y-4 text-sm sm:text-xl md:text-2xl font-extrabold text-emerald-950 leading-relaxed">
                         <p data-i18n-html="philo_1">
-                            <span class="block">チョコ＆モカでは、<span class="text-gold-bullion">ワンちゃんとの信頼関係を築く手法</span>として、</span>
-                            <span class="block"><span class="text-gold-bullion">「褒めるしつけ」を基本に、トレーニングを行っています。</span></span>
+                            <span class="block sm:inline">チョコ＆モカでは、<span class="text-gold-bullion">ワンちゃんとの信頼関係を</span></span>
+                            <span class="block sm:inline"><span class="text-gold-bullion">築く手法として、「褒めるしつけ」を基本に、</span></span>
+                            <span class="block"><span class="text-gold-bullion">トレーニングを行っています。</span></span>
                         </p>
 
                         <p data-i18n-html="philo_2">
                             <span class="block">愛犬の命に関わることや本当に危険なことだけを</span>
-                            <span class="block"><span class="text-red-highlight">「NO」と教え</span>、<span class="text-red-highlight">それ以外の失敗は一切叱りません。</span></span>
+                            <span class="block"><span class="text-red-highlight">「NO」と教え、それ以外の失敗は一切叱りません。</span></span>
                         </p>
                     </div>
 
@@ -473,20 +499,25 @@
                             <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
                             <span data-i18n="cta_repeat">リピーター様のご予約はこちら（Square）</span>
                         </a>
+
+                        <a href="#school-price" class="w-full inline-flex items-center justify-center gap-1.5 bg-emerald-100/80 hover:bg-emerald-100 text-emerald-950 text-xs sm:text-sm font-extrabold px-5 py-3 rounded-full transition">
+                            <span data-i18n="cta_jump">1日の過ごし方・料金表を見る ↓</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ② ドッグトレーナー兼オーナー紹介（離脱防止のため1日の過ごし方の直上に配置・指定3行削除済み） -->
+        <!-- ② ドッグトレーナー兼オーナー紹介（スマホ表示のみ2行改行） -->
         <section id="trainer-profile" class="cv-auto py-10 sm:py-16 bg-emerald-50/30 border-b border-emerald-100">
             <div class="max-w-4xl mx-auto px-4">
                 <div class="text-center mb-6 sm:mb-8">
                     <span class="bg-emerald-100 text-emerald-900 text-[10px] sm:text-xs font-bold px-3.5 py-1 rounded-full border border-emerald-300 uppercase tracking-wider">
                         Trainer &amp; Owner Profile
                     </span>
-                    <h2 class="text-lg sm:text-2xl md:text-3xl font-extrabold text-emerald-950 mt-2" data-i18n="trainer_h2">
-                        🐾 ドッグトレーナー兼オーナーが丁寧に指導いたします
+                    <h2 class="text-lg sm:text-2xl md:text-3xl font-extrabold text-emerald-950 mt-2 leading-snug" data-i18n-html="trainer_h2">
+                        <span class="block sm:inline">🐾 ドッグトレーナー兼オーナーが丁寧に</span>
+                        <span class="block sm:inline">指導いたします</span>
                     </h2>
                 </div>
 
@@ -495,7 +526,7 @@
                         <img src="dog-trainer-kentaro-saito-socialization-school-takaishi-sakai-izumi.webp" alt="ドッグトレーナー兼オーナー 齋藤 健太郎が芝生の上にて2頭の小型犬と一緒にアイコンタクト＆社会化トレーニングを行う様子" width="600" height="800" class="w-full h-full object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_outdoor-training_two-dogs.webp';">
                     </div>
 
-                    <div class="w-full md:w-1/2 space-y-3 text-left">
+                    <div class="w-full md:w-1/2 space-y-3.5 text-left">
                         <div class="space-y-1">
                             <span class="inline-block bg-emerald-800 text-white text-[11px] font-extrabold px-3 py-0.5 rounded-full" data-i18n="trainer_badge">
                                 1日3組限定の犬のしつけ教室・幼稚園 チョコ＆モカ
@@ -505,7 +536,7 @@
                         </div>
 
                         <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium" data-i18n-html="trainer_p1">
-                            チョコ＆モカでは、<span class="text-gold-bullion">ワンちゃんとの信頼関係を築く手法</span>として、<span class="text-gold-bullion">「褒めるしつけ」を基本に、トレーニングを行っています。</span>愛犬の命に関わることや本当に危険なことだけを<span class="text-red-highlight">「NO」と教え</span>、<span class="text-red-highlight">それ以外の失敗は一切叱りません。</span>
+                            チョコ＆モカでは、<span class="text-gold-bullion text-sm sm:text-base">ワンちゃんとの信頼関係を築く手法として、「褒めるしつけ」を基本に、トレーニングを行っています。</span><span class="text-red-highlight">愛犬の命に関わることや本当に危険なことだけを「NO」と教え、それ以外の失敗は一切叱りません。</span>
                         </p>
                         <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-medium" data-i18n="trainer_p2">
                             まずはアイコンタクトを取りながら「人と一緒に学ぶって楽しい！」と感じてもらうことを大切にしています。生後3ヶ月頃までのパピー期の社会化から成犬のお悩みまで、どんな小さなことでもお気軽にご相談ください。
@@ -591,12 +622,12 @@
                     </div>
 
                     <div id="school-voice-grid" class="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
-                        <!-- 1（パピー）：堺市西区 もなかちゃん -->
+                        <!-- 1 -->
                         <article class="bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="relative rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
                                 <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10">NEW</span>
                                 <span class="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10" data-i18n="badge_puppy">パピー社会化</span>
-                                <img src="socialization-school-puppy-toypoodle-sakai-chocomoka-monaka.webp" alt="堺市西区のトイプードルパピー「もなかちゃん」が社会化教室で楽しくおすわりする様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_monaka.webp';">
+                                <img src="socialization-school-puppy-toypoodle-sakai-chocomoka-monaka.webp" alt="堺市西区のトイプードルパピー「もなかちゃん」" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_monaka.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">堺市西区・トイプードル 3ヶ月</span>
@@ -613,12 +644,12 @@
                             </button>
                         </article>
 
-                        <!-- 2（パピー）：高石市 みるくちゃん -->
+                        <!-- 2 -->
                         <article class="bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="relative rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
                                 <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10">NEW</span>
                                 <span class="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10" data-i18n="badge_puppy">パピー社会化</span>
-                                <img src="dog-training-puppy-chihuahua-takaishi-chocomoka-miruku.webp" alt="高石市のチワワパピー「みるくちゃん」が社会化教室でアイコンタクト訓練をする様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_miruku.webp';">
+                                <img src="dog-training-puppy-chihuahua-takaishi-chocomoka-miruku.webp" alt="高石市のチワワパピー「みるくちゃん」" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_miruku.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">高石市・チワワ 4ヶ月</span>
@@ -635,12 +666,12 @@
                             </button>
                         </article>
 
-                        <!-- 3（パピー）：和泉市 こたろうくん -->
+                        <!-- 3 -->
                         <article class="bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="relative rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
                                 <span class="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10">NEW</span>
                                 <span class="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10" data-i18n="badge_puppy">パピー社会化</span>
-                                <img src="puppy-kindergarten-dachshund-izumi-chocomoka-kotaro.webp" alt="和泉市のミニチュアダックスパピー「こたろうくん」がクレートトレーニングを頑張る様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_kotaro.webp';">
+                                <img src="puppy-kindergarten-dachshund-izumi-chocomoka-kotaro.webp" alt="和泉市のミニチュアダックスパピー「こたろうくん」" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_kotaro.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">和泉市・ダックス 3ヶ月</span>
@@ -657,11 +688,11 @@
                             </button>
                         </article>
 
-                        <!-- 4（パピー）：堺市南区 ぽんずちゃん -->
+                        <!-- 4 -->
                         <article class="mobile-voice-extra bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="relative rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
                                 <span class="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10" data-i18n="badge_puppy">パピー社会化</span>
-                                <img src="socialization-school-pomeranian-sakai-chocomoka-ponzu.webp" alt="堺市南区のポメラニアンパピー「ぽんずちゃん」が社会化教室で笑顔を見せる様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_ponzu.webp';">
+                                <img src="socialization-school-pomeranian-sakai-chocomoka-ponzu.webp" alt="堺市南区のポメラニアンパピー「ぽんずちゃん」" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_ponzu.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">堺市南区・ポメラニアン 4ヶ月</span>
@@ -678,11 +709,11 @@
                             </button>
                         </article>
 
-                        <!-- 5（パピー）：和泉市 らてちゃん -->
+                        <!-- 5 -->
                         <article class="mobile-voice-extra bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="relative rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
                                 <span class="absolute top-2 right-2 bg-orange-500 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full shadow z-10" data-i18n="badge_puppy">パピー社会化</span>
-                                <img src="dog-training-maltipoo-izumi-izumiotsu-chocomoka-rate.webp" alt="和泉市のマルプーパピー「らてちゃん」が褒めて伸ばすトレーニングを受ける様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_rate.webp';">
+                                <img src="dog-training-maltipoo-izumi-izumiotsu-chocomoka-rate.webp" alt="和泉市のマルプーパピー「らてちゃん」" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_rate.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">和泉市・マルプー 4ヶ月</span>
@@ -699,10 +730,10 @@
                             </button>
                         </article>
 
-                        <!-- 6（成犬）：堺市北区 むぎくん -->
+                        <!-- 6 -->
                         <article class="mobile-voice-extra bg-white p-4 rounded-2xl border border-emerald-200 shadow-sm flex flex-col space-y-2.5">
                             <div class="rounded-xl overflow-hidden border border-emerald-300 bg-white aspect-[4/3]">
-                                <img src="dog-training-bichon-frise-sakai-osaka-chocomoka-mugi.webp" alt="堺市北区のビションフリーゼ「むぎくん」がマットの上で落ち着いて過ごす様子" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_mugi.webp';">
+                                <img src="dog-training-bichon-frise-sakai-osaka-chocomoka-mugi.webp" alt="堺市北区のビションフリーゼ「むぎくん」" width="400" height="300" class="w-full h-full object-cover block hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_school_mugi.webp';">
                             </div>
                             <div class="flex items-center justify-between gap-1 min-h-[26px]">
                                 <span class="bg-emerald-800 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">堺市北区・ビション 2歳</span>
@@ -720,7 +751,6 @@
                         </article>
                     </div>
 
-                    <!-- スマホ専用：残り3件の体験談アコーディオン開閉ボタン（md以上では非表示） -->
                     <div class="md:hidden text-center pt-1">
                         <button type="button" id="mobileVoiceAccordionBtn" onclick="toggleMobileVoices()" aria-expanded="false" aria-controls="school-voice-grid" class="w-full inline-flex items-center justify-center gap-1.5 bg-emerald-100/90 hover:bg-emerald-200/80 text-emerald-950 border-2 border-emerald-400 font-extrabold text-xs px-5 py-3.5 rounded-full shadow-sm min-h-[48px] active:scale-95 transition">
                             <span id="mobileVoiceAccordionLabel" data-i18n="voice_accordion_open">▼ 残り3件の体験談をここですぐ見る（ぽんずちゃん・らてちゃん・むぎくん）</span>
@@ -733,24 +763,12 @@
                             <svg class="w-4 h-4 text-emerald-800 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                         </a>
                     </div>
-
-                    <div class="pt-3 flex flex-col items-center gap-3 max-w-md mx-auto">
-                        <button type="button" onclick="openModal()" class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs sm:text-base font-extrabold px-7 py-3.5 rounded-full shadow-lg min-h-[48px] active:scale-95 transition">
-                            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
-                            <span data-i18n="cta_first">【初回】しつけカウンセリングを予約する</span>
-                        </button>
-
-                        <a href="https://chocomoka.square.site" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 bg-amber-900 hover:bg-amber-950 text-white text-xs sm:text-base font-extrabold px-7 py-3.5 rounded-full shadow-md min-h-[48px] active:scale-95 transition">
-                            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
-                            <span data-i18n="cta_repeat">リピーター様のご予約はこちら（Square）</span>
-                        </a>
-                    </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- ④ しつけ教室メニュー・料金表 -->
+        <!-- ④ しつけ教室メニュー・料金表 ＋ ご利用可能なお支払い方法（1日の過ごし方・体験談の直下に配置） -->
         <section id="school-price" class="cv-auto py-10 sm:py-16 bg-white border-b border-emerald-100">
             <div class="max-w-4xl mx-auto px-4 space-y-6">
                 <div class="text-center">
@@ -817,10 +835,11 @@
                     <p class="text-gray-700 font-medium leading-relaxed" data-i18n="shuttle_desc">※高石市から車で約30分圏内（堺市全域・和泉市・大阪狭山市・泉大津市・忠岡町・岸和田市・貝塚市・泉佐野市・松原市・富田林市西部・羽曳野市西部・大阪市南部〜中心部）へ登園送迎に対応しております。駐車スペースがない場合のコインパーキング代および遠方での高速道路利用時は往復実費を頂戴いたします。</p>
                 </div>
 
+                <!-- ご利用可能なお支払い方法 -->
                 <div id="payment-methods" class="pt-2 max-w-3xl mx-auto">
                     <figure class="rounded-2xl overflow-hidden border-2 border-amber-300 shadow-md bg-white">
                         <div class="aspect-[10/3] w-full">
-                            <img src="chocomoka-dog-training-pet-hotel-payment-methods-takaishi-sakai.webp" alt="ご利用可能なお支払い方法" width="1200" height="360" class="w-full h-full object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_payment-methods_banner.webp';">
+                            <img src="chocomoka-dog-training-pet-hotel-payment-methods-takaishi-sakai.webp" alt="ご利用可能なお支払い方法：クレジットカード（VISA・Mastercard・JCB・AMERICAN EXPRESS）、電子マネー（iD・QUICPay）、QRコード決済（PayPay・d払い・楽天ペイ・au PAY・メルペイ）、現金" width="1200" height="360" class="w-full h-full object-contain block" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='chocomoka_payment-methods_banner.webp';">
                         </div>
                         <figcaption class="bg-amber-100/80 text-amber-950 text-[11px] sm:text-xs font-bold text-center py-2 px-3 border-t border-amber-200" data-i18n="pay_cap">
                             💳 現金・クレジットカード（VISA/Mastercard/JCB/AMEX）・電子マネー（iD/QUICPay）・QR決済（PayPay/d払い/楽天ペイ/au PAY/メルペイ）対応
@@ -842,58 +861,71 @@
             </div>
         </section>
 
-        <!-- ⑤ Area & FAQ（ご指定2問削除済み） -->
+        <!-- ⑤ Area & FAQ（スマホ2行見出し＋折りたたみアコーディオン仕様＋指定説明文削除済み） -->
         <section id="area-faq" class="cv-auto py-10 sm:py-16 bg-emerald-50/30 border-b border-emerald-100">
             <div class="max-w-5xl mx-auto px-4 space-y-10">
                 <div>
-                    <h2 class="text-lg sm:text-2xl font-extrabold text-emerald-950 text-center mb-6" data-i18n="faq_h2">
-                        犬のしつけ教室・社会化に関するよくあるご質問
+                    <h2 class="text-lg sm:text-2xl font-extrabold text-emerald-950 text-center mb-6 leading-snug" data-i18n-html="faq_h2">
+                        <span class="block sm:inline">犬のしつけ教室・社会化に関する</span>
+                        <span class="block sm:inline">よくあるご質問</span>
                     </h2>
 
-                    <div class="space-y-4">
-                        <article class="bg-white p-5 sm:p-6 rounded-2xl border border-emerald-200 shadow-sm space-y-3">
-                            <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-extrabold text-emerald-950 leading-snug">
-                                <span class="bg-emerald-800 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                                <span data-i18n="faq_q1">高石市・堺市・和泉市で小型犬専門のしつけ教室を探しています。吠え癖や噛み癖、パピーの社会化も相談できますか？</span>
-                            </h3>
-                            <div class="flex items-start gap-2.5 pt-3 border-t border-emerald-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                    <div class="space-y-3">
+                        <details class="faq-item bg-white rounded-2xl border border-emerald-200 shadow-sm overflow-hidden">
+                            <summary class="p-4 sm:p-5 flex items-center justify-between gap-2.5 text-sm sm:text-base font-extrabold text-emerald-950 leading-snug select-none">
+                                <span class="flex items-start gap-2.5">
+                                    <span class="bg-emerald-800 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                    <span data-i18n="faq_q1">高石市・堺市・和泉市で小型犬専門のしつけ教室を探しています。吠え癖や噛み癖、パピーの社会化も相談できますか？</span>
+                                </span>
+                                <span class="faq-chevron text-emerald-700 text-xs font-extrabold shrink-0">▼</span>
+                            </summary>
+                            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-3 border-t border-emerald-100 flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
                                 <span class="bg-teal-600 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
                                 <p data-i18n="faq_a1">もちろんです。1日3組限定の少人数制で、生後3ヶ月頃までのパピー期の社会化サポートから、成犬の無駄吠え・噛み癖・トイレ失敗・お留守番不安の改善まで、初回カウンセリングで個別カルテを作成し、1頭ずつの性格に合わせた個別プログラムをご提供しています。</p>
                             </div>
-                        </article>
+                        </details>
 
-                        <article class="bg-white p-5 sm:p-6 rounded-2xl border border-emerald-200 shadow-sm space-y-3">
-                            <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-extrabold text-emerald-950 leading-snug">
-                                <span class="bg-emerald-800 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                                <span data-i18n="faq_q2">子犬（パピー）の社会化教室は何ヶ月頃から通えますか？ワクチン完了前でも相談できますか？</span>
-                            </h3>
-                            <div class="flex items-start gap-2.5 pt-3 border-t border-emerald-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                        <details class="faq-item bg-white rounded-2xl border border-emerald-200 shadow-sm overflow-hidden">
+                            <summary class="p-4 sm:p-5 flex items-center justify-between gap-2.5 text-sm sm:text-base font-extrabold text-emerald-950 leading-snug select-none">
+                                <span class="flex items-start gap-2.5">
+                                    <span class="bg-emerald-800 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                    <span data-i18n="faq_q2">子犬（パピー）の社会化教室は何ヶ月頃から通えますか？ワクチン完了前でも相談できますか？</span>
+                                </span>
+                                <span class="faq-chevron text-emerald-700 text-xs font-extrabold shrink-0">▼</span>
+                            </summary>
+                            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-3 border-t border-emerald-100 flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
                                 <span class="bg-teal-600 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
                                 <p data-i18n="faq_a2">生後3週間〜14週間頃は一生に一度の「社会化黄金期」です。混合ワクチン接種完了前であっても、初回カウンセリングでの個別相談や抱っこでのお外慣れなど、感染症に配慮したプログラムからスタートできますのでお早めにご相談ください。</p>
                             </div>
-                        </article>
+                        </details>
 
-                        <article class="bg-white p-5 sm:p-6 rounded-2xl border border-emerald-200 shadow-sm space-y-3">
-                            <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-extrabold text-emerald-950 leading-snug">
-                                <span class="bg-emerald-800 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                                <span data-i18n="faq_q3">他の犬が苦手な怖がりな小型犬や、成犬になってからでも改善できますか？</span>
-                            </h3>
-                            <div class="flex items-start gap-2.5 pt-3 border-t border-emerald-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                        <details class="faq-item bg-white rounded-2xl border border-emerald-200 shadow-sm overflow-hidden">
+                            <summary class="p-4 sm:p-5 flex items-center justify-between gap-2.5 text-sm sm:text-base font-extrabold text-emerald-950 leading-snug select-none">
+                                <span class="flex items-start gap-2.5">
+                                    <span class="bg-emerald-800 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                    <span data-i18n="faq_q3">他の犬が苦手な怖がりな小型犬や、成犬になってからでも改善できますか？</span>
+                                </span>
+                                <span class="faq-chevron text-emerald-700 text-xs font-extrabold shrink-0">▼</span>
+                            </summary>
+                            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-3 border-t border-emerald-100 flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
                                 <span class="bg-teal-600 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
                                 <p data-i18n="faq_a3">はい、ご安心ください。1日3組限定・小型犬専門で性格や相性を見極めながら、愛犬の命に関わることや本当に危険なことだけを「NO」と教え、それ以外の失敗は一切叱りません。「褒めるしつけ」を基本に愛犬のペースに合わせて楽しく成長できます。</p>
                             </div>
-                        </article>
+                        </details>
 
-                        <article class="bg-white p-5 sm:p-6 rounded-2xl border border-emerald-200 shadow-sm space-y-3">
-                            <h3 class="flex items-start gap-2.5 text-sm sm:text-base font-extrabold text-emerald-950 leading-snug">
-                                <span class="bg-emerald-800 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
-                                <span data-i18n="faq_q6">駐車場や最寄り駅からのアクセスはどうなっていますか？</span>
-                            </h3>
-                            <div class="flex items-start gap-2.5 pt-3 border-t border-emerald-100 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
+                        <details class="faq-item bg-white rounded-2xl border border-emerald-200 shadow-sm overflow-hidden">
+                            <summary class="p-4 sm:p-5 flex items-center justify-between gap-2.5 text-sm sm:text-base font-extrabold text-emerald-950 leading-snug select-none">
+                                <span class="flex items-start gap-2.5">
+                                    <span class="bg-emerald-800 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">Q</span>
+                                    <span data-i18n="faq_q6">駐車場や最寄り駅からのアクセスはどうなっていますか？</span>
+                                </span>
+                                <span class="faq-chevron text-emerald-700 text-xs font-extrabold shrink-0">▼</span>
+                            </summary>
+                            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-3 border-t border-emerald-100 flex items-start gap-2.5 text-xs sm:text-sm text-gray-700 leading-relaxed font-medium">
                                 <span class="bg-teal-600 text-white text-xs font-extrabold w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5">A</span>
                                 <p data-i18n="faq_a6">南海高師浜線「高師浜駅」から徒歩3分の場所（〒592-0004 大阪府高石市高師浜４丁目８−１６）にあり、専用駐車場も1台完備しております。南海本線「羽衣駅」やJR阪和線「東羽衣駅」からもお車で約5分とアクセスしやすい立地です。</p>
                             </div>
-                        </article>
+                        </details>
                     </div>
                 </div>
 
@@ -908,7 +940,7 @@
 
                     <div class="bg-white p-5 sm:p-8 rounded-3xl border border-emerald-200 shadow-sm space-y-4">
                         <p class="text-xs sm:text-base text-gray-700 leading-relaxed font-medium" data-i18n="area_desc">
-                            生後3ヶ月頃までのパピー期の社会化サポートから、成犬の無駄吠え・噛み癖・トイレ失敗・お留守番不安の改善まで、1頭ずつの性格に合わせた個別プログラムを実施しています。高石市周辺はもちろん、車で約30分圏内の北方面（堺市全域・大阪市南部〜中心部）、南方面の泉州エリア（泉大津市・和泉市・忠岡町・岸和田市・貝塚市・泉佐野市）、東・南東方面の南河内エリア（大阪狭山市・松原市・富田林市西部・羽曳野市西部）から「1日お預かり社会化教室（犬の幼稚園）」への登園・朝夕のご自宅送迎をご利用いただけます。
+                            生後3ヶ月頃までのパピー期の社会化サポートから、成犬の無駄吠え・噛み癖・トイレ失敗・お留守番不安の改善まで、1頭ずつの性格に合わせた個別プログラムを実施しています。
                         </p>
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-emerald-100 text-xs">
                             <div class="bg-emerald-50/70 p-3.5 rounded-2xl border border-emerald-200 space-y-1">
@@ -1018,7 +1050,7 @@
     </main>
 
     <!-- フッター -->
-    <footer class="bg-amber-950 text-amber-200 py-6 text-center text-xs">
+    <footer class="bg-amber-950 text-amber-200 py-6 text-center text-xs w-full">
         <div class="max-w-4xl mx-auto px-4 space-y-2">
             <div class="flex justify-center flex-wrap gap-4 font-bold text-amber-300">
                 <a href="index.html" class="hover:underline" data-i18n="rel_hotel">ペットホテルTOP</a>
@@ -1139,16 +1171,17 @@
             hero_h1_main1: 'Small Dog Training School & Puppy Kindergarten',
             hero_h1_main2: 'CHOCO & MOCA',
             philo_1: '<span class="block">At CHOCO &amp; MOCA, as <span class="text-gold-bullion">our approach to building trust with your dog</span>,</span><span class="block"><span class="text-gold-bullion">we base all training on "Positive Praise-Based Training."</span></span>',
-            philo_2: '<span class="block">Only for life-threatening or truly dangerous behaviors do we</span><span class="block"><span class="text-red-highlight">teach "NO,"</span> and <span class="text-red-highlight">we never scold for any other mistakes.</span></span>',
+            philo_2: '<span class="block">Only for life-threatening or truly dangerous behaviors do we</span><span class="block"><span class="text-red-highlight">teach "NO," and we never scold for any other mistakes.</span></span>',
             hero_desc_1: 'Located in <strong>Takashinohama, Takaishi-shi, Osaka (3 min walk from Takashinohama Sta.)</strong>, <span class="font-extrabold text-emerald-800">"CHOCO &amp; MOCA" offers personalized 1-on-1 programs tailored to each dog\'s personality—from puppy socialization up to 3 months old to resolving adult barking, biting, potty accidents, and separation anxiety</span>.',
             hero_desc_2: 'Morning &amp; evening home shuttle service is available <strong>within approx. 30 minutes by car from Takaishi</strong> (all of Sakai, Izumi, Osakasayama, Izumiotsu, Tadaoka, Kishiwada, Kaizuka, Izumisano, Matsubara, West Tondabayashi, West Habikino &amp; South/Central Osaka).',
             cta_first: 'Book Initial Training Counseling',
             cta_repeat: 'Returning Client Booking (Square)',
-            trainer_h2: '🐾 Dedicated Instruction by Our Trainer & Owner',
+            cta_jump: 'View 1-Day Schedule & Pricing ↓',
+            trainer_h2: '<span class="block sm:inline">🐾 Dedicated Instruction by</span><span class="block sm:inline"> Our Trainer &amp; Owner</span>',
             trainer_badge: 'Limited to 3 Dogs/Day • Dog School & Kindergarten CHOCO & MOCA',
             trainer_role: 'Head Dog Trainer & Owner',
             trainer_name: 'Kentaro Saito',
-            trainer_p1: 'At CHOCO &amp; MOCA, as <span class="text-gold-bullion">our approach to building trust with your dog</span>, <span class="text-gold-bullion">we base all training on "Positive Praise-Based Training."</span> Only for life-threatening or truly dangerous behaviors do we <span class="text-red-highlight">teach "NO,"</span> and <span class="text-red-highlight">we never scold for any other mistakes.</span>',
+            trainer_p1: 'At CHOCO &amp; MOCA, <span class="text-gold-bullion text-sm sm:text-base">as our approach to building trust with your dog, we base all training on "Positive Praise-Based Training."</span> <span class="text-red-highlight">Only for life-threatening or truly dangerous behaviors do we teach "NO," and we never scold for any other mistakes.</span>',
             trainer_p2: 'We prioritize eye contact so dogs feel that learning together with people is fun. From puppy socialization up to 3 months old to adult behavior concerns, feel free to consult us anytime.',
             sched_h2: '<span class="block sm:inline">🕒 A Day at Our Socialization School</span><span class="block sm:inline"> &amp; Dog Kindergarten</span><span class="block text-gold-bullion mt-0.5">CHOCO &amp; MOCA Kindergarten (Limited to 3 Dogs/Day)</span>',
             sched_sub: '<span class="sm:block">Balancing structured play and restful breaks, our pro trainer</span><span class="sm:block">nurtures social skills and manners one dog at a time.</span>',
@@ -1187,7 +1220,7 @@
             shuttle_title: '🚗 Home Shuttle Fee: ¥550 within 5km one-way from Takashinohama (+¥550 per additional 5km)',
             shuttle_desc: '*Door-to-door shuttle available within ~30 min drive from Takaishi (Sakai, Izumi, Osakasayama, Izumiotsu, Tadaoka, Kishiwada, Kaizuka, Izumisano, Matsubara, West Tondabayashi, West Habikino & South/Central Osaka). Actual coin parking or highway tolls apply if required.',
             pay_cap: '💳 Cash, Credit Cards (VISA/Mastercard/JCB/AMEX), E-Money (iD/QUICPay) & QR Payments (PayPay/d-Barai/Rakuten Pay/au PAY/Merpay) accepted',
-            faq_h2: 'Frequently Asked Questions (FAQ)',
+            faq_h2: '<span class="block sm:inline">Dog Training &amp; Socialization</span><span class="block sm:inline"> Frequently Asked Questions</span>',
             faq_q1: 'Can we consult about barking, biting, or puppy socialization in Takaishi, Sakai, or Izumi?',
             faq_a1: 'Of course! With our 3-dogs-per-day small-group system, we support everything from puppy socialization up to 3 months old to adult nuisance barking, biting, potty accidents, and separation anxiety using a personalized chart created during your initial counseling.',
             faq_q2: 'From what age can puppies join socialization class? Can we consult before vaccinations are finished?',
@@ -1197,7 +1230,7 @@
             faq_q6: 'How is parking and access from the nearest train station?',
             faq_a6: 'We are a 3-minute walk from Takashinohama Station (Nankai Takashinohama Line) with 1 dedicated parking space on-site, and about 5 minutes by car from Hagoromo / Higashi-Hagoromo Stations.',
             area_h2: '<span class="block">Accessible Within ~30 Min Drive from Takaishi</span><span class="block text-gold-bullion mt-0.5">3-Dogs/Day Dog Training &amp; Kindergarten<br class="sm:hidden"> CHOCO &amp; MOCA</span>',
-            area_desc: 'From puppy socialization up to 3 months old to resolving adult barking, biting, potty mistakes, and separation anxiety, we provide 1-on-1 tailored programs with morning/evening home shuttle service across Sakai, Izumi, Osakasayama, Senshu, Minamikawachi, and South/Central Osaka.',
+            area_desc: 'From puppy socialization up to 3 months old to resolving adult barking, biting, potty mistakes, and separation anxiety, we provide 1-on-1 tailored programs.',
             area_n_t: '🧭 North Area (Sakai & Osaka City)',
             area_n_d: 'All Sakai Wards (Nishi, Sakai, Kita, Naka, Higashi, Minami, Mihara) & South/Central Osaka Wards (Suminoe, Sumiyoshi, Abeno, Naniwa, Tennoji, Higashisumiyoshi, Hirano)',
             area_s_t: '🌊 South Area (Senshu Region)',
